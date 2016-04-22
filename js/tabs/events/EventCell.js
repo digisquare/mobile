@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
+    padding: 10,
+    paddingBottom: 0,
   },
   avatarContainer: {
     width: 50
@@ -69,7 +71,6 @@ const styles = StyleSheet.create({
     height: 0.5,
     backgroundColor: '#CCCCCC',
     marginTop: 10,
-    marginBottom: 10
   }
 });
 

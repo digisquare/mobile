@@ -52,7 +52,6 @@ var Events = React.createClass({
           icon={require('../../common/img/hamburger.png')}
         />
         <ListView
-          style={styles.container}
           dataSource={this.state.dataSource}
           renderRow={this.renderEventCell}
         />
@@ -77,12 +76,6 @@ var Events = React.createClass({
       }
     });
   }
-});
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
 });
 
 module.exports = Events;
