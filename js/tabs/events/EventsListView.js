@@ -63,7 +63,8 @@ var Events = React.createClass({
     return(
       <EventCell
         onSelect={() => this.selectEvent(event)}
-        event={event}/>
+        event={event}
+      />
     );
   },
 
