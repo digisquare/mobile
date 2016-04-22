@@ -1,10 +1,4 @@
-'use strict';
-
-import React, {
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Platform,
-} from 'react-native';
+import React, { TouchableHighlight, TouchableNativeFeedback, Platform } from 'react-native';
 
 function DigiTouchableIOS(props) {
   return (
@@ -16,8 +10,8 @@ function DigiTouchableIOS(props) {
   );
 }
 
-const DigiTouchableIOS = Platform.OS === 'android'
-  ? TouchableNativeFeedback
-  : DigiTouchableIOS;
+const DigiTouchable = Platform.OS === 'ios'
+  ? DigiTouchableIOS
+  : TouchableNativeFeedback;
 
-module.exports = DigiTouchableIOS;
+export default DigiTouchable;

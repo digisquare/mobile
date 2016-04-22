@@ -1,11 +1,9 @@
-'use strict';
-
 import React, { Component, View, StatusBar, StyleSheet } from 'react-native';
 
 import DigiNavigator from './DigiNavigator';
-import EventsListView from './tabs/events/EventsListView';
+import Events from './scenes/events/Events';
 
-class DigiApp extends Component {
+export default class DigiApp extends Component {
   constructor() {
     super();
   }
@@ -20,7 +18,7 @@ class DigiApp extends Component {
         <DigiNavigator
           initialRoute={{
             name: 'Digisquare',
-            component: EventsListView
+            component: Events,
           }}
         />
       </View>
@@ -33,5 +31,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-module.exports = DigiApp;

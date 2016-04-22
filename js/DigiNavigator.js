@@ -1,58 +1,53 @@
-'use strict';
+import React, { Component, PropTypes, BackAndroid, Navigator, StyleSheet } from 'react-native';
 
-var React = require('React');
-var Platform = require('Platform');
-var BackAndroid = require('BackAndroid');
-var Navigator = require('Navigator');
-var StyleSheet = require('StyleSheet');
+export default class DigiNavigator extends Component {
+  constructor(props) {
+    super(props);
+    this._handlers = [];
+    this.handleBackButton = this.handleBackButton.bind(this);
+  }
 
-var DigiNavigator = React.createClass({
-  _handlers: [],
-
-  componentDidMount: function() {
+  componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
-  },
+  }
 
   getChildContext() {
     return {
       addBackButtonListener: this.addBackButtonListener,
       removeBackButtonListener: this.removeBackButtonListener,
     };
-  },
+  }
 
-  addBackButtonListener: function(listener) {
+  addBackButtonListener(listener) {
     this._handlers.push(listener);
-  },
+  }
 
-  removeBackButtonListener: function(listener) {
-    this._handlers = this._handlers.filter((handler) => handler !== listener);
-  },
+  removeBackButtonListener(listener) {
+    this._handlers = this._handlers.filter(handler => handler !== listener);
+  }
 
-  handleBackButton: function() {
+  handleBackButton() {
     for (let i = this._handlers.length - 1; i >= 0; i--) {
       if (this._handlers[i]()) {
         return true;
       }
     }
 
-    const {navigator} = this.refs;
+    const { navigator } = this.refs;
+
     if (navigator && navigator.getCurrentRoutes().length > 1) {
       navigator.pop();
       return true;
     }
 
-    if (this.props.tab !== 'schedule') {
-      this.props.dispatch(switchTab('schedule'));
-      return true;
-    }
     return false;
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <Navigator
         ref="navigator"
@@ -63,21 +58,20 @@ var DigiNavigator = React.createClass({
         initialRoute={this.props.initialRoute}
         renderScene={(route, navigator) => {
           // count the number of func calls
-          console.log(route, navigator);
           if (route.component) {
-            return React.createElement(route.component, { navigator, ...route.passProps });
+            return React.createElement(
+              route.component,
+              {
+                navigator,
+                ...route.passProps,
+              }
+            );
           }
         }}
       />
     );
-  },
-
-});
-
-DigiNavigator.childContextTypes = {
-  addBackButtonListener: React.PropTypes.func,
-  removeBackButtonListener: React.PropTypes.func,
-};
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -86,4 +80,11 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = DigiNavigator;
+DigiNavigator.childContextTypes = {
+  addBackButtonListener: React.PropTypes.func,
+  removeBackButtonListener: React.PropTypes.func,
+};
+
+DigiNavigator.propTypes = {
+  initialRoute: PropTypes.object.isRequired,
+};

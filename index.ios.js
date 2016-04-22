@@ -1,6 +1,4 @@
-'use strict';
-
-const { AppRegistry } = require('react-native');
-const DigiApp = require('./js/DigiApp');
+import { AppRegistry } from 'react-native';
+import DigiApp from './js/DigiApp';
 
 AppRegistry.registerComponent('digisquare', () => DigiApp);

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "eslint js; exit 0"
   },
   "dependencies": {
     "moment": "^2.12.0",
@@ -12,5 +13,12 @@
     "react-native-fence-html": "^1.0.1",
     "react-native-htmlview": "^0.4.2",
     "react-native-maps": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.3",
+    "eslint": "^2.8.0",
+    "eslint-config-defaults": "^10.0.0-alpha.1",
+    "eslint-plugin-react": "^5.0.1",
+    "eslint-plugin-react-native": "^1.0.0"
   }
 }
