@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, View, Text, ListView, StyleSheet } from 'react-native';
+import React, { Component, PropTypes, View, ListView, StyleSheet } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 
 import DigiDrawerLayout from '../../common/DigiDrawerLayout';
@@ -6,6 +6,7 @@ import DigiHeader from '../../common/DigiHeader';
 
 import EventsRow from './EventsRow';
 import Event from '../event/Event';
+import Editions from '../editions/Editions';
 
 export default class Events extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class Events extends Component {
     };
     this.renderEventsRow = this.renderEventsRow.bind(this);
     this.selectEvent = this.selectEvent.bind(this);
-    this.openCityDrawer = this.openCityDrawer.bind(this);
+    this.openEditionsDrawer = this.openEditionsDrawer.bind(this);
   }
 
   componentWillMount() {
@@ -50,7 +51,7 @@ export default class Events extends Component {
         ref={(drawer) => this._drawer = drawer}
         drawerWidth={300}
         drawerPosition="right"
-        renderNavigationView={this.renderNavigationView}
+        renderNavigationView={() => <Editions />}
       >
         <View style={styles.container}>
           <DigiHeader
@@ -63,7 +64,7 @@ export default class Events extends Component {
               icon: require('../../common/img/filter.png'),
               title: 'Filter',
               show: 'always',
-              onPress: this.openCityDrawer,
+              onPress: this.openEditionsDrawer,
             }}
           />
           <ListView
@@ -75,16 +76,8 @@ export default class Events extends Component {
     );
   }
 
-  openCityDrawer() {
+  openEditionsDrawer() {
     this._drawer && this._drawer.openDrawer();
-  }
-
-  renderNavigationView() {
-    return (
-      <View>
-        <Text>Plop</Text>
-      </View>
-    );
   }
 
   renderEventsRow(event) {

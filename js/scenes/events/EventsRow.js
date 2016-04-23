@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize:18,
+    fontSize: 18,
     fontWeight: '500',
   },
   separator: {
