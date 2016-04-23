@@ -1,7 +1,6 @@
 package com.digisquare;
 
 import com.facebook.react.ReactActivity;
-import com.AirMaps.AirPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -35,8 +34,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-            new MainReactPackage(),
-            new AirPackage()
+            new MainReactPackage()
         );
     }
 }
