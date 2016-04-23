@@ -11,7 +11,7 @@ export default function EventsRow({ event, onSelect}) {
       <View style={styles.container}>
         <View style={styles.avatarContainer}>
           {
-            event.Organization[0] ? (
+            event.Organization[0] && event.Organization[0].avatar ? (
               <Image
                 style={styles.avatar}
                 source={{uri: event.Organization[0].avatar}}

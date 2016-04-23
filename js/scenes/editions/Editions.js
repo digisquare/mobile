@@ -1,37 +1,29 @@
-import React, { View, Text, StyleSheet } from 'react-native';
+import React, { PropTypes, View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux'
+
+import { selectEdition } from '../../actions/editions.js';
+import { fetchEvents } from '../../actions/events.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiTouchable from '../../common/DigiTouchable';
 
-const editions = [
-  {
-    name: 'Bordeaux',
-    id: 9,
-  },
-  {
-    name: 'Montpellier',
-    id: 8,
-  },
-  {
-    name: 'Clermont-Ferrand',
-    id: 23,
-  },
-  {
-    name: 'Toulouse',
-    id: 4,
-  },
-];
-
-export default function Editions() {
+const Editions = ({ editions, dispatch, closeDrawer }) => {
   return (
     <View>
       <DigiHeader
         title="Editions"
       />
       {
-        editions.map(edition => {
+        editions.items.map(edition => {
           return (
-            <DigiTouchable key={edition.id} onPress={() => null}>
+            <DigiTouchable
+              key={edition.id}
+              onPress={() => {
+                dispatch(selectEdition(edition.id));
+                dispatch(fetchEvents(edition.id));
+                closeDrawer();
+              }}
+            >
               <View style={styles.editionContainer}>
                 <Text style={styles.edition}>
                   {edition.name}
@@ -57,3 +49,10 @@ const styles = StyleSheet.create({
   },
 });
 
+Editions.propTypes = {
+  editions: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  closeDrawer: PropTypes.func.isRequired,
+};
+
+export default connect(state => state)(Editions);
