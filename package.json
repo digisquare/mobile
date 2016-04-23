@@ -10,7 +10,6 @@
     "moment": "^2.12.0",
     "react": "^0.14.8",
     "react-native": "^0.24.1",
-    "react-native-fence-html": "^1.0.1",
     "react-native-htmlview": "^0.4.2",
     "react-native-maps": "^0.3.1"
   },
