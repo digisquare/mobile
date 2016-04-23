@@ -47,6 +47,7 @@ export default function EventVenue({ venue }) {
 const styles = StyleSheet.create({
   venue: {
     marginTop: 10,
+    marginBottom: 30,
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,

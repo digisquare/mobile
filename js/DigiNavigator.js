@@ -54,9 +54,7 @@ export default class DigiNavigator extends Component {
       <Navigator
         ref="navigator"
         style={styles.container}
-        configureScene={() => {
-          return Navigator.SceneConfigs.FloatFromRight;
-        }}
+        configureScene={() => Navigator.SceneConfigs.PushFromRight}
         initialRoute={this.props.initialRoute}
         renderScene={(route, navigator) => {
           // count the number of func calls
