@@ -1,18 +1,47 @@
-import React, { PropTypes, View, ToolbarAndroid, Text, StyleSheet } from 'react-native';
+import React, { Component, PropTypes, View, ToolbarAndroid, StyleSheet } from 'react-native';
 
-export default function DigiHeader({ icon }) {
-  return (
-    <View style={styles.toolbarContainer}>
-      <ToolbarAndroid
-        navIcon={icon}
-        title="Digisquare"
-        titleColor="white"
-        style={styles.toolbar}
-      >
-        <Text>content</Text>
-      </ToolbarAndroid>
-    </View>
-  );
+export default class EventsHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.handleActionSelected = this.handleActionSelected.bind(this);
+  }
+
+  render() {
+    const { leftItem, rightItem, title } = this.props;
+    let actions = [];
+    if (rightItem) {
+      const { title, icon, layout } = rightItem;
+      actions.push({
+        icon: layout !== 'title' ? icon : undefined,
+        title: title,
+        show: 'always',
+      });
+    }
+
+    return (
+      <View style={styles.toolbarContainer}>
+        <ToolbarAndroid
+          navIcon={leftItem && leftItem.icon}
+          onIconClicked={leftItem && leftItem.onPress}
+          title={title}
+          titleColor="white"
+          style={styles.toolbar}
+          actions={actions}
+          onActionSelected={this.handleActionSelected}
+        />
+      </View>
+    );
+  }
+
+
+  handleActionSelected(position) {
+    const { rightItem } = this.props;
+    if (rightItem) {
+      const items = [rightItem];
+      const item = items[position];
+      item && item.onPress && item.onPress();
+    }
+  }
 }
 
 const styles = StyleSheet.create({
@@ -25,6 +54,8 @@ const styles = StyleSheet.create({
   },
 });
 
-DigiHeader.propTypes = {
-  icon: PropTypes.number.isRequired,
+EventsHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  leftItem: PropTypes.object,
+  rightItem: PropTypes.object,
 };

@@ -1,6 +1,7 @@
-import React, { Component, PropTypes, View, ListView, StyleSheet } from 'react-native';
+import React, { Component, PropTypes, View, Text, ListView, StyleSheet } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 
+import DigiDrawerLayout from '../../common/DigiDrawerLayout';
 import DigiHeader from '../../common/DigiHeader';
 
 import EventsRow from './EventsRow';
@@ -17,6 +18,7 @@ export default class Events extends Component {
     };
     this.renderEventsRow = this.renderEventsRow.bind(this);
     this.selectEvent = this.selectEvent.bind(this);
+    this.openCityDrawer = this.openCityDrawer.bind(this);
   }
 
   componentWillMount() {
@@ -44,14 +46,43 @@ export default class Events extends Component {
     }
 
     return (
-      <View style={styles.container}>
-        <DigiHeader
-          icon={require('../../common/img/hamburger.png')}
-        />
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderEventsRow}
-        />
+      <DigiDrawerLayout
+        ref={(drawer) => this._drawer = drawer}
+        drawerWidth={300}
+        drawerPosition="right"
+        renderNavigationView={this.renderNavigationView}
+      >
+        <View style={styles.container}>
+          <DigiHeader
+            title="Bordeaux"
+            leftItem={{
+              icon: require('../../common/img/hamburger.png'),
+              onPress: () => null,
+            }}
+            rightItem={{
+              icon: require('../../common/img/filter.png'),
+              title: 'Filter',
+              show: 'always',
+              onPress: this.openCityDrawer,
+            }}
+          />
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderEventsRow}
+          />
+        </View>
+      </DigiDrawerLayout>
+    );
+  }
+
+  openCityDrawer() {
+    this._drawer && this._drawer.openDrawer();
+  }
+
+  renderNavigationView() {
+    return (
+      <View>
+        <Text>Plop</Text>
       </View>
     );
   }

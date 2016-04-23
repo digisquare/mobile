@@ -5,6 +5,8 @@ export default class DigiNavigator extends Component {
     super(props);
     this._handlers = [];
     this.handleBackButton = this.handleBackButton.bind(this);
+    this.addBackButtonListener = this.addBackButtonListener.bind(this);
+    this.removeBackButtonListener = this.removeBackButtonListener.bind(this);
   }
 
   componentDidMount() {
