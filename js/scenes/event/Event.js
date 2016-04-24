@@ -12,7 +12,7 @@ export default function Event({ event, navigator }) {
   return (
     <View style={styles.container}>
       <DigiHeader
-        title="Évement"
+        title="Évènement"
         leftItem={{
           icon: require('../../common/img/back_white.png'),
           onPress: () => navigator.pop(),
