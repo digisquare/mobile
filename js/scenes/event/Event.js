@@ -23,7 +23,7 @@ export default function Event({ event, navigator }) {
           {event.Event.name}
         </Text>
         <Text style={styles.date}>
-          {moment(event.Event.start_at).format('dddd D MMMM YYYY')}
+          {moment(event.Event.start_at).format('dddd D MMMM YYYY, HH:mm')}
         </Text>
         <HTMLView
           value={event.Event.description}

@@ -6,6 +6,9 @@ import DigiTouchable from '../../common/DigiTouchable';
 moment.locale('fr');
 
 export default function EventsRow({ event, onSelect}) {
+  const time = moment(event.Event.start_at).format('HH:mm');
+  const place = event.Venue.name;
+  const timeAndPlace = time === '00:00' ? place : time + ' @ ' + place;
   return (
     <DigiTouchable onPress={onSelect}>
       <View style={styles.container}>
@@ -24,13 +27,8 @@ export default function EventsRow({ event, onSelect}) {
             {event.Event.name}
           </Text>
           <Text style={styles.date}>
-            {
-              event.Venue.name
-              + ', '
-              + moment(event.Event.start_at).fromNow()
-            }
+            {timeAndPlace}
           </Text>
-          <View style={styles.separator} />
         </View>
       </View>
     </DigiTouchable>
@@ -42,7 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     padding: 10,
-    paddingBottom: 0,
   },
   avatarContainer: {
     width: 50,
@@ -58,11 +55,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: '500',
-  },
-  separator: {
-    height: 0.5,
-    backgroundColor: '#CCCCCC',
-    marginTop: 10,
   },
 });
 

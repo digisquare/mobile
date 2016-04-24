@@ -1,5 +1,6 @@
 import React, { Component, PropTypes, View, ListView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import moment from 'moment/min/moment-with-locales';
 
 import { fetchEvents } from '../../actions/events.js';
 
@@ -15,6 +16,7 @@ const Events = class Events extends Component {
     this.state = {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
+        sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
       }),
       loading: true,
       error: false,
@@ -47,8 +49,18 @@ const Events = class Events extends Component {
       });
     }
     if (events[selectedEdition].items) {
+      const dataBlob = {};
+      let date;
+      events[selectedEdition].items.map(item => {
+        const newDate = moment(item.Event.start_at).format('YYYY-MM-DD');
+        if (newDate !== date) {
+          date = newDate;
+          dataBlob[date] = [];
+        }
+        dataBlob[date].push(item);
+      });
       return this.setState({
-        dataSource: dataSource.cloneWithRows(events[selectedEdition].items),
+        dataSource: dataSource.cloneWithRowsAndSections(dataBlob),
         loading: false,
         error: false,
       });

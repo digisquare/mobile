@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, ListView, RefreshControl } from 'react-native';
+import React, { Component, PropTypes, ListView, RefreshControl, View, Text, StyleSheet } from 'react-native';
+import moment from 'moment/min/moment-with-locales';
 
 import DigiError from '../../common/DigiError';
 
@@ -8,6 +9,7 @@ import Event from '../event/Event';
 export default class EventsListView extends Component {
   constructor(props) {
     super(props);
+    this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderEventsRow = this.renderEventsRow.bind(this);
     this.selectEvent = this.selectEvent.bind(this);
   }
@@ -44,9 +46,21 @@ export default class EventsListView extends Component {
     return (
       <ListView
         dataSource={dataSource}
-        renderRow={this.renderEventsRow}
         refreshControl={refreshControl}
+        renderSectionHeader={this.renderSectionHeader}
+        renderRow={this.renderEventsRow}
       />
+    );
+  }
+
+  renderSectionHeader(sectionData, sectionID) {
+    const date = moment(sectionID);
+    return (
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>
+          {date.format('dddd Do MMMM')}
+        </Text>
+      </View>
     );
   }
 
@@ -69,6 +83,22 @@ export default class EventsListView extends Component {
     });
   }
 }
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomColor : 'grey',
+    borderBottomWidth: 0.5,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  header: {
+    color: 'black',
+    fontWeight: '500',
+    fontSize: 18,
+  },
+});
 
 EventsListView.propTypes = {
   navigator: PropTypes.object.isRequired,
