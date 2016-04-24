@@ -33,7 +33,7 @@ export function fetchEvents(edition, refresh = true) {
     refresh ? dispatch(fetchEventsRequest(edition)) : '';
 
     const url = 'https://digisquare.net/events.json?'
-      + 'end_at=' + moment().format('YYYY-MM-DD')
+      + 'end_at=' + moment().format('YYYY-MM-DD HH:mm')
       + '&edition_id=' + edition
       + '&sort=start_at'
       + '&direction=asc';
