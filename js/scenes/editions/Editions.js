@@ -20,7 +20,7 @@ const Editions = ({ editions, dispatch, closeDrawer }) => {
               key={edition.id}
               onPress={() => {
                 dispatch(selectEdition(edition.id));
-                dispatch(fetchEvents(edition.id));
+                dispatch(fetchEvents(edition.id, false));
                 closeDrawer();
               }}
             >

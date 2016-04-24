@@ -26,7 +26,7 @@ const Events = class Events extends Component {
 
   componentWillMount() {
     const { dispatch, editions: { selectedEdition } } = this.props;
-    dispatch(fetchEvents(selectedEdition));
+    dispatch(fetchEvents(selectedEdition, false));
   }
 
   componentWillReceiveProps(nextProps) {

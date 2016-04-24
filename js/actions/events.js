@@ -28,9 +28,9 @@ export function fetchEventsFailure(edition, error) {
   }
 }
 
-export function fetchEvents(edition) {
+export function fetchEvents(edition, refresh = true) {
   return dispatch => {
-    dispatch(fetchEventsRequest(edition));
+    refresh ? dispatch(fetchEventsRequest(edition)) : '';
 
     const url = 'https://digisquare.net/events.json?'
       + 'end_at=' + moment().format('YYYY-MM-DD')
@@ -41,7 +41,7 @@ export function fetchEvents(edition) {
     fetch(url)
       .then(response => response.json())
       .then(json => dispatch(fetchEventsSuccess(edition, json)))
-      .catch(error => dispatch(fetchEventsFailure(edition, error)))
+      .catch(error => refresh ? dispatch(fetchEventsFailure(edition, error)) : '')
       .done();
   }
 }
