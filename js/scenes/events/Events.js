@@ -6,8 +6,7 @@ import { fetchEvents } from '../../actions/events.js';
 import DigiDrawerLayout from '../../common/DigiDrawerLayout';
 import DigiHeader from '../../common/DigiHeader';
 
-import EventsRow from './EventsRow';
-import Event from '../event/Event';
+import EventsListView from './EventsListView';
 import Editions from '../editions/Editions';
 
 const Events = class Events extends Component {
@@ -17,12 +16,12 @@ const Events = class Events extends Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-      loaded: false,
+      loading: false,
+      error: false,
     };
     this.renderNavigationView = this.renderNavigationView.bind(this);
-    this.renderEventsRow = this.renderEventsRow.bind(this);
-    this.selectEvent = this.selectEvent.bind(this);
     this.openEditionsDrawer = this.openEditionsDrawer.bind(this);
+    this.onRefresh = this.onRefresh.bind(this);
   }
 
   componentWillMount() {
@@ -33,21 +32,38 @@ const Events = class Events extends Component {
   componentWillReceiveProps(nextProps) {
     const { events, editions: { selectedEdition } } = nextProps;
     const { dataSource } = this.state;
-    if (!events[selectedEdition] || events[selectedEdition].isFetching) {
-      this.setState({
-        loaded: false,
-      })
-    } else {
-      this.setState({
+    if (!events[selectedEdition]) {
+      return null;
+    }
+    if (events[selectedEdition].isFetching) {
+      return this.setState({
+        loading: true,
+      });
+    }
+    if (events[selectedEdition].items) {
+      return this.setState({
         dataSource: dataSource.cloneWithRows(events[selectedEdition].items),
-        loaded: true,
+        loading: false,
+        error: false,
+      });
+    }
+    if (events[selectedEdition].error) {
+      return this.setState({
+        loading: false,
+        error: true,
       });
     }
   }
 
+  onRefresh() {
+    const { dispatch, editions: { selectedEdition } } = this.props;
+    dispatch(fetchEvents(selectedEdition));
+  }
+
   render() {
-    const { selectedEdition, items: editions } = this.props.editions;
-    const edition = editions.find(edition => edition.id === selectedEdition);
+    const { navigator, editions: { selectedEdition, items } } = this.props;
+    const edition = items.find(edition => edition.id === selectedEdition);
+    const { dataSource, loading, error } = this.state;
     return (
       <DigiDrawerLayout
         ref={ref => this.drawer = ref}
@@ -69,9 +85,12 @@ const Events = class Events extends Component {
               onPress: this.openEditionsDrawer,
             }}
           />
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderEventsRow}
+          <EventsListView
+            navigator={navigator}
+            dataSource={dataSource}
+            refreshing={loading}
+            onRefresh={this.onRefresh}
+            error={error}
           />
         </View>
       </DigiDrawerLayout>
@@ -89,25 +108,6 @@ const Events = class Events extends Component {
   openEditionsDrawer() {
     this.drawer && this.drawer.openDrawer();
   }
-
-  renderEventsRow(event) {
-    return (
-      <EventsRow
-        onSelect={() => this.selectEvent(event)}
-        event={event}
-      />
-    );
-  }
-
-  selectEvent(event) {
-    this.props.navigator.push({
-      component: Event,
-      title: 'Evènement',
-      passProps: {
-        event: event,
-      },
-    });
-  }
 }
 
 const styles = StyleSheet.create({
@@ -120,6 +120,7 @@ Events.propTypes = {
   navigator: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
+  events: PropTypes.object.isRequired,
 };
 
 export default connect(state => state)(Events);
