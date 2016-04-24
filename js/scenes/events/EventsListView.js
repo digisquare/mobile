@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, ListView, ScrollView, RefreshControl, StyleSheet } from 'react-native';
+import React, { Component, PropTypes, ListView, RefreshControl } from 'react-native';
 
 import DigiError from '../../common/DigiError';
 
@@ -8,9 +8,6 @@ import Event from '../event/Event';
 export default class EventsListView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      refreshing: false,
-    };
     this.renderEventsRow = this.renderEventsRow.bind(this);
     this.selectEvent = this.selectEvent.bind(this);
   }
@@ -26,12 +23,21 @@ export default class EventsListView extends Component {
 
     if (error) {
       return (
-        <ScrollView
-          contentContainerStyle={styles.container}
+        <DigiError
           refreshControl={refreshControl}
-        >
-          <DigiError />
-        </ScrollView>
+          image={require('../../common/img/tumbeast-network.png')}
+          text="Oups, impossible de récupérer les évènements"
+        />
+      );
+    }
+
+    if (dataSource.getRowCount() === 0 && !refreshing) {
+      return (
+        <DigiError
+          refreshControl={refreshControl}
+          image={require('../../common/img/tumbeast-sitting.png')}
+          text="Snif, aucun évènement à venir"
+        />
       );
     }
 
@@ -63,14 +69,6 @@ export default class EventsListView extends Component {
     });
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 EventsListView.propTypes = {
   navigator: PropTypes.object.isRequired,

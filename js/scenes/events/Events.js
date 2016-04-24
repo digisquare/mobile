@@ -16,7 +16,7 @@ const Events = class Events extends Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-      loading: false,
+      loading: true,
       error: false,
     };
     this.renderNavigationView = this.renderNavigationView.bind(this);
@@ -40,17 +40,17 @@ const Events = class Events extends Component {
         loading: true,
       });
     }
+    if (events[selectedEdition].error) {
+      return this.setState({
+        loading: false,
+        error: true,
+      });
+    }
     if (events[selectedEdition].items) {
       return this.setState({
         dataSource: dataSource.cloneWithRows(events[selectedEdition].items),
         loading: false,
         error: false,
-      });
-    }
-    if (events[selectedEdition].error) {
-      return this.setState({
-        loading: false,
-        error: true,
       });
     }
   }

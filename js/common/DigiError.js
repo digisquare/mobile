@@ -1,16 +1,17 @@
-import React, { View, Image, Text, StyleSheet } from 'react-native';
+import React, { PropTypes, ScrollView, Image, Text, StyleSheet } from 'react-native';
 
-export default function DigiError() {
+export default function DigiError({ refreshControl, image, text }) {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      refreshControl={refreshControl}
+    >
       <Image
         style={styles.tumbeast}
-        source={require('./img/tumbeast.png')}
+        source={image}
       />
-      <Text>
-        Oups, impossible de se connecter
-      </Text>
-    </View>
+      <Text>{text}</Text>
+    </ScrollView>
   );
 }
 
@@ -22,6 +23,16 @@ const styles = StyleSheet.create({
   },
   tumbeast: {
     width: 200,
-    height: 92.5,
+    height: 200,
   },
 });
+
+DigiError.propTypes = {
+  refreshControl: PropTypes.node,
+  image: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+DigiError.defaultProps = {
+  refreshControl: null,
+};
