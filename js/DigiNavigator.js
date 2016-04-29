@@ -1,5 +1,8 @@
 import React, { Component, PropTypes, BackAndroid, Navigator, StyleSheet } from 'react-native';
 
+import DigiDrawerLayout from './common/DigiDrawerLayout';
+import DigiMainDrawer from './common/DigiMainDrawer';
+
 export default class DigiNavigator extends Component {
   constructor(props) {
     super(props);
@@ -7,6 +10,8 @@ export default class DigiNavigator extends Component {
     this.handleBackButton = this.handleBackButton.bind(this);
     this.addBackButtonListener = this.addBackButtonListener.bind(this);
     this.removeBackButtonListener = this.removeBackButtonListener.bind(this);
+    this.renderNavigationView = this.renderNavigationView.bind(this);
+    this.openMainDrawer = this.openMainDrawer.bind(this);
   }
 
   componentDidMount() {
@@ -57,20 +62,41 @@ export default class DigiNavigator extends Component {
         configureScene={() => Navigator.SceneConfigs.PushFromRight}
         initialRoute={this.props.initialRoute}
         renderScene={(route, navigator) => {
-          // count the number of func calls
           if (route.component) {
-            return React.createElement(
-              route.component,
-              {
-                navigator,
-                ...route.passProps,
-              }
+            const RouteComponent = route.component;
+            return (
+              <DigiDrawerLayout
+                ref={ref => this.drawer = ref}
+                drawerWidth={300}
+                drawerPosition="left"
+                renderNavigationView={() => this.renderNavigationView(navigator)}
+              >
+                <RouteComponent
+                  navigator={navigator}
+                  openMainDrawer={this.openMainDrawer}
+                  {...route.passProps}
+                />
+              </DigiDrawerLayout>
             );
           }
         }}
       />
     );
   }
+
+  renderNavigationView(navigator) {
+    return (
+      <DigiMainDrawer
+        navigator={navigator}
+        closeDrawer={() => this.drawer.closeDrawer()}
+      />
+    );
+  }
+
+  openMainDrawer() {
+    this.drawer && this.drawer.openDrawer();
+  }
+
 }
 
 const styles = StyleSheet.create({

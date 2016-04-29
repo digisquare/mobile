@@ -2,7 +2,6 @@ import React, { PropTypes, View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux'
 
 import { selectEdition } from '../../actions/editions.js';
-import { fetchEvents } from '../../actions/events.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiTouchable from '../../common/DigiTouchable';
@@ -20,7 +19,6 @@ const Editions = ({ editions, dispatch, closeDrawer }) => {
               key={edition.id}
               onPress={() => {
                 dispatch(selectEdition(edition.id));
-                dispatch(fetchEvents(edition.id, false));
                 closeDrawer();
               }}
             >

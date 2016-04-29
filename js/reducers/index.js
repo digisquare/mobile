@@ -5,10 +5,12 @@ import { persistStore, autoRehydrate } from 'redux-persist';
 
 import editions from './editions.js';
 import events from './events.js';
+import organizations from './organizations.js';
 
 const reducers = combineReducers({
   editions,
   events,
+  organizations,
 });
 
 const store = createStore(

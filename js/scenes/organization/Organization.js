@@ -1,34 +1,32 @@
-import React, { PropTypes, View, ScrollView, StyleSheet, Text, Linking } from 'react-native';
+import React, { PropTypes, View, ScrollView, StyleSheet, Linking } from 'react-native';
 
-import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';
 
 import DigiHeader from '../../common/DigiHeader';
-import EventVenue from './EventVenue';
+import OrganizationVenue from './OrganizationVenue';
 
-moment.locale('fr');
-
-export default function Event({ event, navigator }) {
+export default function Organization({ organization, navigator }) {
   return (
     <View style={styles.container}>
       <DigiHeader
-        title={event.Event.name}
+        title={organization.Organization.name}
         leftItem={{
           icon: require('../../common/img/back_white.png'),
           onPress: () => navigator.pop(),
         }}
       />
       <ScrollView style={styles.scrollview}>
-        <Text style={styles.date}>
-          {moment(event.Event.start_at).format('dddd D MMMM YYYY, HH:mm')}
-        </Text>
         <HTMLView
-          value={event.Event.description}
+          value={organization.Organization.description}
           onLinkPress={url => Linking.openURL(url)}
         />
-        <EventVenue
-          venue={event.Venue}
-        />
+        {
+          organization.Venue.id ? (
+            <OrganizationVenue
+              venue={organization.Venue}
+            />
+          ) : null
+        }
       </ScrollView>
     </View>
   );
@@ -42,13 +40,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
   },
-  date: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
 });
 
-Event.propTypes = {
-  event: PropTypes.object.isRequired,
+Organization.propTypes = {
+  organization: PropTypes.object.isRequired,
   navigator: PropTypes.object.isRequired,
 };
