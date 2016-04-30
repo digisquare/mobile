@@ -26,32 +26,33 @@ const Organizations = class Organizations extends Component {
 
   componentWillMount() {
     const { dispatch, editions: { selectedEdition } } = this.props;
-    dispatch(fetchOrganizations(selectedEdition, false));
+    dispatch(fetchOrganizations(selectedEdition));
   }
 
   componentWillReceiveProps(nextProps) {
     const { organizations, editions: { selectedEdition } } = nextProps;
     const { dataSource } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
-      this.props.dispatch(fetchOrganizations(selectedEdition, false));
-    }
-    if (!organizations[selectedEdition]) {
-      return null;
-    }
-    if (organizations[selectedEdition].isFetching) {
-      return this.setState({
+      this.props.dispatch(fetchOrganizations(selectedEdition));
+      this.setState({
         loading: true,
       });
     }
-    if (organizations[selectedEdition].error) {
+    if (!organizations[selectedEdition]) {
+      return this.setState({
+        dataSource: dataSource.cloneWithRowsAndSections({}),
+      });
+    }
+    const { error, isFetching, items } = organizations[selectedEdition];
+    if (error && !isFetching && items.length === 0) {
       return this.setState({
         loading: false,
         error: true,
       });
     }
-    if (organizations[selectedEdition].items) {
+    if (items) {
       return this.setState({
-        dataSource: dataSource.cloneWithRows(organizations[selectedEdition].items),
+        dataSource: dataSource.cloneWithRows(items),
         loading: false,
         error: false,
       });
@@ -61,6 +62,9 @@ const Organizations = class Organizations extends Component {
   onRefresh() {
     const { dispatch, editions: { selectedEdition } } = this.props;
     dispatch(fetchOrganizations(selectedEdition));
+    return this.setState({
+      loading: true,
+    });
   }
 
   render() {

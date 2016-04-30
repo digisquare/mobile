@@ -26,9 +26,9 @@ export function fetchOrganizationsFailure(edition, error) {
   }
 }
 
-export function fetchOrganizations(edition, refresh = true) {
+export function fetchOrganizations(edition) {
   return dispatch => {
-    refresh ? dispatch(fetchOrganizationsRequest(edition)) : '';
+    dispatch(fetchOrganizationsRequest(edition));
 
     const url = 'https://digisquare.net/organizations.json?'
       + '&edition_id=' + edition;
@@ -36,7 +36,7 @@ export function fetchOrganizations(edition, refresh = true) {
     fetch(url)
       .then(response => response.json())
       .then(json => dispatch(fetchOrganizationsSuccess(edition, json)))
-      .catch(error => refresh ? dispatch(fetchOrganizationsFailure(edition, error)) : '')
+      .catch(error => dispatch(fetchOrganizationsFailure(edition, error)))
       .done();
   }
 }

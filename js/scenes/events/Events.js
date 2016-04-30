@@ -28,30 +28,31 @@ const Events = class Events extends Component {
 
   componentWillMount() {
     const { dispatch, editions: { selectedEdition } } = this.props;
-    dispatch(fetchEvents(selectedEdition, false));
+    dispatch(fetchEvents(selectedEdition));
   }
 
   componentWillReceiveProps(nextProps) {
     const { events, editions: { selectedEdition } } = nextProps;
     const { dataSource } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
-      this.props.dispatch(fetchEvents(selectedEdition, false));
-    }
-    if (!events[selectedEdition]) {
-      return null;
-    }
-    if (events[selectedEdition].isFetching) {
-      return this.setState({
+      this.props.dispatch(fetchEvents(selectedEdition));
+      this.setState({
         loading: true,
       });
     }
-    if (events[selectedEdition].error) {
+    if (!events[selectedEdition]) {
+      return this.setState({
+        dataSource: dataSource.cloneWithRowsAndSections({}),
+      });
+    }
+    const { error, isFetching, items } = events[selectedEdition];
+    if (error && !isFetching && items.length === 0) {
       return this.setState({
         loading: false,
         error: true,
       });
     }
-    if (events[selectedEdition].items) {
+    if (items) {
       const dataBlob = {};
       let date;
       events[selectedEdition].items.map(item => {
@@ -73,6 +74,9 @@ const Events = class Events extends Component {
   onRefresh() {
     const { dispatch, editions: { selectedEdition } } = this.props;
     dispatch(fetchEvents(selectedEdition));
+    return this.setState({
+      loading: true,
+    });
   }
 
   render() {
