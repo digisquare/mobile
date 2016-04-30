@@ -6,7 +6,7 @@ import DigiTouchable from './DigiTouchable';
 import Events from '../scenes/events/Events';
 import Organizations from '../scenes/organizations/Organizations';
 
-const DigiMainDrawer = ({ navigator, closeDrawer }) => {
+const DigiMainDrawer = ({ navigator }) => {
   return (
     <View>
       <DigiHeader
@@ -18,7 +18,6 @@ const DigiMainDrawer = ({ navigator, closeDrawer }) => {
           navigator.replace({
             component: Events,
           });
-          closeDrawer();
         }}
       >
         <View style={styles.editionContainer}>
@@ -33,7 +32,6 @@ const DigiMainDrawer = ({ navigator, closeDrawer }) => {
           navigator.replace({
             component: Organizations,
           });
-          closeDrawer();
         }}
       >
         <View style={styles.editionContainer}>
@@ -60,7 +58,6 @@ const styles = StyleSheet.create({
 
 DigiMainDrawer.propTypes = {
   navigator: PropTypes.object.isRequired,
-  closeDrawer: PropTypes.func.isRequired,
 };
 
 export default DigiMainDrawer;

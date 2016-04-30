@@ -88,7 +88,6 @@ export default class DigiNavigator extends Component {
     return (
       <DigiMainDrawer
         navigator={navigator}
-        closeDrawer={() => this.drawer.closeDrawer()}
       />
     );
   }
