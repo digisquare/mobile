@@ -16,7 +16,7 @@ const Organizations = class Organizations extends Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-      loading: true,
+      refreshing: true,
       error: false,
     };
     this.renderNavigationView = this.renderNavigationView.bind(this);
@@ -35,7 +35,7 @@ const Organizations = class Organizations extends Component {
     if (selectedEdition !== this.props.editions.selectedEdition) {
       this.props.dispatch(fetchOrganizations(selectedEdition));
       this.setState({
-        loading: true,
+        refreshing: true,
       });
     }
     if (!organizations[selectedEdition]) {
@@ -46,14 +46,14 @@ const Organizations = class Organizations extends Component {
     const { error, isFetching, items } = organizations[selectedEdition];
     if (error && !isFetching && items.length === 0) {
       return this.setState({
-        loading: false,
+        refreshing: false,
         error: true,
       });
     }
     if (items) {
       return this.setState({
         dataSource: dataSource.cloneWithRows(items),
-        loading: false,
+        refreshing: false,
         error: false,
       });
     }
@@ -63,14 +63,14 @@ const Organizations = class Organizations extends Component {
     const { dispatch, editions: { selectedEdition } } = this.props;
     dispatch(fetchOrganizations(selectedEdition));
     return this.setState({
-      loading: true,
+      refreshing: true,
     });
   }
 
   render() {
     const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
     const edition = items.find(edition => edition.id === selectedEdition);
-    const { dataSource, loading, error } = this.state;
+    const { dataSource, refreshing, error } = this.state;
     return (
       <DigiDrawerLayout
         ref={ref => this.drawer = ref}
@@ -95,7 +95,7 @@ const Organizations = class Organizations extends Component {
           <OrganizationsListView
             navigator={navigator}
             dataSource={dataSource}
-            refreshing={loading}
+            refreshing={refreshing}
             onRefresh={this.onRefresh}
             error={error}
           />

@@ -18,7 +18,7 @@ const Events = class Events extends Component {
         rowHasChanged: (row1, row2) => row1 !== row2,
         sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
       }),
-      loading: true,
+      refreshing: true,
       error: false,
     };
     this.renderNavigationView = this.renderNavigationView.bind(this);
@@ -37,7 +37,7 @@ const Events = class Events extends Component {
     if (selectedEdition !== this.props.editions.selectedEdition) {
       this.props.dispatch(fetchEvents(selectedEdition));
       this.setState({
-        loading: true,
+        refreshing: true,
       });
     }
     if (!events[selectedEdition]) {
@@ -48,7 +48,7 @@ const Events = class Events extends Component {
     const { error, isFetching, items } = events[selectedEdition];
     if (error && !isFetching && items.length === 0) {
       return this.setState({
-        loading: false,
+        refreshing: false,
         error: true,
       });
     }
@@ -65,7 +65,7 @@ const Events = class Events extends Component {
       });
       return this.setState({
         dataSource: dataSource.cloneWithRowsAndSections(dataBlob),
-        loading: false,
+        refreshing: false,
         error: false,
       });
     }
@@ -75,14 +75,14 @@ const Events = class Events extends Component {
     const { dispatch, editions: { selectedEdition } } = this.props;
     dispatch(fetchEvents(selectedEdition));
     return this.setState({
-      loading: true,
+      refreshing: true,
     });
   }
 
   render() {
     const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
     const edition = items.find(edition => edition.id === selectedEdition);
-    const { dataSource, loading, error } = this.state;
+    const { dataSource, refreshing, error } = this.state;
     return (
       <DigiDrawerLayout
         ref={ref => this.drawer = ref}
@@ -107,7 +107,7 @@ const Events = class Events extends Component {
           <EventsListView
             navigator={navigator}
             dataSource={dataSource}
-            refreshing={loading}
+            refreshing={refreshing}
             onRefresh={this.onRefresh}
             error={error}
           />
