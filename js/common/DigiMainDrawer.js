@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import DigiHeader from './DigiHeader';
 import DigiTouchable from './DigiTouchable';
@@ -21,8 +22,9 @@ const DigiMainDrawer = ({ navigator }) => {
           });
         }}
       >
-        <View style={styles.editionContainer}>
-          <Text style={styles.edition}>
+        <View style={styles.itemContainer}>
+          <Icon name="calendar" size={20} color="black" style={styles.icon} />
+          <Text style={styles.item}>
             Évènements
           </Text>
         </View>
@@ -35,8 +37,9 @@ const DigiMainDrawer = ({ navigator }) => {
           });
         }}
       >
-        <View style={styles.editionContainer}>
-          <Text style={styles.edition}>
+        <View style={styles.itemContainer}>
+          <Icon name="users" size={20} color="black" style={styles.icon} />
+          <Text style={styles.item}>
             Organisateurs
           </Text>
         </View>
@@ -46,14 +49,19 @@ const DigiMainDrawer = ({ navigator }) => {
 }
 
 const styles = StyleSheet.create({
-  editionContainer: {
+  itemContainer: {
     height: 56,
-    justifyContent: 'center',
+    alignItems: 'center',
     paddingLeft: 30,
+    flex: 1,
+    flexDirection: 'row',
   },
-  edition: {
+  item: {
     fontSize: 18,
     fontWeight: '500',
+  },
+  icon: {
+    width: 40,
   },
 });
 
