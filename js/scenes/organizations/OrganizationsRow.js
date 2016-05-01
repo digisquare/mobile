@@ -1,4 +1,5 @@
-import React, { PropTypes, Text, View, Image, StyleSheet } from 'react-native';
+import React, { PropTypes } from 'react';
+import { Text, View, Image, StyleSheet } from 'react-native';
 
 import DigiTouchable from '../../common/DigiTouchable';
 

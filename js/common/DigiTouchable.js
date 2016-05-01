@@ -1,4 +1,5 @@
-import React, { TouchableHighlight, TouchableNativeFeedback, Platform } from 'react-native';
+import React from 'react';
+import { TouchableHighlight, TouchableNativeFeedback, Platform } from 'react-native';
 
 function DigiTouchableIOS(props) {
   return (

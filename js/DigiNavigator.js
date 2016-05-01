@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, BackAndroid, Navigator, StyleSheet } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { BackAndroid, Navigator, StyleSheet } from 'react-native';
 
 import DigiDrawerLayout from './common/DigiDrawerLayout';
 import DigiMainDrawer from './common/DigiMainDrawer';

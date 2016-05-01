@@ -1,4 +1,5 @@
-import React, { PropTypes, ScrollView, Image, Text, StyleSheet } from 'react-native';
+import React, { PropTypes } from 'react';
+import { ScrollView, Image, Text, StyleSheet } from 'react-native';
 
 export default function DigiError({ refreshControl, image, text }) {
   return (

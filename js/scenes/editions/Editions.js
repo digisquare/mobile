@@ -1,4 +1,5 @@
-import React, { PropTypes, View, Text, StyleSheet } from 'react-native';
+import React, { PropTypes } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux'
 
 import { selectEdition } from '../../actions/editions.js';

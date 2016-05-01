@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, View, ToolbarAndroid, StyleSheet } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { View, ToolbarAndroid, StyleSheet } from 'react-native';
 
 export default class EventsHeader extends Component {
   constructor(props) {

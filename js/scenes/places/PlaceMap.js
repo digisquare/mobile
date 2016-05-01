@@ -1,4 +1,5 @@
-import React, { PropTypes, StyleSheet } from 'react-native';
+import React, { PropTypes } from 'react';
+import { StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
 
 export default function PlaceMap({ venue }) {

@@ -1,4 +1,5 @@
-import React, { PropTypes, StyleSheet, View, Text, Linking, Image, Platform } from 'react-native';
+import React, { PropTypes } from 'react';
+import { StyleSheet, View, Text, Linking, Image, Platform } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 
 import DigiTouchable from '../../common/DigiTouchable';

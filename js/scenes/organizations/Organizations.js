@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, View, ListView, StyleSheet } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { View, ListView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import { fetchOrganizations } from '../../actions/organizations.js';

@@ -1,4 +1,5 @@
-import React, { PropTypes, View, ScrollView, StyleSheet, Text, Linking } from 'react-native';
+import React, { PropTypes } from 'react';
+import { View, ScrollView, StyleSheet, Text, Linking } from 'react-native';
 
 import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';

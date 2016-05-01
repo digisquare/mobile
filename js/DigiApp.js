@@ -1,4 +1,5 @@
-import React, { Component, View, StatusBar, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { View, StatusBar, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './reducers';

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, DrawerLayoutAndroid } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { DrawerLayoutAndroid } from 'react-native';
 
 export default class DigiDrawerLayout extends Component {
 

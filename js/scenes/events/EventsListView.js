@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, ListView, RefreshControl, View, Text, StyleSheet } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { ListView, RefreshControl, View, Text, StyleSheet } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 
 import DigiError from '../../common/DigiError';

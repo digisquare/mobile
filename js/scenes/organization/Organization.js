@@ -1,4 +1,5 @@
-import React, { PropTypes, View, ScrollView, StyleSheet, Linking } from 'react-native';
+import React, { PropTypes } from 'react';
+import { View, ScrollView, StyleSheet, Linking } from 'react-native';
 
 import HTMLView from 'react-native-htmlview';
 

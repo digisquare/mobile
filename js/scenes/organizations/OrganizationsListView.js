@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, ListView, RefreshControl } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { ListView, RefreshControl } from 'react-native';
 
 import DigiError from '../../common/DigiError';
 
