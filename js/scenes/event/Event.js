@@ -5,7 +5,7 @@ import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';
 
 import DigiHeader from '../../common/DigiHeader';
-import EventVenue from './EventVenue';
+import VenueFooter from '../venues/VenueFooter';
 
 moment.locale('fr');
 
@@ -20,17 +20,23 @@ export default function Event({ event, navigator }) {
         }}
       />
       <ScrollView style={styles.scrollview}>
-        <Text style={styles.date}>
-          {moment(event.Event.start_at).format('dddd D MMMM YYYY, HH:mm')}
-        </Text>
-        <HTMLView
-          value={event.Event.description}
-          onLinkPress={url => Linking.openURL(url)}
-        />
-        <EventVenue
-          venue={event.Venue}
-        />
+        <View style={styles.event}>
+          <Text style={styles.date}>
+            {moment(event.Event.start_at).format('dddd D MMMM YYYY, HH:mm')}
+          </Text>
+          <HTMLView
+            value={event.Event.description}
+            onLinkPress={url => Linking.openURL(url)}
+          />
+        </View>
       </ScrollView>
+      {
+        event.Venue.id ? (
+          <VenueFooter
+            venue={event.Venue}
+          />
+        ) : null
+      }
     </View>
   );
 }
@@ -38,9 +44,12 @@ export default function Event({ event, navigator }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   scrollview: {
     flex: 1,
+  },
+  event: {
     padding: 10,
   },
   date: {

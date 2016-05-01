@@ -4,7 +4,7 @@ import { View, ScrollView, StyleSheet, Linking } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 
 import DigiHeader from '../../common/DigiHeader';
-import OrganizationVenue from './OrganizationVenue';
+import VenueFooter from '../venues/VenueFooter';
 
 export default function Organization({ organization, navigator }) {
   return (
@@ -17,18 +17,20 @@ export default function Organization({ organization, navigator }) {
         }}
       />
       <ScrollView style={styles.scrollview}>
-        <HTMLView
-          value={organization.Organization.description}
-          onLinkPress={url => Linking.openURL(url)}
-        />
-        {
-          organization.Venue.id ? (
-            <OrganizationVenue
-              venue={organization.Venue}
-            />
-          ) : null
-        }
+        <View style={styles.organization}>
+          <HTMLView
+            value={organization.Organization.description}
+            onLinkPress={url => Linking.openURL(url)}
+          />
+        </View>
       </ScrollView>
+      {
+        organization.Venue.id ? (
+          <VenueFooter
+            venue={organization.Venue}
+          />
+        ) : null
+      }
     </View>
   );
 }
@@ -36,9 +38,12 @@ export default function Organization({ organization, navigator }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   scrollview: {
     flex: 1,
+  },
+  organization: {
     padding: 10,
   },
 });
