@@ -31,7 +31,10 @@ export function fetchOrganizations(edition) {
     dispatch(fetchOrganizationsRequest(edition));
 
     const url = 'https://digisquare.net/organizations.json?'
-      + '&edition_id=' + edition;
+      + '&edition_id=' + edition
+      + '&sort=name'
+      + '&direction=asc'
+      + '&limit=100';
 
     fetch(url)
       .then(response => response.json())

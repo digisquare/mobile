@@ -36,7 +36,8 @@ export function fetchEvents(edition) {
       + 'end_at=' + moment().format('YYYY-MM-DD HH:mm')
       + '&edition_id=' + edition
       + '&sort=start_at'
-      + '&direction=asc';
+      + '&direction=asc'
+      + '&limit=100';
 
     fetch(url)
       .then(response => response.json())
