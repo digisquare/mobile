@@ -6,7 +6,7 @@ import HTMLView from 'react-native-htmlview';
 import DigiHeader from '../../common/DigiHeader';
 import VenueFooter from '../venues/VenueFooter';
 
-export default function Organization({ organization, navigator }) {
+export default function Organization({ navigator, organization }) {
   return (
     <View style={styles.container}>
       <DigiHeader
@@ -25,7 +25,7 @@ export default function Organization({ organization, navigator }) {
         </View>
       </ScrollView>
       {
-        organization.Venue.id ? (
+        organization.Venue && organization.Venue.id ? (
           <VenueFooter
             venue={organization.Venue}
           />
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
 });
 
 Organization.propTypes = {
-  organization: PropTypes.object.isRequired,
   navigator: PropTypes.object.isRequired,
+  organization: PropTypes.object.isRequired,
 };

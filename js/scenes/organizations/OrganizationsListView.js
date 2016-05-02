@@ -4,13 +4,11 @@ import { ListView, RefreshControl } from 'react-native';
 import DigiError from '../../common/DigiError';
 
 import OrganizationsRow from './OrganizationsRow';
-import Organization from '../organization/Organization';
 
 export default class OrganizationsListView extends Component {
   constructor(props) {
     super(props);
     this.renderOrganizationsRow = this.renderOrganizationsRow.bind(this);
-    this.selectOrganization = this.selectOrganization.bind(this);
   }
 
   render() {
@@ -54,21 +52,12 @@ export default class OrganizationsListView extends Component {
   renderOrganizationsRow(organization) {
     return (
       <OrganizationsRow
-        onSelect={() => this.selectOrganization(organization)}
+        navigator={this.props.navigator}
         organization={organization}
       />
     );
   }
 
-  selectOrganization(organization) {
-    this.props.navigator.push({
-      component: Organization,
-      title: 'Organisateur',
-      passProps: {
-        organization: organization,
-      },
-    });
-  }
 }
 
 OrganizationsListView.propTypes = {

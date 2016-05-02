@@ -4,14 +4,25 @@ import moment from 'moment/min/moment-with-locales';
 
 import DigiTouchable from '../../common/DigiTouchable';
 
+import Event from '../event/Event';
+
 moment.locale('fr');
 
-export default function EventsRow({ event, onSelect}) {
+const selectEvent = (navigator, event) => {
+  navigator.push({
+    component: Event,
+    passProps: {
+      event: event,
+    },
+  });
+}
+
+export default function EventsRow({ navigator, event}) {
   const time = moment(event.Event.start_at).format('HH:mm');
   const place = event.Venue.name;
   const timeAndPlace = time === '00:00' ? place : time + ' @ ' + place;
   return (
-    <DigiTouchable onPress={onSelect}>
+    <DigiTouchable onPress={() => selectEvent(navigator, event)}>
       <View style={styles.container}>
         <View style={styles.avatarContainer}>
           {
@@ -41,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     padding: 10,
+    height: 60,
   },
   avatarContainer: {
     width: 50,
@@ -60,6 +72,6 @@ const styles = StyleSheet.create({
 });
 
 EventsRow.propTypes = {
+  navigator: PropTypes.object.isRequired,
   event: PropTypes.object.isRequired,
-  onSelect: PropTypes.func.isRequired,
 };

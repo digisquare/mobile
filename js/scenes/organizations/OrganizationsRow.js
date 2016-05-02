@@ -3,9 +3,20 @@ import { Text, View, Image, StyleSheet } from 'react-native';
 
 import DigiTouchable from '../../common/DigiTouchable';
 
-export default function OrganizationsRow({ organization, onSelect}) {
+import Organization from '../organization/Organization';
+
+const selectOrganization = (navigator, organization) => {
+  navigator.push({
+    component: Organization,
+    passProps: {
+      organization: organization,
+    },
+  });
+}
+
+export default function OrganizationsRow({ navigator, organization }) {
   return (
-    <DigiTouchable onPress={onSelect}>
+    <DigiTouchable onPress={() => selectOrganization(navigator, organization)}>
       <View style={styles.container}>
         <View style={styles.avatarContainer}>
           {
@@ -21,9 +32,9 @@ export default function OrganizationsRow({ organization, onSelect}) {
           <Text style={styles.title}>
             {organization.Organization.name}
           </Text>
-          <Text style={styles.date}>
+          <Text>
             {
-              organization.Venue.name ? (
+              organization.Venue && organization.Venue.name ? (
                 `@ ${organization.Venue.name}`
               ) : null
             }
@@ -50,6 +61,8 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 18,
@@ -58,6 +71,6 @@ const styles = StyleSheet.create({
 });
 
 OrganizationsRow.propTypes = {
+  navigator: PropTypes.object.isRequired,
   organization: PropTypes.object.isRequired,
-  onSelect: PropTypes.func.isRequired,
 };

@@ -9,10 +9,11 @@ import { datetime } from '../../utils/datetime.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import VenueFooter from '../venues/VenueFooter';
+import OrganizationsRow from '../organizations/OrganizationsRow';
 
 moment.locale('fr');
 
-export default function Event({ event, navigator }) {
+export default function Event({ navigator, event }) {
   return (
     <View style={styles.container}>
       <DigiHeader
@@ -34,6 +35,25 @@ export default function Event({ event, navigator }) {
             value={event.Event.description}
             onLinkPress={url => Linking.openURL(url)}
           />
+          {
+            event.Organization.length > 0 ? (
+              <Text style={styles.organizers}>Organisé par :</Text>
+            ) : null
+          }
+          {
+            event.Organization.map(organization => {
+              return (
+                <OrganizationsRow
+                  key={organization.id}
+                  navigator={navigator}
+                  organization={{
+                    Organization: organization,
+                    Venue: organization.venue_id === event.Venue.id ? event.Venue : null,
+                  }}
+                />
+              );
+            })
+          }
         </View>
       </ScrollView>
       {
@@ -60,16 +80,22 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: "500",
+    fontWeight: '500',
+    color: 'black',
   },
   date: {
     fontSize: 12,
-    fontWeight: "500",
+    fontWeight: '500',
     marginBottom: 10,
+  },
+  organizers: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: 'black',
   },
 });
 
 Event.propTypes = {
-  event: PropTypes.object.isRequired,
   navigator: PropTypes.object.isRequired,
+  event: PropTypes.object.isRequired,
 };

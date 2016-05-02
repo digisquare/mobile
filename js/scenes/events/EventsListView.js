@@ -5,14 +5,12 @@ import moment from 'moment/min/moment-with-locales';
 import DigiError from '../../common/DigiError';
 
 import EventsRow from './EventsRow';
-import Event from '../event/Event';
 
 export default class EventsListView extends Component {
   constructor(props) {
     super(props);
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderEventsRow = this.renderEventsRow.bind(this);
-    this.selectEvent = this.selectEvent.bind(this);
   }
 
   render() {
@@ -68,20 +66,10 @@ export default class EventsListView extends Component {
   renderEventsRow(event) {
     return (
       <EventsRow
-        onSelect={() => this.selectEvent(event)}
+        navigator={this.props.navigator}
         event={event}
       />
     );
-  }
-
-  selectEvent(event) {
-    this.props.navigator.push({
-      component: Event,
-      title: 'Evènement',
-      passProps: {
-        event: event,
-      },
-    });
   }
 }
 
