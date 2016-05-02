@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react';
 import { View, ScrollView, StyleSheet, Text, Linking } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';
+
+import { datetime } from '../../utils/datetime.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import VenueFooter from '../venues/VenueFooter';
@@ -13,7 +16,7 @@ export default function Event({ event, navigator }) {
   return (
     <View style={styles.container}>
       <DigiHeader
-        title={event.Event.name}
+        title='Évènement'
         leftItem={{
           icon: require('../../common/img/back_white.png'),
           onPress: () => navigator.pop(),
@@ -21,8 +24,11 @@ export default function Event({ event, navigator }) {
       />
       <ScrollView style={styles.scrollview}>
         <View style={styles.event}>
+          <Text style={styles.title}>
+            {event.Event.name}
+          </Text>
           <Text style={styles.date}>
-            {moment(event.Event.start_at).format('dddd D MMMM YYYY, HH:mm')}
+            <Icon name="clock-o" /> {datetime(event.Event.start_at, event.Event.end_at)}              
           </Text>
           <HTMLView
             value={event.Event.description}
@@ -52,8 +58,13 @@ const styles = StyleSheet.create({
   event: {
     padding: 10,
   },
+  title: {
+    fontSize: 22,
+    fontWeight: "500",
+  },
   date: {
-    fontSize: 18,
+    fontSize: 12,
+    fontWeight: "500",
     marginBottom: 10,
   },
 });
