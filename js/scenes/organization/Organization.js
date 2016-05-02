@@ -1,23 +1,59 @@
 import React, { PropTypes } from 'react';
-import { View, ScrollView, StyleSheet, Linking } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet, Linking } from 'react-native';
+import { connect } from 'react-redux';
 
 import HTMLView from 'react-native-htmlview';
+
+import { socialBadge } from '../../utils/social.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import VenueFooter from '../venues/VenueFooter';
 
-export default function Organization({ navigator, organization }) {
+const Organization = ({ navigator, organization, organizations }) => {
+  const editionId = organization.Organization.edition_id;
+  const organizationsItems = organizations[editionId].items;
+  if (organization.Organization.venue_id && !organization.Venue && organizationsItems.length > 0) {
+    const venue = organizationsItems.find(item => item.Venue.id === organization.Organization.venue_id);
+    organization.Venue = venue ? venue.Venue : null;
+  }
+  const rightItem = organization.Organization.Contacts.website ? {
+    icon: require('../../common/img/website.png'),
+    onPress: () => Linking.openURL(organization.Organization.Contacts.website),
+    title: "website",
+  } : null;
   return (
     <View style={styles.container}>
       <DigiHeader
-        title={organization.Organization.name}
+        title="Organisateur"
         leftItem={{
           icon: require('../../common/img/back_white.png'),
           onPress: () => navigator.pop(),
         }}
+        rightItem={rightItem}
       />
       <ScrollView style={styles.scrollview}>
         <View style={styles.organization}>
+          <View style={styles.header}>
+            {
+              organization.Organization.avatar ? (
+                <View style={styles.avatarContainer}>
+                  <Image
+                    style={styles.avatar}
+                    source={{uri: organization.Organization.avatar}}
+                  />
+                </View>
+              ) : null
+            }
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>
+                {organization.Organization.name}
+              </Text>
+              <View style={styles.social}>
+                {socialBadge('twitter', organization.Organization.Contacts)}
+                {socialBadge('facebook', organization.Organization.Contacts)}
+              </View>
+            </View>
+          </View>
           <HTMLView
             value={organization.Organization.description}
             onLinkPress={url => Linking.openURL(url)}
@@ -46,9 +82,35 @@ const styles = StyleSheet.create({
   organization: {
     padding: 10,
   },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  avatarContainer: {
+    marginRight: 20,
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: '500',
+    color: 'black',
+    marginTop: 10,
+  },
+  social: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 10,
+  },
 });
 
 Organization.propTypes = {
   navigator: PropTypes.object.isRequired,
   organization: PropTypes.object.isRequired,
+  organizations: PropTypes.object.isRequired,
 };
+
+export default connect(state => state)(Organization);

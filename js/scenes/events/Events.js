@@ -101,7 +101,6 @@ const Events = class Events extends Component {
             rightItem={{
               icon: require('../../common/img/filter.png'),
               title: 'Filter',
-              show: 'always',
               onPress: this.openEditionsDrawer,
             }}
           />
