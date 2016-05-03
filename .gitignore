@@ -28,6 +28,9 @@ project.xcworkspace
 .gradle
 local.properties
 *.keystore
+android/app/fabric.properties
+android/app/src/debug/AndroidManifest.xml
+android/app/src/release/AndroidManifest.xml
 
 # node.js
 #
