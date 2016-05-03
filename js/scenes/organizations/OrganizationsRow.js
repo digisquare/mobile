@@ -1,11 +1,17 @@
 import React, { PropTypes } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
+import { Answers } from 'react-native-fabric';
 
 import DigiTouchable from '../../common/DigiTouchable';
 
 import Organization from '../organization/Organization';
 
 const selectOrganization = (navigator, organization) => {
+  Answers.logContentView(
+    `${organization.Organization.name}`,
+    'organization',
+    `organizations/${organization.Organization.id}`
+  );
   navigator.push({
     component: Organization,
     passProps: {

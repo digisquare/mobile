@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, ListView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import { Answers } from 'react-native-fabric';
 
 import { fetchOrganizations } from '../../actions/organizations.js';
 
@@ -26,8 +27,10 @@ const Organizations = class Organizations extends Component {
   }
 
   componentWillMount() {
-    const { dispatch, editions: { selectedEdition } } = this.props;
+    const { dispatch, editions, editions: { selectedEdition } } = this.props;
+    const editionName = editions.items.find(edition => edition.id === selectedEdition).name;
     dispatch(fetchOrganizations(selectedEdition));
+    Answers.logContentView(`Organisateurs à ${editionName}`, 'organizations', 'organizations');
   }
 
   componentWillReceiveProps(nextProps) {

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, ListView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import moment from 'moment/min/moment-with-locales';
+import { Answers } from 'react-native-fabric';
 
 import { fetchEvents } from '../../actions/events.js';
 
@@ -28,8 +29,10 @@ const Events = class Events extends Component {
   }
 
   componentWillMount() {
-    const { dispatch, editions: { selectedEdition } } = this.props;
+    const { dispatch, editions, editions: { selectedEdition } } = this.props;
+    const editionName = editions.items.find(edition => edition.id === selectedEdition).name;
     dispatch(fetchEvents(selectedEdition));
+    Answers.logContentView(`Évènements à ${editionName}`, 'events', 'events');
   }
 
   componentWillReceiveProps(nextProps) {

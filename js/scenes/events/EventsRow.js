@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
+import { Answers } from 'react-native-fabric';
 
 import DigiTouchable from '../../common/DigiTouchable';
 
@@ -9,6 +10,11 @@ import Event from '../event/Event';
 moment.locale('fr');
 
 const selectEvent = (navigator, event) => {
+  Answers.logContentView(
+    `${event.Event.name}`,
+    'event',
+    `events/${event.Event.id}`
+  );
   navigator.push({
     component: Event,
     passProps: {
@@ -17,7 +23,7 @@ const selectEvent = (navigator, event) => {
   });
 }
 
-export default function EventsRow({ navigator, event}) {
+export default function EventsRow({ navigator, event }) {
   const time = moment(event.Event.start_at).format('HH:mm');
   const place = event.Venue.name;
   const timeAndPlace = time === '00:00' ? place : time + ' @ ' + place;
