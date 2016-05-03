@@ -10,11 +10,13 @@ import DigiHeader from '../../common/DigiHeader';
 import VenueFooter from '../venues/VenueFooter';
 
 const Organization = ({ navigator, organization, organizations }) => {
-  const editionId = organization.Organization.edition_id;
-  const organizationsItems = organizations[editionId].items;
-  if (organization.Organization.venue_id && !organization.Venue && organizationsItems.length > 0) {
-    const venue = organizationsItems.find(item => item.Venue.id === organization.Organization.venue_id);
-    organization.Venue = venue ? venue.Venue : null;
+  const { edition_id, venue_id } = organization.Organization;
+  if (edition_id && organizations[edition_id]) {
+    const organizationsItems = organizations[edition_id].items;
+    if (venue_id && !organization.Venue && organizationsItems.length > 0) {
+      const venue = organizationsItems.find(item => item.Venue.id === venue_id);
+      organization.Venue = venue ? venue.Venue : null;
+    }
   }
   const rightItem = organization.Organization.Contacts.website ? {
     icon: require('../../common/img/website.png'),
