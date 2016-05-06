@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, ListView, StyleSheet } from 'react-native';
+import { View, ListView, StyleSheet, Linking } from 'react-native';
 import { connect } from 'react-redux';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
@@ -10,6 +10,7 @@ import DigiDrawerLayout from '../../common/DigiDrawerLayout';
 import DigiHeader from '../../common/DigiHeader';
 
 import EventsListView from './EventsListView';
+import EventContainer from '../event/EventContainer';
 import Editions from '../editions/Editions';
 
 const Events = class Events extends Component {
@@ -33,6 +34,24 @@ const Events = class Events extends Component {
     const editionName = editions.items.find(edition => edition.id === selectedEdition).name;
     dispatch(fetchEvents(selectedEdition));
     Answers.logContentView(`Évènements à ${editionName}`, 'events', 'events');
+  }
+
+  componentDidMount() {
+    const { navigator } = this.props;
+    Linking.getInitialURL().then(url => {
+      if (!url) {
+        return null;
+      }
+      const match = url.match(/https:\/\/digisquare.net\/events\/([0-9]+)/);
+      if (match && match[1]) {
+        navigator.push({
+          component: EventContainer,
+          passProps: {
+            eventId: parseInt(match[1], 10),
+          },
+        });
+      }
+    }).catch(() => null);
   }
 
   componentWillReceiveProps(nextProps) {
