@@ -1,11 +1,22 @@
 import { AsyncStorage } from 'react-native';
-import thunkMiddleware from 'redux-thunk';
-import { combineReducers, applyMiddleware, createStore } from 'redux';
+import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
+import thunk from 'redux-thunk';
+import devTools from 'remote-redux-devtools';
 import { persistStore, autoRehydrate } from 'redux-persist';
+import createLogger from 'redux-logger';
 
 import editions from './editions.js';
 import events from './events.js';
 import organizations from './organizations.js';
+
+
+const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
+
+const logger = createLogger({
+  predicate: (getState, action) => isDebuggingInChrome,
+  collapsed: true,
+  duration: true,
+});
 
 const reducers = combineReducers({
   editions,
@@ -13,10 +24,21 @@ const reducers = combineReducers({
   organizations,
 });
 
+const middlewares = applyMiddleware(
+  thunk,
+  logger,
+);
+
+const enhancers = compose(
+  autoRehydrate(),
+  middlewares,
+  devTools(),
+);
+
 const store = createStore(
   reducers,
-  applyMiddleware(thunkMiddleware),
-  autoRehydrate()
+  undefined,
+  enhancers,
 );
 
 persistStore(store, { storage: AsyncStorage });
