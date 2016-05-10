@@ -17,7 +17,6 @@ apply plugin: "io.fabric"
 
 repositories {
     maven { url "https://maven.fabric.io/public" }
-    maven { url "https://urbanairship.bintray.com/android" }
 }
 
 
@@ -100,8 +99,6 @@ dependencies {
     compile("com.crashlytics.sdk.android:crashlytics:2.5.5@aar") {
         transitive = true;
     }
-    // Urban Airship SDK
-    compile "com.urbanairship.android:urbanairship-sdk:7.1.+"
 }
 
 // Run this once to be able to run the application with BUCK
