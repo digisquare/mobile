@@ -7,6 +7,7 @@ import DigiTouchable from './DigiTouchable';
 
 import Events from '../scenes/events/Events';
 import Organizations from '../scenes/organizations/Organizations';
+import Settings from '../scenes/settings/Settings';
 
 const DigiMainDrawer = ({ navigator }) => {
   return (
@@ -41,6 +42,21 @@ const DigiMainDrawer = ({ navigator }) => {
           <Icon name="users" size={20} color="black" style={styles.icon} />
           <Text style={styles.item}>
             Organisateurs
+          </Text>
+        </View>
+      </DigiTouchable>
+      <DigiTouchable
+        key="3"
+        onPress={() => {
+          navigator.replace({
+            component: Settings,
+          });
+        }}
+      >
+        <View style={styles.itemContainer}>
+          <Icon name="cogs" size={20} color="black" style={styles.icon} />
+          <Text style={styles.item}>
+            Paramètres
           </Text>
         </View>
       </DigiTouchable>

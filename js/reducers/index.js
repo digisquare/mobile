@@ -8,6 +8,7 @@ import createLogger from 'redux-logger';
 import editions from './editions.js';
 import events from './events.js';
 import organizations from './organizations.js';
+import settings from './settings.js';
 
 
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
@@ -22,6 +23,7 @@ const reducers = combineReducers({
   editions,
   events,
   organizations,
+  settings,
 });
 
 const middlewares = applyMiddleware(
