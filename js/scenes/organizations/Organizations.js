@@ -27,17 +27,17 @@ const Organizations = class Organizations extends Component {
   }
 
   componentWillMount() {
-    const { dispatch, editions, editions: { selectedEdition } } = this.props;
+    const { onFetchOrganizations, editions, editions: { selectedEdition } } = this.props;
     const editionName = editions.items.find(edition => edition.id === selectedEdition).name;
-    dispatch(fetchOrganizations(selectedEdition));
+    onFetchOrganizations(selectedEdition);
     Answers.logContentView(`Organisateurs à ${editionName}`, 'organizations', 'organizations');
   }
 
   componentWillReceiveProps(nextProps) {
-    const { organizations, editions: { selectedEdition } } = nextProps;
+    const { onFetchOrganizations, organizations, editions: { selectedEdition } } = nextProps;
     const { dataSource } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
-      this.props.dispatch(fetchOrganizations(selectedEdition));
+      onFetchOrganizations(selectedEdition);
       this.setState({
         refreshing: true,
       });
@@ -64,8 +64,8 @@ const Organizations = class Organizations extends Component {
   }
 
   onRefresh() {
-    const { dispatch, editions: { selectedEdition } } = this.props;
-    dispatch(fetchOrganizations(selectedEdition));
+    const { onFetchOrganizations, editions: { selectedEdition } } = this.props;
+    onFetchOrganizations(selectedEdition);
     return this.setState({
       refreshing: true,
     });
@@ -130,9 +130,24 @@ const styles = StyleSheet.create({
 Organizations.propTypes = {
   navigator: PropTypes.object.isRequired,
   openMainDrawer: PropTypes.func.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  onFetchOrganizations: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
   organizations: PropTypes.object.isRequired,
 };
 
-export default connect(state => state)(Organizations);
+const mapStateToProps = (state) => {
+  return {
+    editions: state.editions,
+    organizations: state.organizations,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchOrganizations: (selectedEdition) => {
+      dispatch(fetchOrganizations(selectedEdition));
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Organizations);

@@ -30,9 +30,9 @@ const Events = class Events extends Component {
   }
 
   componentWillMount() {
-    const { dispatch, editions, editions: { selectedEdition } } = this.props;
+    const { onFetchEvents, editions, editions: { selectedEdition } } = this.props;
     const editionName = editions.items.find(edition => edition.id === selectedEdition).name;
-    dispatch(fetchEvents(selectedEdition));
+    onFetchEvents(selectedEdition);
     Answers.logContentView(`Évènements à ${editionName}`, 'events', 'events');
   }
 
@@ -55,10 +55,10 @@ const Events = class Events extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { events, editions: { selectedEdition } } = nextProps;
+    const { onFetchEvents, events, editions: { selectedEdition } } = nextProps;
     const { dataSource } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
-      this.props.dispatch(fetchEvents(selectedEdition));
+      onFetchEvents(selectedEdition);
       this.setState({
         refreshing: true,
       });
@@ -95,8 +95,8 @@ const Events = class Events extends Component {
   }
 
   onRefresh() {
-    const { dispatch, editions: { selectedEdition } } = this.props;
-    dispatch(fetchEvents(selectedEdition));
+    const { onFetchEvents, editions: { selectedEdition } } = this.props;
+    onFetchEvents(selectedEdition);
     return this.setState({
       refreshing: true,
     });
@@ -160,9 +160,24 @@ const styles = StyleSheet.create({
 Events.propTypes = {
   navigator: PropTypes.object.isRequired,
   openMainDrawer: PropTypes.func.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  onFetchEvents: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
   events: PropTypes.object.isRequired,
 };
 
-export default connect(state => state)(Events);
+const mapStateToProps = (state) => {
+  return {
+    editions: state.editions,
+    events: state.events,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchEvents: (selectedEdition) => {
+      dispatch(fetchEvents(selectedEdition));
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Events);

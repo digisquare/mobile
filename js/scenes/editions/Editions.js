@@ -7,7 +7,7 @@ import { selectEdition } from '../../actions/editions.js';
 import DigiHeader from '../../common/DigiHeader';
 import DigiTouchable from '../../common/DigiTouchable';
 
-const Editions = ({ editions, dispatch, closeDrawer }) => {
+const Editions = ({ editions, onSelectEdition, closeDrawer }) => {
   return (
     <View>
       <DigiHeader
@@ -19,7 +19,7 @@ const Editions = ({ editions, dispatch, closeDrawer }) => {
             <DigiTouchable
               key={edition.id}
               onPress={() => {
-                dispatch(selectEdition(edition.id));
+                onSelectEdition(edition.id);
                 closeDrawer();
               }}
             >
@@ -50,8 +50,22 @@ const styles = StyleSheet.create({
 
 Editions.propTypes = {
   editions: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  onSelectEdition: PropTypes.func.isRequired,
   closeDrawer: PropTypes.func.isRequired,
 };
 
-export default connect(state => state)(Editions);
+const mapStateToProps = (state) => {
+  return {
+    editions: state.editions,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSelectEdition: (id) => {
+      dispatch(selectEdition(id));
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Editions);

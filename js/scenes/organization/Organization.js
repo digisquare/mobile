@@ -115,4 +115,10 @@ Organization.propTypes = {
   organizations: PropTypes.object.isRequired,
 };
 
-export default connect(state => state)(Organization);
+const mapStateToProps = (state) => {
+  return {
+    organizations: state.organizations,
+  }
+}
+
+export default connect(mapStateToProps)(Organization);

@@ -5,9 +5,8 @@ import { connect } from 'react-redux'
 import { toggleNotification } from '../../actions/settings.js';
 
 import DigiHeader from '../../common/DigiHeader';
-import DigiTouchable from '../../common/DigiTouchable';
 
-const Notifications = ({ navigator, dispatch, editions, settings }) => {
+const Notifications = ({ navigator, onToggleNotification, editions, notifications }) => {
   return (
     <View style={styles.container}>
       <DigiHeader
@@ -20,7 +19,7 @@ const Notifications = ({ navigator, dispatch, editions, settings }) => {
       <View>
         {
           editions.items.map(edition => {
-            const value = settings.notifications[edition.name] || false;
+            const value = notifications[edition.name] || false;
             return (
               <View key={edition.id} style={styles.editionContainer}>
                 <View style={styles.nameContainer}>
@@ -30,7 +29,7 @@ const Notifications = ({ navigator, dispatch, editions, settings }) => {
                 </View>
                 <View style={styles.switchContainer}>
                   <Switch
-                    onValueChange={value => dispatch(toggleNotification(edition.name, value))}
+                    onValueChange={value => onToggleNotification(edition.name, value)}
                     value={value}
                   />
                 </View>
@@ -66,13 +65,29 @@ const styles = StyleSheet.create({
   switchContainer: {
     paddingTop: 15,
     paddingRight: 30,
-  }
+  },
 });
 
 Notifications.propTypes = {
   navigator: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  onToggleNotification: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
+  notifications: PropTypes.object.isRequired,
 };
 
-export default connect(state => state)(Notifications);
+const mapStateToProps = (state) => {
+  return {
+    editions: state.editions,
+    notifications: state.settings.notifications,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onToggleNotification: (name, value) => {
+      dispatch(toggleNotification(name, value));
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Notifications);

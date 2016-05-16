@@ -83,4 +83,10 @@ EventContainer.propTypes = {
   eventId: PropTypes.number.isRequired,
 };
 
-export default connect(state => state)(EventContainer);
+const mapStateToProps = (state) => {
+  return {
+    events: state.events,
+  }
+}
+
+export default connect(mapStateToProps)(EventContainer);
