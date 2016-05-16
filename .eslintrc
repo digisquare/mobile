@@ -19,6 +19,8 @@
     "require": false,
     "module": false,
     "fetch": false,
+    "__DEV__": false,
+    "window": false
   },
   "rules": {
     "react-native/no-unused-styles": 2,

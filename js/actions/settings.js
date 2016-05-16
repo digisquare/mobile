@@ -4,7 +4,6 @@ export const INIT_NOTIFICATIONS = 'INIT_NOTIFICATIONS';
 export function initNotifications() {
   return dispatch => {
     OneSignal.getTags(receivedTags => {
-      console.log(receivedTags);
       if (receivedTags) {
         Object.keys(receivedTags).map(tag => {
           const value = receivedTags[tag] === "true" ? true : false;

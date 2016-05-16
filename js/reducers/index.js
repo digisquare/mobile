@@ -14,7 +14,7 @@ import settings from './settings.js';
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
 
 const logger = createLogger({
-  predicate: (getState, action) => isDebuggingInChrome,
+  predicate: () => isDebuggingInChrome,
   collapsed: true,
   duration: true,
 });
