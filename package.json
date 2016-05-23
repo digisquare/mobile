@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "lint": "eslint js",
-    "test": "mocha --opts test/mocha.opts --recursive js/**/tests/*.test.js",
-    "test:watch": "multi='mocha-osx-reporter=- spec=-' npm test -- --reporter mocha-multi --watch"
+    "test": "mocha --opts test/mocha.opts js/**/tests/*.test.js",
+    "test:watch": "multi='mocha-osx-reporter=- spec=-' npm test -- --reporter mocha-multi --watch",
+    "cover": "babel-node ./node_modules/istanbul/lib/cli cover -- node_modules/.bin/_mocha --opts test/mocha.opts js/**/tests/*.test.js"
   },
   "dependencies": {
     "immutable": "^3.8.1",
@@ -34,6 +35,7 @@
     "eslint-config-defaults": "^10.0.0-alpha.1",
     "eslint-plugin-react": "^5.0.1",
     "eslint-plugin-react-native": "^1.0.0",
+    "istanbul": "^1.0.0-alpha",
     "mocha": "^2.5.0",
     "mocha-multi": "^0.9.0",
     "mocha-osx-reporter": "^0.1.2",

@@ -36,6 +36,7 @@ android/app/src/release/AndroidManifest.xml
 #
 node_modules/
 npm-debug.log
+coverage/
 
 # BUCK
 buck-out/
