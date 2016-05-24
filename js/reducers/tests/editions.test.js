@@ -1,5 +1,5 @@
-import { expect } from 'chai'
-import editions, { initialState } from '../editions'
+import { expect } from 'chai';
+import editions, { initialState } from '../editions';
 import * as editionsActions from '../../actions/editions.js';
 
 describe('editions reducer', () => {
@@ -13,10 +13,8 @@ describe('editions reducer', () => {
         type: editionsActions.SELECT_EDITION,
         edition: 23,
       })
-    ).to.deep.equal(
-      {
-        selectedEdition: 23,
-      },
-    )
+    ).to.deep.equal({
+      selectedEdition: 23,
+    });
   });
 });

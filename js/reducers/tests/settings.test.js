@@ -1,5 +1,5 @@
-import { expect } from 'chai'
-import settings, { initialState } from '../settings'
+import { expect } from 'chai';
+import settings, { initialState } from '../settings';
 import * as settingsActions from '../../actions/settings.js';
 
 describe('settings reducer', () => {
@@ -14,12 +14,10 @@ describe('settings reducer', () => {
         edition: 9,
         value: true,
       })
-    ).to.deep.equal(
-      {
-        notifications: {
-          9: true,
-        },
+    ).to.deep.equal({
+      notifications: {
+        9: true,
       },
-    )
+    });
   });
 });

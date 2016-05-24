@@ -1,5 +1,5 @@
-import { expect } from 'chai'
-import events from '../events'
+import { expect } from 'chai';
+import events from '../events';
 import * as eventsActions from '../../actions/events.js';
 
 describe('events reducer', () => {
@@ -13,16 +13,14 @@ describe('events reducer', () => {
         type: eventsActions.FETCH_EVENTS_REQUEST,
         edition: 9,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: true,
-          error: false,
-          items: [],
-          lastUpdated: undefined,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: true,
+        error: false,
+        items: [],
+        lastUpdated: undefined,
       },
-    )
+    });
   });
 
   it('should handle FETCH_EVENTS_SUCCESS', () => {
@@ -39,16 +37,14 @@ describe('events reducer', () => {
         events: [fetchedEvents],
         receivedAt: receivedAt,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: false,
-          error: false,
-          items: [fetchedEvents],
-          lastUpdated: receivedAt,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: false,
+        error: false,
+        items: [fetchedEvents],
+        lastUpdated: receivedAt,
       },
-    )
+    });
   });
 
   it('should handle FETCH_EVENTS_FAILURE', () => {
@@ -61,15 +57,13 @@ describe('events reducer', () => {
         error: error,
         receivedAt: receivedAt,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: false,
-          error: error,
-          items: [],
-          lastUpdated: receivedAt,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: false,
+        error: error,
+        items: [],
+        lastUpdated: receivedAt,
       },
-    )
+    });
   });
 });

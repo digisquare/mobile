@@ -1,5 +1,5 @@
-import { expect } from 'chai'
-import organizations from '../organizations'
+import { expect } from 'chai';
+import organizations from '../organizations';
 import * as organizationsActions from '../../actions/organizations.js';
 
 describe('organizations reducer', () => {
@@ -13,16 +13,14 @@ describe('organizations reducer', () => {
         type: organizationsActions.FETCH_ORGANIZATIONS_REQUEST,
         edition: 9,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: true,
-          error: false,
-          items: [],
-          lastUpdated: undefined,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: true,
+        error: false,
+        items: [],
+        lastUpdated: undefined,
       },
-    )
+    });
   });
 
   it('should handle FETCH_ORGANIZATIONS_SUCCESS', () => {
@@ -39,16 +37,14 @@ describe('organizations reducer', () => {
         organizations: [fetchedOrganizations],
         receivedAt: receivedAt,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: false,
-          error: false,
-          items: [fetchedOrganizations],
-          lastUpdated: receivedAt,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: false,
+        error: false,
+        items: [fetchedOrganizations],
+        lastUpdated: receivedAt,
       },
-    )
+    });
   });
 
   it('should handle FETCH_ORGANIZATIONS_FAILURE', () => {
@@ -61,15 +57,13 @@ describe('organizations reducer', () => {
         error: error,
         receivedAt: receivedAt,
       })
-    ).to.deep.equal(
-      {
-        9: {
-          isFetching: false,
-          error: error,
-          items: [],
-          lastUpdated: receivedAt,
-        },
+    ).to.deep.equal({
+      9: {
+        isFetching: false,
+        error: error,
+        items: [],
+        lastUpdated: receivedAt,
       },
-    )
+    });
   });
 });
