@@ -9,7 +9,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.AirMaps.AirPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import com.smixx.fabric.FabricPackage;
@@ -51,8 +51,8 @@ public class MainActivity extends ReactActivity {
             new FabricPackage(this),
             new MainReactPackage(),
             new VectorIconsPackage(),
-            new ReactNativeOneSignalPackage(this),
-            new AirPackage()
+            new MapsPackage(),
+            new ReactNativeOneSignalPackage(this)
         );
     }
 }

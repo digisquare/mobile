@@ -16,7 +16,7 @@
     "react-native": "^0.25.1",
     "react-native-fabric": "^0.2.1",
     "react-native-htmlview": "^0.5.0",
-    "react-native-maps": "^0.3.1",
+    "react-native-maps": "^0.5.0",
     "react-native-onesignal": "^1.1.1",
     "react-native-vector-icons": "^2.0.0",
     "react-redux": "^4.4.5",
