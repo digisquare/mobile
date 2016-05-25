@@ -16,7 +16,7 @@ const goToMap = oneliner => {
   Linking.openURL(mapsURL + oneliner);
 }
 
-export default function EventVenue({ venue }) {
+export default function VenueFooter({ venue }) {
   return (
     <DigiTouchable onPress={() => goToMap(venue.oneliner)}>
       <View style={styles.container}>
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
   },
 });
 
-EventVenue.propTypes = {
+VenueFooter.propTypes = {
   venue: PropTypes.object.isRequired,
 };
