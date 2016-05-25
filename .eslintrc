@@ -20,7 +20,8 @@
     "module": false,
     "fetch": false,
     "__DEV__": false,
-    "window": false
+    "window": false,
+    "__dirname": false
   },
   "rules": {
     "react-native/no-unused-styles": 2,

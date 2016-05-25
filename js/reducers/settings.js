@@ -1,6 +1,6 @@
 import * as settingsActions from '../actions/settings.js';
 
-const initialState = {
+export const initialState = {
   notifications: {},
 };
 

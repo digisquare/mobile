@@ -39,10 +39,9 @@ export function fetchEvents(edition) {
       + '&direction=asc'
       + '&limit=100';
 
-    fetch(url)
+    return fetch(url)
       .then(response => response.json())
       .then(json => dispatch(fetchEventsSuccess(edition, json)))
-      .catch(error => dispatch(fetchEventsFailure(edition, error)))
-      .done();
+      .catch(error => dispatch(fetchEventsFailure(edition, error)));
   }
 }

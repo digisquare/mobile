@@ -36,10 +36,9 @@ export function fetchOrganizations(edition) {
       + '&direction=asc'
       + '&limit=100';
 
-    fetch(url)
+    return fetch(url)
       .then(response => response.json())
       .then(json => dispatch(fetchOrganizationsSuccess(edition, json)))
-      .catch(error => dispatch(fetchOrganizationsFailure(edition, error)))
-      .done();
+      .catch(error => dispatch(fetchOrganizationsFailure(edition, error)));
   }
 }

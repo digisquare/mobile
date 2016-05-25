@@ -2,7 +2,7 @@ import { List } from 'immutable';
 
 import * as editionsActions from '../actions/editions.js';
 
-const initialState = {
+export const initialState = {
   selectedEdition: 9,
   items: List([
     {

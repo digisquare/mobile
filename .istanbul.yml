@@ -1,0 +1,7 @@
+verbose: false
+instrumentation:
+  root: ./js
+  include-all-sources: true
+reporting:
+  reports:
+    - html
