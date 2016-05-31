@@ -11,7 +11,6 @@ export default class DigiNavigator extends Component {
     this.handleBackButton = this.handleBackButton.bind(this);
     this.addBackButtonListener = this.addBackButtonListener.bind(this);
     this.removeBackButtonListener = this.removeBackButtonListener.bind(this);
-    this.renderNavigationView = this.renderNavigationView.bind(this);
     this.openMainDrawer = this.openMainDrawer.bind(this);
   }
 
@@ -68,9 +67,11 @@ export default class DigiNavigator extends Component {
             return (
               <DigiDrawerLayout
                 ref={ref => this.drawer = ref}
-                drawerWidth={300}
-                drawerPosition="left"
-                renderNavigationView={() => this.renderNavigationView(navigator)}
+                content={
+                  <DigiMainDrawer
+                    navigator={navigator}
+                  />
+                }
               >
                 <RouteComponent
                   navigator={navigator}
@@ -81,14 +82,6 @@ export default class DigiNavigator extends Component {
             );
           }
         }}
-      />
-    );
-  }
-
-  renderNavigationView(navigator) {
-    return (
-      <DigiMainDrawer
-        navigator={navigator}
       />
     );
   }

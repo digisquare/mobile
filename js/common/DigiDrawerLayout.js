@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { DrawerLayoutAndroid } from 'react-native';
+import Drawer from 'react-native-drawer'
 
 export default class DigiDrawerLayout extends Component {
 
@@ -14,15 +14,27 @@ export default class DigiDrawerLayout extends Component {
   }
 
   render() {
-    const { drawerPosition, ...props} = this.props;
-    const { Right, Left } = DrawerLayoutAndroid.positions;
+    const { ...props } = this.props;
     return (
-      <DrawerLayoutAndroid
+      <Drawer
         ref={(drawer) => this._drawer = drawer}
+        type="overlay"
+        openDrawerOffset={0.2}
+        panOpenMask={0.2}
+        panCloseMask={0.99}
+        negotiatePan={true}
+        captureGestures={false}
+        tweenHandler={(ratio) => {
+          return {
+            mainOverlay: {
+              opacity: 0.7 * ratio,
+              backgroundColor: 'black',
+            },
+          }
+        }}
         {...props}
-        drawerPosition={drawerPosition === 'right' ? Right : Left}
-        onDrawerOpen={this.onDrawerOpen}
-        onDrawerClose={this.onDrawerClose}
+        onOpen={this.onDrawerOpen}
+        onClose={this.onDrawerClose}
       />
     );
   }
@@ -48,11 +60,11 @@ export default class DigiDrawerLayout extends Component {
   }
 
   closeDrawer() {
-    this._drawer && this._drawer.closeDrawer();
+    this._drawer && this._drawer.close();
   }
 
   openDrawer() {
-    this._drawer && this._drawer.openDrawer();
+    this._drawer && this._drawer.open();
   }
 }
 

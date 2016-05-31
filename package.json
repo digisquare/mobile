@@ -14,6 +14,7 @@
     "moment": "^2.12.0",
     "react": "^0.14.5",
     "react-native": "^0.25.1",
+    "react-native-drawer": "^2.2.3",
     "react-native-fabric": "^0.2.1",
     "react-native-htmlview": "^0.5.0",
     "react-native-maps": "^0.5.0",

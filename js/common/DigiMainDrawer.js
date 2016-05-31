@@ -11,60 +11,66 @@ import Settings from '../scenes/settings/Settings';
 
 const DigiMainDrawer = ({ navigator }) => {
   return (
-    <View>
-      <DigiHeader
-        title="Digisquare"
-      />
-      <DigiTouchable
-        key="1"
-        onPress={() => {
-          navigator.replace({
-            component: Events,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="calendar" size={20} color="black" style={styles.icon} />
-          <Text style={styles.item}>
-            Évènements
-          </Text>
-        </View>
-      </DigiTouchable>
-      <DigiTouchable
-        key="2"
-        onPress={() => {
-          navigator.replace({
-            component: Organizations,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="users" size={20} color="black" style={styles.icon} />
-          <Text style={styles.item}>
-            Organisateurs
-          </Text>
-        </View>
-      </DigiTouchable>
-      <DigiTouchable
-        key="3"
-        onPress={() => {
-          navigator.replace({
-            component: Settings,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="cogs" size={20} color="black" style={styles.icon} />
-          <Text style={styles.item}>
-            Paramètres
-          </Text>
-        </View>
-      </DigiTouchable>
+    <View style={styles.container}>
+      <View>
+        <DigiHeader
+          title="Digisquare"
+        />
+        <DigiTouchable
+          key="1"
+          onPress={() => {
+            navigator.replace({
+              component: Events,
+            });
+          }}
+        >
+          <View style={styles.itemContainer}>
+            <Icon name="calendar" size={20} color="black" style={styles.icon} />
+            <Text style={styles.item}>
+              Évènements
+            </Text>
+          </View>
+        </DigiTouchable>
+        <DigiTouchable
+          key="2"
+          onPress={() => {
+            navigator.replace({
+              component: Organizations,
+            });
+          }}
+        >
+          <View style={styles.itemContainer}>
+            <Icon name="users" size={20} color="black" style={styles.icon} />
+            <Text style={styles.item}>
+              Organisateurs
+            </Text>
+          </View>
+        </DigiTouchable>
+        <DigiTouchable
+          key="3"
+          onPress={() => {
+            navigator.replace({
+              component: Settings,
+            });
+          }}
+        >
+          <View style={styles.itemContainer}>
+            <Icon name="cogs" size={20} color="black" style={styles.icon} />
+            <Text style={styles.item}>
+              Paramètres
+            </Text>
+          </View>
+        </DigiTouchable>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   itemContainer: {
     height: 56,
     alignItems: 'center',
