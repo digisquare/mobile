@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1ACBC623CA50143CE083ECC7B677B00E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		507D738C669429919F75FFC18D701CBC /* Pods-digisquareTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A42697D1BC9403B35C7F4C91A3339D76 /* Pods-digisquareTests-dummy.m */; };
+		8D585D891955B068D66B4F841E32D49C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F26BA2914B76073683C5A6E25958BFDE /* Pods-digisquare-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 849105EB0419C4786B2235C1D7947F76 /* Pods-digisquare-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A9C63B41D230696F6C89B976A29EA22 /* libPods-digisquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E88DB71E37E19B11B1F33368B0B722B /* Pods-digisquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-digisquare.release.xcconfig"; sourceTree = "<group>"; };
+		732C6F2D9C4BF2EE7716C53BE1789C0D /* Pods-digisquare-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-digisquare-resources.sh"; sourceTree = "<group>"; };
+		7FB836EBD44F89706FDAC333035B834B /* Pods-digisquare-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-digisquare-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8185B8E2B7942B56D939331DD065CDBA /* Pods-digisquare-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-digisquare-acknowledgements.plist"; sourceTree = "<group>"; };
+		82DE856DEEB546EFBE186B63B1E966FB /* Pods-digisquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-digisquare.debug.xcconfig"; sourceTree = "<group>"; };
+		849105EB0419C4786B2235C1D7947F76 /* Pods-digisquare-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-digisquare-dummy.m"; sourceTree = "<group>"; };
+		89CF78E1904EFF0FFCCCF5A39A4141EF /* Pods-digisquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-digisquareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A98DA003BC3D16244E1E32F64E16E21 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
+		921AC300314A616AA763417A15AB237D /* Pods-digisquareTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-digisquareTests-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A42697D1BC9403B35C7F4C91A3339D76 /* Pods-digisquareTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-digisquareTests-dummy.m"; sourceTree = "<group>"; };
+		B603A0FEDCCB5E5FD56AEAAC5DA995CB /* Pods-digisquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-digisquareTests.release.xcconfig"; sourceTree = "<group>"; };
+		C07B1368DEDBC8D47F2BAD2D1B2892C5 /* Pods-digisquareTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-digisquareTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1460ED7F5F6870BDF521C2499B34A08 /* libPods-digisquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E7BF6AF26358AF00EB5E172F0CA2B6EF /* Pods-digisquareTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-digisquareTests-resources.sh"; sourceTree = "<group>"; };
+		EEB6D57C6B22A4B1536A94AB1BD2E9CE /* Pods-digisquare-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-digisquare-frameworks.sh"; sourceTree = "<group>"; };
+		F77E130F097FE13444BC300F0B1DB83A /* Pods-digisquareTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-digisquareTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B890AEB07E911A52BC717BA11282A72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D585D891955B068D66B4F841E32D49C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB328C407A751F9FD0D0B8F130B06E5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ACBC623CA50143CE083ECC7B677B00E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CB5A1335B9458648F7B400C68AA1A7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C63B41D230696F6C89B976A29EA22 /* libPods-digisquare.a */,
+				C1460ED7F5F6870BDF521C2499B34A08 /* libPods-digisquareTests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6202124E9D433C3EA7B1CF2F09917CA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B109A558AEC0464E1C8AD13A3517ECA8 /* OneSignal */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				6202124E9D433C3EA7B1CF2F09917CA5 /* Pods */,
+				2CB5A1335B9458648F7B400C68AA1A7B /* Products */,
+				FFAE72259A0DA7A077B142AB1710CDD6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A62CB80EC75F67F05F9651E1AB5FEA98 /* Pods-digisquare */ = {
+			isa = PBXGroup;
+			children = (
+				7FB836EBD44F89706FDAC333035B834B /* Pods-digisquare-acknowledgements.markdown */,
+				8185B8E2B7942B56D939331DD065CDBA /* Pods-digisquare-acknowledgements.plist */,
+				849105EB0419C4786B2235C1D7947F76 /* Pods-digisquare-dummy.m */,
+				EEB6D57C6B22A4B1536A94AB1BD2E9CE /* Pods-digisquare-frameworks.sh */,
+				732C6F2D9C4BF2EE7716C53BE1789C0D /* Pods-digisquare-resources.sh */,
+				82DE856DEEB546EFBE186B63B1E966FB /* Pods-digisquare.debug.xcconfig */,
+				3E88DB71E37E19B11B1F33368B0B722B /* Pods-digisquare.release.xcconfig */,
+			);
+			name = "Pods-digisquare";
+			path = "Target Support Files/Pods-digisquare";
+			sourceTree = "<group>";
+		};
+		B109A558AEC0464E1C8AD13A3517ECA8 /* OneSignal */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CEBD734AC19E8ADE2CA12CDF9AD21 /* Frameworks */,
+			);
+			path = OneSignal;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9CFF3DF9A4A27D561B715D4A94BAD3F /* Pods-digisquareTests */ = {
+			isa = PBXGroup;
+			children = (
+				C07B1368DEDBC8D47F2BAD2D1B2892C5 /* Pods-digisquareTests-acknowledgements.markdown */,
+				F77E130F097FE13444BC300F0B1DB83A /* Pods-digisquareTests-acknowledgements.plist */,
+				A42697D1BC9403B35C7F4C91A3339D76 /* Pods-digisquareTests-dummy.m */,
+				921AC300314A616AA763417A15AB237D /* Pods-digisquareTests-frameworks.sh */,
+				E7BF6AF26358AF00EB5E172F0CA2B6EF /* Pods-digisquareTests-resources.sh */,
+				89CF78E1904EFF0FFCCCF5A39A4141EF /* Pods-digisquareTests.debug.xcconfig */,
+				B603A0FEDCCB5E5FD56AEAAC5DA995CB /* Pods-digisquareTests.release.xcconfig */,
+			);
+			name = "Pods-digisquareTests";
+			path = "Target Support Files/Pods-digisquareTests";
+			sourceTree = "<group>";
+		};
+		FF9CEBD734AC19E8ADE2CA12CDF9AD21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A98DA003BC3D16244E1E32F64E16E21 /* OneSignal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFAE72259A0DA7A077B142AB1710CDD6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A62CB80EC75F67F05F9651E1AB5FEA98 /* Pods-digisquare */,
+				E9CFF3DF9A4A27D561B715D4A94BAD3F /* Pods-digisquareTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8029B304C538EA39D4F0614085DAF05C /* Pods-digisquareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47401A4F6DD300C77936612DE2E60A7A /* Build configuration list for PBXNativeTarget "Pods-digisquareTests" */;
+			buildPhases = (
+				F952AE15714868251F220F0D6FBF99A2 /* Sources */,
+				B890AEB07E911A52BC717BA11282A72B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-digisquareTests";
+			productName = "Pods-digisquareTests";
+			productReference = C1460ED7F5F6870BDF521C2499B34A08 /* libPods-digisquareTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C5A6E099586400D3EF000496E10FDFB8 /* Pods-digisquare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E429EAADEE834A395C7E5EB1B64F201 /* Build configuration list for PBXNativeTarget "Pods-digisquare" */;
+			buildPhases = (
+				B791021612691EE8A47DED89614E80D4 /* Sources */,
+				FB328C407A751F9FD0D0B8F130B06E5B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-digisquare";
+			productName = "Pods-digisquare";
+			productReference = 3A9C63B41D230696F6C89B976A29EA22 /* libPods-digisquare.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2CB5A1335B9458648F7B400C68AA1A7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5A6E099586400D3EF000496E10FDFB8 /* Pods-digisquare */,
+				8029B304C538EA39D4F0614085DAF05C /* Pods-digisquareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B791021612691EE8A47DED89614E80D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F26BA2914B76073683C5A6E25958BFDE /* Pods-digisquare-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F952AE15714868251F220F0D6FBF99A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507D738C669429919F75FFC18D701CBC /* Pods-digisquareTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B52C49872A67520E61D36DA78F59C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E88DB71E37E19B11B1F33368B0B722B /* Pods-digisquare.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2B8E70BAD993CC7B46D3A51C66D2A9E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82DE856DEEB546EFBE186B63B1E966FB /* Pods-digisquare.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7F6CC58770B92DA07AFFD1EA150F476F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89CF78E1904EFF0FFCCCF5A39A4141EF /* Pods-digisquareTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B004841F29845599947DDBC68D60F867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B603A0FEDCCB5E5FD56AEAAC5DA995CB /* Pods-digisquareTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E429EAADEE834A395C7E5EB1B64F201 /* Build configuration list for PBXNativeTarget "Pods-digisquare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8E70BAD993CC7B46D3A51C66D2A9E8 /* Debug */,
+				2B52C49872A67520E61D36DA78F59C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47401A4F6DD300C77936612DE2E60A7A /* Build configuration list for PBXNativeTarget "Pods-digisquareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F6CC58770B92DA07AFFD1EA150F476F /* Debug */,
+				B004841F29845599947DDBC68D60F867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -10,15 +10,23 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "RCTOneSignal.h"
 
 #import "RCTRootView.h"
 
 @implementation AppDelegate
+@synthesize oneSignal = _oneSignal;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [Fabric with:@[[Crashlytics class]]];
 
+  NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+  NSString *ONE_SIGNAL_APP_ID = infoDictionary[@"ONE_SIGNAL_APP_ID"];
+
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
+                                                         appId:ONE_SIGNAL_APP_ID];
+  
   NSURL *jsCodeLocation;
 
   /**
@@ -58,6 +66,10 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
+  [RCTOneSignal didReceiveRemoteNotification:notification];
 }
 
 @end

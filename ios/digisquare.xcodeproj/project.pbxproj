@@ -24,14 +24,17 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		34D2433C03A8489D9C81FF1E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98269A131B894B6F818317B2 /* EvilIcons.ttf */; };
+		363DD89CF4E3FB70F8919962 /* libPods-digisquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8770349257E4832075D0D9B7 /* libPods-digisquare.a */; };
 		3CF07747062446A1838ADB0D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62023C59122348488BEB287C /* Ionicons.ttf */; };
 		6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD36AFC3FAD4FB79E3FDD93 /* libRNVectorIcons.a */; };
 		6D63622B1CFDF43E007F0E85 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6362291CFDF43E007F0E85 /* Fabric.framework */; };
 		6D63622C1CFDF43E007F0E85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */; };
 		6D63622D1CFDF4AB007F0E85 /* libSMXCrashlytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD3BFE51CFDEE6400571B37 /* libSMXCrashlytics.a */; };
+		6DEC98DA1CFDFB57004E7D09 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEC98D91CFDFB03004E7D09 /* libRCTOneSignal.a */; };
 		7621BE9F141F40C8A18E5A13 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 023B181961EA4E76BE5AF0F8 /* Zocial.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		BB2EC0276E964B1F9796EFC7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68AAE19C6C134A9EBB2DFD4E /* Entypo.ttf */; };
+		BBD6006D0C97DC30A651172D /* libPods-digisquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */; };
 		D8F218BD903F4E63B4CE52DF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4063A6619C2D4A12B9F5D677 /* MaterialIcons.ttf */; };
 		E020CF514C0B41F28E4B3F8D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C30411037E745DC9541760B /* Foundation.ttf */; };
 		E5C50E80092944F182B00A63 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAB5079CDCF44B6FA3A7BFF3 /* FontAwesome.ttf */; };
@@ -122,6 +125,13 @@
 			remoteGlobalIDString = D8D9DB831C6D03DB009FBC0E;
 			remoteInfo = SMXCrashlytics;
 		};
+		6DEC98D81CFDFB03004E7D09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3245CDED1BFEE35C00EABF68;
+			remoteInfo = RCTOneSignal;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -148,6 +158,8 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* digisquareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = digisquareTests.m; sourceTree = "<group>"; };
 		023B181961EA4E76BE5AF0F8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		076B69EA4BA6D58378CAF3F0 /* Pods-digisquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F5A2B07D9EA2E85FB3D9534 /* Pods-digisquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-digisquare/Pods-digisquare.release.xcconfig"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* digisquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digisquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,10 +181,15 @@
 		6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6DBDCEB11D0616E500B4C8E5 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.debug.xcconfig; path = config/Config.debug.xcconfig; sourceTree = "<group>"; };
 		6DD3BFE01CFDEE6400571B37 /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
+		6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8770349257E4832075D0D9B7 /* libPods-digisquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		886ACAF3660A1C346E444FA1 /* Pods-digisquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digisquare/Pods-digisquare.debug.xcconfig"; sourceTree = "<group>"; };
 		98269A131B894B6F818317B2 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		B2148A33302D4CCC87D96BA6 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
+		D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68E4BC36A7F4DF2BA7A8C52 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
 		DAB5079CDCF44B6FA3A7BFF3 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		F5088FED5440427AA7D3121C /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -183,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD6006D0C97DC30A651172D /* libPods-digisquareTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEC98DA1CFDFB57004E7D09 /* libRCTOneSignal.a in Frameworks */,
 				6D63622D1CFDF4AB007F0E85 /* libSMXCrashlytics.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -205,6 +224,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				0349B8D3500B49AEA6FC7A93 /* libAirMaps.a in Frameworks */,
 				6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */,
+				363DD89CF4E3FB70F8919962 /* libPods-digisquare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +325,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		27980A6C802D2BB4FE34782F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				886ACAF3660A1C346E444FA1 /* Pods-digisquare.debug.xcconfig */,
+				0F5A2B07D9EA2E85FB3D9534 /* Pods-digisquare.release.xcconfig */,
+				79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */,
+				076B69EA4BA6D58378CAF3F0 /* Pods-digisquareTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		47BC4489054F4F2E94BCE880 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +384,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6DEC98D51CFDFB03004E7D09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC98D91CFDFB03004E7D09 /* libRCTOneSignal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +403,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */,
 				6D6362291CFDF43E007F0E85 /* Fabric.framework */,
 				6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */,
 				6DD3BFE01CFDEE6400571B37 /* SMXCrashlytics.xcodeproj */,
@@ -400,6 +440,8 @@
 				00E356EF1AD99517003FC87E /* digisquareTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				47BC4489054F4F2E94BCE880 /* Resources */,
+				27980A6C802D2BB4FE34782F /* Pods */,
+				B4ECF34B3AF8011FD96CFFCA /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -414,6 +456,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B4ECF34B3AF8011FD96CFFCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8770349257E4832075D0D9B7 /* libPods-digisquare.a */,
+				D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,9 +472,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "digisquareTests" */;
 			buildPhases = (
+				DDABC06DA31C046BBEE755EE /* 📦 Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				A01539386CEAC776CAE5CFAC /* 📦 Embed Pods Frameworks */,
+				BB91365CAB9E0E7DC10785DA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -439,6 +493,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "digisquare" */;
 			buildPhases = (
+				A10005D6E551277D1379D4EF /* 📦 Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -468,6 +523,13 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -506,6 +568,10 @@
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = 6DEC98D51CFDFB03004E7D09 /* Products */;
+					ProjectRef = 6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -622,6 +688,13 @@
 			remoteRef = 6DD3BFE41CFDEE6400571B37 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6DEC98D91CFDFB03004E7D09 /* libRCTOneSignal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTOneSignal.a;
+			remoteRef = 6DEC98D81CFDFB03004E7D09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -709,6 +782,81 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run $DIGISQUARE_FABRIC_API_KEY $DIGISQUARE_FABRIC_API_SECRET";
 		};
+		A01539386CEAC776CAE5CFAC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A10005D6E551277D1379D4EF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB91365CAB9E0E7DC10785DA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDABC06DA31C046BBEE755EE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1E9AF6C7D18643672C40850 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digisquare/Pods-digisquare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -754,6 +902,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -779,6 +928,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076B69EA4BA6D58378CAF3F0 /* Pods-digisquareTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -815,10 +965,14 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/**",
 				);
 				INFOPLIST_FILE = digisquare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = digisquare;
 			};
 			name = Debug;
@@ -838,10 +992,14 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/**",
 				);
 				INFOPLIST_FILE = digisquare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = digisquare;
 			};
 			name = Release;
