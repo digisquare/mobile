@@ -6,12 +6,10 @@ import { Answers } from 'react-native-fabric';
 
 import { fetchEvents } from '../../actions/events.js';
 
-import DigiDrawerLayout from '../../common/DigiDrawerLayout';
 import DigiHeader from '../../common/DigiHeader';
 
 import EventsListView from './EventsListView';
 import EventContainer from '../event/EventContainer';
-import Editions from '../editions/Editions';
 
 const Events = class Events extends Component {
   constructor(props) {
@@ -24,8 +22,6 @@ const Events = class Events extends Component {
       refreshing: true,
       error: false,
     };
-    this.renderNavigationView = this.renderNavigationView.bind(this);
-    this.openEditionsDrawer = this.openEditionsDrawer.bind(this);
     this.onRefresh = this.onRefresh.bind(this);
   }
 
@@ -107,47 +103,23 @@ const Events = class Events extends Component {
     const edition = items.find(edition => edition.id === selectedEdition);
     const { dataSource, refreshing, error } = this.state;
     return (
-      <DigiDrawerLayout
-        ref={ref => this.drawer = ref}
-        drawerWidth={300}
-        drawerPosition="right"
-        renderNavigationView={this.renderNavigationView}
-      >
-        <View style={styles.container}>
-          <DigiHeader
-            title={edition.name}
-            leftItem={{
-              icon: require('../../common/img/hamburger.png'),
-              onPress: openMainDrawer,
-            }}
-            rightItem={{
-              icon: require('../../common/img/filter.png'),
-              title: 'Filter',
-              onPress: this.openEditionsDrawer,
-            }}
-          />
-          <EventsListView
-            navigator={navigator}
-            dataSource={dataSource}
-            refreshing={refreshing}
-            onRefresh={this.onRefresh}
-            error={error}
-          />
-        </View>
-      </DigiDrawerLayout>
+      <View style={styles.container}>
+        <DigiHeader
+          title={edition.name}
+          leftItem={{
+            icon: require('../../common/img/hamburger.png'),
+            onPress: openMainDrawer,
+          }}
+        />
+        <EventsListView
+          navigator={navigator}
+          dataSource={dataSource}
+          refreshing={refreshing}
+          onRefresh={this.onRefresh}
+          error={error}
+        />
+      </View>
     );
-  }
-
-  renderNavigationView() {
-    return (
-      <Editions
-        closeDrawer={() => this.drawer.closeDrawer()}
-      />
-    );
-  }
-
-  openEditionsDrawer() {
-    this.drawer && this.drawer.openDrawer();
   }
 }
 

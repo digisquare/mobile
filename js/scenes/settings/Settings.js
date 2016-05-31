@@ -6,6 +6,7 @@ import { Answers } from 'react-native-fabric';
 import DigiHeader from '../../common/DigiHeader';
 import DigiTouchable from '../../common/DigiTouchable';
 
+import Editions from './Editions';
 import Notifications from './Notifications';
 
 export default function Settings({ navigator, openMainDrawer }) {
@@ -22,6 +23,26 @@ export default function Settings({ navigator, openMainDrawer }) {
       <View>
         <DigiTouchable
           key="1"
+          onPress={() => {
+            Answers.logContentView(
+              'Choix de l\'édition',
+              'editions',
+              'settings/editions'
+            );
+            navigator.push({
+              component: Editions,
+            });
+          }}
+        >
+          <View style={styles.itemContainer}>
+            <Icon name="globe" size={20} color="black" style={styles.icon} />
+            <Text style={styles.item}>
+              Edition
+            </Text>
+          </View>
+        </DigiTouchable>
+        <DigiTouchable
+          key="2"
           onPress={() => {
             Answers.logContentView(
               'Paramètres des Notifications',
