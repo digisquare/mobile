@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   header: {
     color: 'black',
-    fontWeight: '500',
+    fontWeight: '900',
     fontSize: 18,
   },
 });

@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   },
   editionName: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '900',
+    color: 'grey',
   },
   switchContainer: {
     paddingTop: 15,

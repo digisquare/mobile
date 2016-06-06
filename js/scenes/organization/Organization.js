@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: '500',
+    fontWeight: '900',
     color: 'black',
     marginTop: 10,
   },

@@ -38,7 +38,7 @@ export default function OrganizationsRow({ navigator, organization }) {
           <Text style={styles.title}>
             {organization.Organization.name}
           </Text>
-          <Text>
+          <Text style={styles.venue}>
             {
               organization.Venue && organization.Venue.name ? (
                 `@ ${organization.Venue.name}`
@@ -72,7 +72,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '900',
+    color: 'grey',
+  },
+  venue: {
+    color: 'grey',
   },
 });
 

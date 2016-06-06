@@ -37,7 +37,9 @@ export default function Event({ navigator, event }) {
           />
           {
             event.Organization.length > 0 ? (
-              <Text style={styles.organizers}>Organisé par :</Text>
+              <Text style={styles.organizers}>
+                Organisé par :
+              </Text>
             ) : null
           }
           {
@@ -80,17 +82,19 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: '500',
+    fontWeight: '900',
     color: 'black',
   },
   date: {
     fontSize: 12,
-    fontWeight: '500',
+    fontWeight: '900',
     marginBottom: 10,
+    color: 'grey',
   },
   organizers: {
+    marginTop: 10,
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '900',
     color: 'black',
   },
 });

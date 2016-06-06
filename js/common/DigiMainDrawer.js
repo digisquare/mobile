@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
   },
   item: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '900',
+    color: 'grey',
   },
   icon: {
     width: 40,

@@ -73,7 +73,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '900',
+    color: 'grey',
+  },
+  date: {
+    color: 'grey',
   },
 });
 
