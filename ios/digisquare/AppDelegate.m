@@ -65,6 +65,24 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  /**
+   * Splash Screen
+   */
+  NSArray *allPngImageNames = [[NSBundle mainBundle] pathsForResourcesOfType:@"png"
+                                                                 inDirectory:nil];
+  for (NSString *imgName in allPngImageNames){
+    // Find launch images
+    if ([imgName containsString:@"LaunchImage"]){
+      UIImage *img = [UIImage imageNamed:imgName]; //-- this is a launch image
+      // Has image same scale and dimensions as our current device's screen?
+      if (img.scale == [UIScreen mainScreen].scale && CGSizeEqualToSize(img.size, [UIScreen mainScreen].bounds.size)) {
+        UIImageView *launchView = [[UIImageView alloc] initWithImage: img];
+        rootView.loadingView = launchView;
+      }
+    }
+  }
+  
   return YES;
 }
 
