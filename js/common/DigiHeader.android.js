@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, ToolbarAndroid, StyleSheet } from 'react-native';
 
-export default class EventsHeader extends Component {
+export default class DigiHeader extends Component {
   constructor(props) {
     super(props);
     this.handleActionSelected = this.handleActionSelected.bind(this);
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
 });
 
-EventsHeader.propTypes = {
+DigiHeader.propTypes = {
   title: PropTypes.string.isRequired,
   leftItem: PropTypes.object,
   rightItem: PropTypes.object,
