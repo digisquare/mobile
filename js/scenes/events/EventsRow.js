@@ -41,7 +41,7 @@ export default function EventsRow({ navigator, event }) {
           }
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.title}>
+          <Text style={styles.title} numberOfLines={1}>
             {event.Event.name}
           </Text>
           <Text style={styles.date}>
