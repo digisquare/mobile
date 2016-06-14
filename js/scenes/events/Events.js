@@ -14,12 +14,16 @@ import EventContainer from '../event/EventContainer';
 const Events = class Events extends Component {
   constructor(props) {
     super(props);
+    const { editions: { selectedEdition }, events } = props;
+    const items = events[selectedEdition]
+      && events[selectedEdition].items
+      && events[selectedEdition].items.length > 0;
     this.state = {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
         sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
       }),
-      refreshing: true,
+      refreshing: !items,
       error: false,
     };
     this.onRefresh = this.onRefresh.bind(this);
@@ -52,7 +56,7 @@ const Events = class Events extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { onFetchEvents, events, editions: { selectedEdition } } = nextProps;
-    const { dataSource } = this.state;
+    const { dataSource, refreshing } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
       onFetchEvents(selectedEdition);
       this.setState({
@@ -71,6 +75,11 @@ const Events = class Events extends Component {
         error: true,
       });
     }
+    if (refreshing && !isFetching) {
+      this.setState({
+        refreshing: false,
+      });
+    }
     if (items) {
       const dataBlob = {};
       let date;
@@ -84,7 +93,6 @@ const Events = class Events extends Component {
       });
       return this.setState({
         dataSource: dataSource.cloneWithRowsAndSections(dataBlob),
-        refreshing: false,
         error: false,
       });
     }

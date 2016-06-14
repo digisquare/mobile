@@ -12,11 +12,15 @@ import OrganizationsListView from './OrganizationsListView';
 const Organizations = class Organizations extends Component {
   constructor(props) {
     super(props);
+    const { editions: { selectedEdition }, organizations } = props;
+    const items = organizations[selectedEdition]
+      && organizations[selectedEdition].items
+      && organizations[selectedEdition].items.length > 0;
     this.state = {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-      refreshing: true,
+      refreshing: !items,
       error: false,
     };
     this.onRefresh = this.onRefresh.bind(this);
@@ -31,7 +35,7 @@ const Organizations = class Organizations extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { onFetchOrganizations, organizations, editions: { selectedEdition } } = nextProps;
-    const { dataSource } = this.state;
+    const { dataSource, refreshing } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
       onFetchOrganizations(selectedEdition);
       this.setState({
@@ -50,10 +54,14 @@ const Organizations = class Organizations extends Component {
         error: true,
       });
     }
+    if (refreshing && !isFetching) {
+      this.setState({
+        refreshing: false,
+      });
+    }
     if (items) {
       return this.setState({
         dataSource: dataSource.cloneWithRows(items),
-        refreshing: false,
         error: false,
       });
     }
