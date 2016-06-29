@@ -77,8 +77,7 @@
       UIImage *img = [UIImage imageNamed:imgName]; //-- this is a launch image
       // Has image same scale and dimensions as our current device's screen?
       if (img.scale == [UIScreen mainScreen].scale && CGSizeEqualToSize(img.size, [UIScreen mainScreen].bounds.size)) {
-        UIImageView *launchView = [[UIImageView alloc] initWithImage: img];
-        rootView.loadingView = launchView;
+        rootView.backgroundColor = [UIColor colorWithPatternImage:img];
       }
     }
   }
