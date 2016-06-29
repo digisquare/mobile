@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     marginLeft: 10,
     marginRight: 10,
+    backgroundColor: 'white',
   },
   header: {
     color: 'black',
