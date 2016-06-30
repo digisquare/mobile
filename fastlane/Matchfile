@@ -1,0 +1,7 @@
+git_url "git@bitbucket.org:digisquare/credentials.git"
+
+type "development"
+shallow_clone "false"
+
+app_identifier "net.digisquare.app"
+username "damien@varron.fr"

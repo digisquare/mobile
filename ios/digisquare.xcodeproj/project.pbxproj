@@ -23,7 +23,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		34D2433C03A8489D9C81FF1E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98269A131B894B6F818317B2 /* EvilIcons.ttf */; };
-		363DD89CF4E3FB70F8919962 /* libPods-digisquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8770349257E4832075D0D9B7 /* libPods-digisquare.a */; };
 		3CF07747062446A1838ADB0D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62023C59122348488BEB287C /* Ionicons.ttf */; };
 		6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD36AFC3FAD4FB79E3FDD93 /* libRNVectorIcons.a */; };
 		6D63622B1CFDF43E007F0E85 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6362291CFDF43E007F0E85 /* Fabric.framework */; };
@@ -161,7 +160,7 @@
 		0F5A2B07D9EA2E85FB3D9534 /* Pods-digisquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-digisquare/Pods-digisquare.release.xcconfig"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* digisquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digisquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Digisquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digisquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = digisquare/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = digisquare/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = digisquare/Images.xcassets; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		6D6362291CFDF43E007F0E85 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6DBDCEB11D0616E500B4C8E5 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.debug.xcconfig; path = config/Config.debug.xcconfig; sourceTree = "<group>"; };
+		6DBE90A71D2451E20078E93A /* libPods-digisquare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-digisquare.a"; path = "Pods/../build/Debug-iphoneos/libPods-digisquare.a"; sourceTree = "<group>"; };
 		6DD3BFE01CFDEE6400571B37 /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
 		6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				0349B8D3500B49AEA6FC7A93 /* libAirMaps.a in Frameworks */,
 				6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */,
-				363DD89CF4E3FB70F8919962 /* libPods-digisquare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +446,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* digisquare.app */,
+				13B07F961A680F5B00A75B9A /* Digisquare.app */,
 				00E356EE1AD99517003FC87E /* digisquareTests.xctest */,
 			);
 			name = Products;
@@ -456,6 +455,7 @@
 		B4ECF34B3AF8011FD96CFFCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DBE90A71D2451E20078E93A /* libPods-digisquare.a */,
 				8770349257E4832075D0D9B7 /* libPods-digisquare.a */,
 				D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */,
 			);
@@ -505,7 +505,7 @@
 			);
 			name = digisquare;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* digisquare.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Digisquare.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -890,10 +890,7 @@
 			baseConfigurationReference = 79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -918,10 +915,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = digisquareTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -942,8 +936,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Damien Varron (X87LYE74J6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Damien Varron (X87LYE74J6)";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -959,13 +953,14 @@
 				);
 				INFOPLIST_FILE = digisquare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare;
-				PRODUCT_NAME = digisquare;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare.app;
+				PRODUCT_NAME = Digisquare;
+				PROVISIONING_PROFILE = "41b941d4-b06a-4ff7-b169-2b479c94f914";
 			};
 			name = Debug;
 		};
@@ -975,8 +970,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Damien Varron (282JW4BBQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damien Varron (282JW4BBQ2)";
+				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -991,13 +987,14 @@
 				);
 				INFOPLIST_FILE = digisquare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare;
-				PRODUCT_NAME = digisquare;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare.app;
+				PRODUCT_NAME = Digisquare;
+				PROVISIONING_PROFILE = "1510e421-1331-4134-986e-e7df356576ed";
 			};
 			name = Release;
 		};
