@@ -42,7 +42,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "net.digisquare"
+        applicationId "net.digisquare.app"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -70,7 +70,7 @@ android {
     buildTypes {
         debug {
             manifestPlaceholders = [
-                manifestApplicationId: "net.digisquare",
+                manifestApplicationId: "net.digisquare.app",
                 onesignal_app_id: DIGISQUARE_ONE_SIGNAL_APP_ID_DEV,
                 onesignal_google_project_number: DIGISQUARE_ONE_SIGNAL_GOOGLE_PROJECT_NUMBER_DEV
             ]
@@ -80,7 +80,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.release
             manifestPlaceholders = [
-                manifestApplicationId: "net.digisquare",
+                manifestApplicationId: "net.digisquare.app",
                 onesignal_app_id: DIGISQUARE_ONE_SIGNAL_APP_ID_PROD,
                 onesignal_google_project_number: DIGISQUARE_ONE_SIGNAL_GOOGLE_PROJECT_NUMBER_PROD
             ]

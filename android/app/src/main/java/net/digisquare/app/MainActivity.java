@@ -1,4 +1,4 @@
-package net.digisquare;
+package net.digisquare.app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
