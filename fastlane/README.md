@@ -6,11 +6,11 @@ sudo gem install fastlane
 ```
 # Available Actions
 ## iOS
-### ios test
+### ios snap
 ```
-fastlane ios test
+fastlane ios snap
 ```
-Runs all the tests
+Shoot the snaps
 ### ios beta
 ```
 fastlane ios beta
@@ -23,6 +23,15 @@ This will also make sure the profile is up to date
 fastlane ios appstore
 ```
 Deploy a new version to the App Store
+
+----
+
+## Android
+### android alpha
+```
+fastlane android alpha
+```
+Deploy a new version to the Google Play Store
 
 ----
 

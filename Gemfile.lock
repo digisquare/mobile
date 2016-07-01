@@ -241,6 +241,7 @@ DEPENDENCIES
   gym
   match
   pilot
+  supply
 
 BUNDLED WITH
    1.12.5

@@ -33,6 +33,7 @@ ios/main.jsbundle
 *.properties
 android/app/src/debug/AndroidManifest.xml
 android/app/src/release/AndroidManifest.xml
+android/key/*.json
 
 # node.js
 #
@@ -47,6 +48,7 @@ android/app/libs
 android/keystores/debug.keystore
 
 # Fastlane
+*.zip
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
