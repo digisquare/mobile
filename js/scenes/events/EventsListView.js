@@ -44,6 +44,7 @@ export default class EventsListView extends Component {
 
     return (
       <ListView
+        testID="EventsListView"
         dataSource={dataSource}
         refreshControl={refreshControl}
         renderSectionHeader={this.renderSectionHeader}
@@ -52,8 +53,8 @@ export default class EventsListView extends Component {
     );
   }
 
-  renderSectionHeader(sectionData, sectionID) {
-    const date = moment(sectionID);
+  renderSectionHeader(sectionData) {
+    const date = moment(sectionData[0]['Event']['start_at']);
     return (
       <View style={styles.headerContainer}>
         <Text style={styles.header}>
@@ -63,9 +64,10 @@ export default class EventsListView extends Component {
     );
   }
 
-  renderEventsRow(event) {
+  renderEventsRow(event, sectionID, rowID) {
     return (
       <EventsRow
+        rowID={`${sectionID}-${rowID}`}
         navigator={this.props.navigator}
         event={event}
       />

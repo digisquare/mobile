@@ -23,12 +23,15 @@ const selectEvent = (navigator, event) => {
   });
 }
 
-export default function EventsRow({ navigator, event }) {
+export default function EventsRow({ rowID, navigator, event }) {
   const time = moment(event.Event.start_at).format('HH:mm');
   const place = event.Venue.name;
   const timeAndPlace = time === '00:00' ? place : time + ' @ ' + place;
   return (
-    <DigiTouchable onPress={() => selectEvent(navigator, event)}>
+    <DigiTouchable
+      testID={`EventsRow-${rowID}`}
+      onPress={() => selectEvent(navigator, event)}
+    >
       <View style={styles.container}>
         <View style={styles.avatarContainer}>
           {
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
 });
 
 EventsRow.propTypes = {
+  rowID: PropTypes.string.isRequired,
   navigator: PropTypes.object.isRequired,
   event: PropTypes.object.isRequired,
 };

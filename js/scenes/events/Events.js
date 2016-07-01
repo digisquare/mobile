@@ -83,13 +83,15 @@ const Events = class Events extends Component {
     if (items) {
       const dataBlob = {};
       let date;
+      let sectionID = -1;
       events[selectedEdition].items.map(item => {
         const newDate = moment(item.Event.start_at).format('YYYY-MM-DD');
         if (newDate !== date) {
           date = newDate;
-          dataBlob[date] = [];
+          sectionID++;
+          dataBlob[sectionID] = [];
         }
-        dataBlob[date].push(item);
+        dataBlob[sectionID].push(item);
       });
       return this.setState({
         dataSource: dataSource.cloneWithRowsAndSections(dataBlob),

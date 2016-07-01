@@ -12,7 +12,6 @@
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
-		00E356F31AD99517003FC87E /* digisquareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* digisquareTests.m */; };
 		0349B8D3500B49AEA6FC7A93 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D68E4BC36A7F4DF2BA7A8C52 /* libAirMaps.a */; };
 		09B4176741EF4B7CBE3B9EBB /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5088FED5440427AA7D3121C /* Octicons.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
@@ -25,14 +24,15 @@
 		34D2433C03A8489D9C81FF1E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98269A131B894B6F818317B2 /* EvilIcons.ttf */; };
 		3CF07747062446A1838ADB0D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62023C59122348488BEB287C /* Ionicons.ttf */; };
 		6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD36AFC3FAD4FB79E3FDD93 /* libRNVectorIcons.a */; };
+		6D43F7B81D26D27700791D5C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43F7B71D26D27700791D5C /* SnapshotHelper.swift */; };
 		6D63622B1CFDF43E007F0E85 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6362291CFDF43E007F0E85 /* Fabric.framework */; };
 		6D63622C1CFDF43E007F0E85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */; };
 		6D63622D1CFDF4AB007F0E85 /* libSMXCrashlytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD3BFE51CFDEE6400571B37 /* libSMXCrashlytics.a */; };
+		6D63AFAA1D26F3AD00FA0E54 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D63AFA91D26F3AD00FA0E54 /* Events.swift */; };
 		6DEC98DA1CFDFB57004E7D09 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEC98D91CFDFB03004E7D09 /* libRCTOneSignal.a */; };
 		7621BE9F141F40C8A18E5A13 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 023B181961EA4E76BE5AF0F8 /* Zocial.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		BB2EC0276E964B1F9796EFC7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68AAE19C6C134A9EBB2DFD4E /* Entypo.ttf */; };
-		BBD6006D0C97DC30A651172D /* libPods-digisquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */; };
 		D8F218BD903F4E63B4CE52DF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4063A6619C2D4A12B9F5D677 /* MaterialIcons.ttf */; };
 		E020CF514C0B41F28E4B3F8D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C30411037E745DC9541760B /* Foundation.ttf */; };
 		E5C50E80092944F182B00A63 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAB5079CDCF44B6FA3A7BFF3 /* FontAwesome.ttf */; };
@@ -74,13 +74,6 @@
 			remoteGlobalIDString = 832C81801AAF6DEF007FA2F7;
 			remoteInfo = RCTVibration;
 		};
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = digisquare;
-		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
@@ -101,6 +94,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
+		};
+		6D1A689B1D26BD0400C453FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = digisquare;
 		};
 		6DD3BFD11CFDEE4000571B37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -152,9 +152,6 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* digisquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = digisquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* digisquareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = digisquareTests.m; sourceTree = "<group>"; };
 		023B181961EA4E76BE5AF0F8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		076B69EA4BA6D58378CAF3F0 /* Pods-digisquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F5A2B07D9EA2E85FB3D9534 /* Pods-digisquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-digisquare/Pods-digisquare.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,34 +171,27 @@
 		68AAE19C6C134A9EBB2DFD4E /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		6C30411037E745DC9541760B /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		6D1472661D061F79009AB685 /* Config.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.release.xcconfig; path = config/Config.release.xcconfig; sourceTree = "<group>"; };
+		6D1A68961D26BD0400C453FD /* DigisquareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigisquareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1A689A1D26BD0400C453FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D43F7B71D26D27700791D5C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		6D6362291CFDF43E007F0E85 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		6D63622A1CFDF43E007F0E85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6D63AFA91D26F3AD00FA0E54 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		6DBDCEB11D0616E500B4C8E5 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.debug.xcconfig; path = config/Config.debug.xcconfig; sourceTree = "<group>"; };
-		6DBE90A71D2451E20078E93A /* libPods-digisquare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-digisquare.a"; path = "Pods/../build/Debug-iphoneos/libPods-digisquare.a"; sourceTree = "<group>"; };
 		6DD3BFE01CFDEE6400571B37 /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
 		6DEC98D41CFDFB03004E7D09 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		8770349257E4832075D0D9B7 /* libPods-digisquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		886ACAF3660A1C346E444FA1 /* Pods-digisquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digisquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digisquare/Pods-digisquare.debug.xcconfig"; sourceTree = "<group>"; };
 		98269A131B894B6F818317B2 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		B2148A33302D4CCC87D96BA6 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
-		D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-digisquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68E4BC36A7F4DF2BA7A8C52 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
 		DAB5079CDCF44B6FA3A7BFF3 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		F5088FED5440427AA7D3121C /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00E356EB1AD99517003FC87E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BBD6006D0C97DC30A651172D /* libPods-digisquareTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +212,13 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				0349B8D3500B49AEA6FC7A93 /* libAirMaps.a in Frameworks */,
 				6AFF0C1D7D7D4AA4B94C50AF /* libRNVectorIcons.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1A68931D26BD0400C453FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,23 +263,6 @@
 				00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		00E356EF1AD99517003FC87E /* digisquareTests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* digisquareTests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = digisquareTests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
@@ -345,6 +325,16 @@
 				023B181961EA4E76BE5AF0F8 /* Zocial.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D1A68971D26BD0400C453FD /* DigisquareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D43F7B71D26D27700791D5C /* SnapshotHelper.swift */,
+				6D1A689A1D26BD0400C453FD /* Info.plist */,
+				6D63AFA91D26F3AD00FA0E54 /* Events.swift */,
+			);
+			path = DigisquareUITests;
 			sourceTree = "<group>";
 		};
 		6DBDCEAC1D0616B200B4C8E5 /* config */ = {
@@ -433,11 +423,10 @@
 				6DBDCEAC1D0616B200B4C8E5 /* config */,
 				13B07FAE1A68108700A75B9A /* digisquare */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* digisquareTests */,
+				6D1A68971D26BD0400C453FD /* DigisquareUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				47BC4489054F4F2E94BCE880 /* Resources */,
 				27980A6C802D2BB4FE34782F /* Pods */,
-				B4ECF34B3AF8011FD96CFFCA /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -447,45 +436,14 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* Digisquare.app */,
-				00E356EE1AD99517003FC87E /* digisquareTests.xctest */,
+				6D1A68961D26BD0400C453FD /* DigisquareUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B4ECF34B3AF8011FD96CFFCA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6DBE90A71D2451E20078E93A /* libPods-digisquare.a */,
-				8770349257E4832075D0D9B7 /* libPods-digisquare.a */,
-				D1D19EBE796E5F91D5E6670F /* libPods-digisquareTests.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* digisquareTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "digisquareTests" */;
-			buildPhases = (
-				DDABC06DA31C046BBEE755EE /* 📦 Check Pods Manifest.lock */,
-				00E356EA1AD99517003FC87E /* Sources */,
-				00E356EB1AD99517003FC87E /* Frameworks */,
-				00E356EC1AD99517003FC87E /* Resources */,
-				A01539386CEAC776CAE5CFAC /* 📦 Embed Pods Frameworks */,
-				BB91365CAB9E0E7DC10785DA /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00E356F51AD99517003FC87E /* PBXTargetDependency */,
-			);
-			name = digisquareTests;
-			productName = digisquareTests;
-			productReference = 00E356EE1AD99517003FC87E /* digisquareTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		13B07F861A680F5B00A75B9A /* digisquare */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "digisquare" */;
@@ -508,19 +466,34 @@
 			productReference = 13B07F961A680F5B00A75B9A /* Digisquare.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6D1A68951D26BD0400C453FD /* DigisquareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D1A689D1D26BD0400C453FD /* Build configuration list for PBXNativeTarget "DigisquareUITests" */;
+			buildPhases = (
+				6D1A68921D26BD0400C453FD /* Sources */,
+				6D1A68931D26BD0400C453FD /* Frameworks */,
+				6D1A68941D26BD0400C453FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1A689C1D26BD0400C453FD /* PBXTargetDependency */,
+			);
+			name = DigisquareUITests;
+			productName = DigisquareUITests;
+			productReference = 6D1A68961D26BD0400C453FD /* DigisquareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = GQTGCZC372;
 						SystemCapabilities = {
@@ -528,6 +501,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					6D1A68951D26BD0400C453FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -602,7 +579,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* digisquare */,
-				00E356ED1AD99517003FC87E /* digisquareTests */,
+				6D1A68951D26BD0400C453FD /* DigisquareUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -709,13 +686,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -729,6 +699,13 @@
 				D8F218BD903F4E63B4CE52DF /* MaterialIcons.ttf in Resources */,
 				09B4176741EF4B7CBE3B9EBB /* Octicons.ttf in Resources */,
 				7621BE9F141F40C8A18E5A13 /* Zocial.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1A68941D26BD0400C453FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,52 +755,7 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run $DIGISQUARE_FABRIC_API_KEY $DIGISQUARE_FABRIC_API_SECRET";
 		};
-		A01539386CEAC776CAE5CFAC /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A10005D6E551277D1379D4EF /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BB91365CAB9E0E7DC10785DA /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digisquareTests/Pods-digisquareTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDABC06DA31C046BBEE755EE /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -856,14 +788,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00E356EA1AD99517003FC87E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00E356F31AD99517003FC87E /* digisquareTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -873,62 +797,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D1A68921D26BD0400C453FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D63AFAA1D26F3AD00FA0E54 /* Events.swift in Sources */,
+				6D43F7B81D26D27700791D5C /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+		6D1A689C1D26BD0400C453FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* digisquare */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+			targetProxy = 6D1A689B1D26BD0400C453FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00E356F61AD99517003FC87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79F66719BE26D3E142D2755F /* Pods-digisquareTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = digisquareTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digisquare.app/digisquare";
-			};
-			name = Debug;
-		};
-		00E356F71AD99517003FC87E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 076B69EA4BA6D58378CAF3F0 /* Pods-digisquareTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = digisquareTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digisquare.app/digisquare";
-			};
-			name = Release;
-		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DBDCEB11D0616E500B4C8E5 /* Config.debug.xcconfig */;
@@ -994,6 +882,41 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare.app;
 				PRODUCT_NAME = Digisquare;
 				PROVISIONING_PROFILE = "1510e421-1331-4134-986e-e7df356576ed";
+			};
+			name = Release;
+		};
+		6D1A689E1D26BD0400C453FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = DigisquareUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare.DigisquareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1510e421-1331-4134-986e-e7df356576ed";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = digisquare;
+			};
+			name = Debug;
+		};
+		6D1A689F1D26BD0400C453FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = DigisquareUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.digisquare.DigisquareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1510e421-1331-4134-986e-e7df356576ed";
+				TEST_TARGET_NAME = digisquare;
 			};
 			name = Release;
 		};
@@ -1064,7 +987,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1091,20 +1014,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "digisquareTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00E356F61AD99517003FC87E /* Debug */,
-				00E356F71AD99517003FC87E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "digisquare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D1A689D1D26BD0400C453FD /* Build configuration list for PBXNativeTarget "DigisquareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D1A689E1D26BD0400C453FD /* Debug */,
+				6D1A689F1D26BD0400C453FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

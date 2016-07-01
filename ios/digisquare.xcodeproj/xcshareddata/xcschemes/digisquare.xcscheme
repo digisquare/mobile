@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "digisquareTests.xctest"
-               BlueprintName = "digisquareTests"
+               BlueprintIdentifier = "6D1A68951D26BD0400C453FD"
+               BuildableName = "DigisquareUITests.xctest"
+               BlueprintName = "DigisquareUITests"
                ReferencedContainer = "container:digisquare.xcodeproj">
             </BuildableReference>
          </TestableReference>

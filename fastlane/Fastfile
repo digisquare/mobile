@@ -1,6 +1,14 @@
 fastlane_version "1.96.0"
 
 platform :ios do
+  desc "Shoot the snaps"
+  lane :snap do
+    snapshot(
+      scheme: "digisquare",
+      project: './ios/digisquare.xcodeproj'
+    )
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
