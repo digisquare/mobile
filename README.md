@@ -1,6 +1,6 @@
 # Digisquare Mobile [![Build Status](https://travis-ci.org/digisquare/mobile.svg?branch=master)](https://travis-ci.org/digisquare/mobile)
 
-This is the mobile application for [Digisquare](https://digisquare.net), built using [React Native](https://facebook.github.io/react-native/).
+This is the mobile application for [Digisquare](https://digisquare.net), built using [React Native](https://facebook.github.io/react-native/), available on [Google Play](https://play.google.com/store/apps/details?id=net.digisquare.app) and the [App Store](https://itunes.apple.com/us/app/digisquare/id1129249292).
 
 It shares the same codebase for iOS and Android.
 
