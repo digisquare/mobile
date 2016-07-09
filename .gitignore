@@ -26,6 +26,7 @@ ios/main.jsbundle
 
 # Android/IJ
 #
+*.iml
 .idea
 .gradle
 *.iml
