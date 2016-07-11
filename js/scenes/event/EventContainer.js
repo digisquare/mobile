@@ -6,7 +6,7 @@ import DigiError from '../../common/DigiError';
 
 import Event from './Event';
 
-const findEvent = (eventId, events) => {
+export const findEvent = (eventId, events) => {
   for (let edition in events) {
     if (events.hasOwnProperty(edition) && events[edition].items) {
       for (let i = 0; i < events[edition].items.length; i++) {

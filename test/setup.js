@@ -1,8 +1,18 @@
+import 'core-js/fn/object/values';
 import 'react-native-mock/mock';
 
+import mockery from 'mockery';
 import fs from 'fs';
 import path from 'path';
 import register from 'babel-core/register';
+
+mockery.enable();
+mockery.warnOnUnregistered(false);
+mockery.registerMock('react-native-fabric', {
+  Crashlytics: {
+    crash: () => {},
+  },
+});
 
 const modulesToCompile = [
   'react-native',
