@@ -7,16 +7,14 @@ import DigiError from '../../common/DigiError';
 import Event from './Event';
 
 export const findEvent = (eventId, events) => {
-  for (let edition in events) {
-    if (events.hasOwnProperty(edition) && events[edition].items) {
-      for (let i = 0; i < events[edition].items.length; i++) {
-        if (parseInt(events[edition].items[i].Event.id, 10) === eventId) {
-          return events[edition].items[i];
-        }
-      }
-    }
-  }
-  return null;
+  return Object.values(events).map(edition => (
+    edition.items.filter(item => (
+      parseInt(item.Event.id, 10) === eventId)
+    )
+  )).reduce((previousValue, currentValue) => ({
+    ...previousValue,
+    ...currentValue[0],
+  }), {});
 }
 
 const EventContainer = class EventContainer extends Component {
