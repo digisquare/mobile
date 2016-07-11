@@ -30,8 +30,8 @@ describe('settings actions', () => {
 
   it('should call OneSignal to init existing notifications settings', () => {
     sinon.stub(OneSignal, 'getTags').yields({
-      Bordeaux: "true",
-      Montpellier: "false",
+      Bordeaux: 'true',
+      Montpellier: 'false',
     });
 
     const fakeDispatcher = (action) => action;
@@ -50,7 +50,7 @@ describe('settings actions', () => {
       settingsActions.toggleNotification(edition, true)
     ).to.deep.equal({
       type: settingsActions.TOGGLE_NOTIFICATION,
-      edition: edition,
+      edition,
       value: true,
     });
   });

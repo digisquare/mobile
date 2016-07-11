@@ -4,7 +4,7 @@ import * as editionsActions from '../actions/editions.js';
 
 export const initialState = {
   selectedEdition: 9,
-  items: List([
+  items: new List([
     {
       id: 9,
       name: 'Bordeaux',
@@ -26,12 +26,12 @@ export const initialState = {
 
 export default function edition(state = initialState, action) {
   switch (action.type) {
-  case editionsActions.SELECT_EDITION:
-    return {
-      ...state,
-      selectedEdition: action.edition,
-    };
-  default:
-    return state;
+    case editionsActions.SELECT_EDITION:
+      return {
+        ...state,
+        selectedEdition: action.edition,
+      };
+    default:
+      return state;
   }
 }

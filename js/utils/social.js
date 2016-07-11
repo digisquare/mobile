@@ -1,26 +1,32 @@
 import React from 'react';
-import { View, Linking } from 'react-native';
+import { View, Linking, StyleSheet } from 'react-native';
 import { Button } from 'react-native-vector-icons/FontAwesome';
 
 const colors = {
   facebook: '#3b5998',
   twitter: '#55acee',
-}
+};
 
 const urls = {
   facebook: 'https://www.facebook.com/',
   twitter: 'https://twitter.com/',
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    marginRight: 10,
+  },
+});
 
 export const socialBadge = (network, contacts) => {
-	if (!contacts[network]) {
+  if (!contacts[network]) {
     return <View />;
   }
 
   const username = contacts[network];
 
   return (
-    <View style={{marginRight: 10}}>
+    <View style={styles.container}>
       <Button
         name={network}
         padding={2}
@@ -34,4 +40,4 @@ export const socialBadge = (network, contacts) => {
       </Button>
     </View>
   );
-}
+};

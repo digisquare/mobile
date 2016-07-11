@@ -3,15 +3,31 @@ import { BackAndroid, Navigator, StyleSheet } from 'react-native';
 
 import DigiDrawerLayout from './common/DigiDrawerLayout';
 import DigiMainDrawer from './common/DigiMainDrawer';
+import DigiColors from './common/DigiColors';
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: DigiColors.primaryBackgroundColor,
+  },
+});
 
 export default class DigiNavigator extends Component {
   constructor(props) {
     super(props);
-    this._handlers = [];
+    this.handlers = [];
     this.handleBackButton = this.handleBackButton.bind(this);
     this.addBackButtonListener = this.addBackButtonListener.bind(this);
     this.removeBackButtonListener = this.removeBackButtonListener.bind(this);
     this.openMainDrawer = this.openMainDrawer.bind(this);
+  }
+
+  getChildContext() {
+    return {
+      addBackButtonListener: this.addBackButtonListener,
+      removeBackButtonListener: this.removeBackButtonListener,
+    };
   }
 
   componentDidMount() {
@@ -22,24 +38,17 @@ export default class DigiNavigator extends Component {
     BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
-  getChildContext() {
-    return {
-      addBackButtonListener: this.addBackButtonListener,
-      removeBackButtonListener: this.removeBackButtonListener,
-    };
-  }
-
   addBackButtonListener(listener) {
-    this._handlers.push(listener);
+    this.handlers.push(listener);
   }
 
   removeBackButtonListener(listener) {
-    this._handlers = this._handlers.filter(handler => handler !== listener);
+    this.handlers = this.handlers.filter(handler => handler !== listener);
   }
 
   handleBackButton() {
-    for (let i = this._handlers.length - 1; i >= 0; i--) {
-      if (this._handlers[i]()) {
+    for (let i = this.handlers.length - 1; i >= 0; i--) {
+      if (this.handlers[i]()) {
         return true;
       }
     }
@@ -54,6 +63,12 @@ export default class DigiNavigator extends Component {
     return false;
   }
 
+  openMainDrawer() {
+    if (this.drawer) {
+      this.drawer.openDrawer();
+    }
+  }
+
   render() {
     return (
       <Navigator
@@ -66,7 +81,7 @@ export default class DigiNavigator extends Component {
             const RouteComponent = route.component;
             return (
               <DigiDrawerLayout
-                ref={ref => this.drawer = ref}
+                ref={ref => { this.drawer = ref; }}
                 content={
                   <DigiMainDrawer
                     navigator={navigator}
@@ -81,23 +96,13 @@ export default class DigiNavigator extends Component {
               </DigiDrawerLayout>
             );
           }
+          return null;
         }}
       />
     );
   }
 
-  openMainDrawer() {
-    this.drawer && this.drawer.openDrawer();
-  }
-
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-});
 
 DigiNavigator.childContextTypes = {
   addBackButtonListener: React.PropTypes.func,

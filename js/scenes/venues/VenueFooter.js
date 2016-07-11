@@ -4,8 +4,37 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment/min/moment-with-locales';
 
 import DigiTouchable from '../../common/DigiTouchable';
+import DigiColors from '../../common/DigiColors';
 
 moment.locale('fr');
+
+const styles = StyleSheet.create({
+  venue: {
+    backgroundColor: DigiColors.invertedBackgroundColor,
+    flex: 1,
+    flexDirection: 'row',
+  },
+  venueDirections: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 60,
+  },
+  venueLocation: {
+    paddingLeft: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  venueName: {
+    fontWeight: '500',
+    color: DigiColors.invertedFontColor,
+  },
+  venueAddress: {
+    color: DigiColors.invertedFontColor,
+  },
+  venueLastLine: {
+    color: DigiColors.invertedFontColor,
+  },
+});
 
 const goToMap = oneliner => {
   const mapsURL = Platform.OS === 'ios' ? (
@@ -14,7 +43,7 @@ const goToMap = oneliner => {
     'https://maps.google.com?q='
   );
   Linking.openURL(mapsURL + oneliner);
-}
+};
 
 export default function VenueFooter({ venue }) {
   return (
@@ -32,11 +61,7 @@ export default function VenueFooter({ venue }) {
               {venue.address}
             </Text>
             <Text style={styles.venueLastLine}>
-              {
-                venue.zipcode
-                + ' ' +
-                venue.city
-              }
+              {`${venue.zipcode} ${venue.city}`}
             </Text>
           </View>
         </View>
@@ -44,34 +69,6 @@ export default function VenueFooter({ venue }) {
     </DigiTouchable>
   );
 }
-
-const styles = StyleSheet.create({
-  venue: {
-    backgroundColor: 'black',
-    flex: 1,
-    flexDirection: 'row',
-  },
-  venueDirections: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 60,
-  },
-  venueLocation: {
-    paddingLeft: 10,
-    paddingTop: 5,
-    paddingBottom: 5,
-  },
-  venueName: {
-    fontWeight: '500',
-    color: 'white',
-  },
-  venueAddress: {
-    color: 'white',
-  },
-  venueLastLine: {
-    color: 'white',
-  },
-});
 
 VenueFooter.propTypes = {
   venue: PropTypes.object.isRequired,

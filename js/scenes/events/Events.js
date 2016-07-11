@@ -11,6 +11,12 @@ import DigiHeader from '../../common/DigiHeader';
 import EventsListView from './EventsListView';
 import EventContainer from '../event/EventContainer';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 const Events = class Events extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +57,7 @@ const Events = class Events extends Component {
           },
         });
       }
+      return null;
     }).catch(() => null);
   }
 
@@ -92,12 +99,14 @@ const Events = class Events extends Component {
           dataBlob[sectionID] = [];
         }
         dataBlob[sectionID].push(item);
+        return null;
       });
       return this.setState({
         dataSource: dataSource.cloneWithRowsAndSections(dataBlob),
         error: false,
       });
     }
+    return null;
   }
 
   onRefresh() {
@@ -110,7 +119,7 @@ const Events = class Events extends Component {
 
   render() {
     const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
-    const edition = items.find(edition => edition.id === selectedEdition);
+    const edition = items.find(e => e.id === selectedEdition);
     const { dataSource, refreshing, error } = this.state;
     return (
       <View style={styles.container}>
@@ -131,13 +140,7 @@ const Events = class Events extends Component {
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 Events.propTypes = {
   navigator: PropTypes.object.isRequired,
@@ -147,19 +150,15 @@ Events.propTypes = {
   events: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    editions: state.editions,
-    events: state.events,
-  }
-}
+const mapStateToProps = (state) => ({
+  editions: state.editions,
+  events: state.events,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchEvents: (selectedEdition) => {
-      dispatch(fetchEvents(selectedEdition));
-    },
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  onFetchEvents: (selectedEdition) => {
+    dispatch(fetchEvents(selectedEdition));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Events);

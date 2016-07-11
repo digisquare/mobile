@@ -8,6 +8,13 @@ import { initNotifications } from './actions/settings.js';
 
 import DigiNavigator from './DigiNavigator';
 import Events from './scenes/events/Events';
+import DigiColors from './common/DigiColors';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default class DigiApp extends Component {
   constructor() {
@@ -20,7 +27,7 @@ export default class DigiApp extends Component {
       <Provider store={store}>
         <View style={styles.container}>
           <StatusBar
-            backgroundColor="black"
+            backgroundColor={DigiColors.invertedBackgroundColor}
             barStyle="light-content"
           />
           <DigiNavigator
@@ -34,9 +41,3 @@ export default class DigiApp extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

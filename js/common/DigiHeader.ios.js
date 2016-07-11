@@ -1,53 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-export default class DigiHeader extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { leftItem, rightItem, title } = this.props;
-
-    return (
-      <View style={styles.header}>
-        <View style={styles.leftItem}>
-          {
-            leftItem ? (
-              <TouchableOpacity
-                onPress={leftItem.onPress}
-                style={styles.itemWrapper}
-              >
-                <Image source={leftItem.icon} />
-              </TouchableOpacity>
-            ) : null
-          }
-        </View>
-        <View style={styles.centerItem}>
-          <Text style={styles.titleText}>
-            {title}
-          </Text>
-        </View>
-        <View style={styles.rightItem}>
-          {
-            rightItem ? (
-              <TouchableOpacity
-                onPress={rightItem.onPress}
-                style={styles.itemWrapper}
-              >
-                <Image source={rightItem.icon} />
-              </TouchableOpacity>
-            ) : null
-          }
-        </View>
-      </View>
-    );
-  }
-}
+import DigiColors from './DigiColors';
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'black',
+    backgroundColor: DigiColors.invertedBackgroundColor,
     paddingTop: 20,
     height: 64,
     flexDirection: 'row',
@@ -55,7 +13,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleText: {
-    color: 'white',
+    color: DigiColors.invertedFontColor,
     fontWeight: 'bold',
     fontSize: 20,
   },
@@ -76,8 +34,44 @@ const styles = StyleSheet.create({
   },
 });
 
+const DigiHeader = ({ leftItem, rightItem, title }) => (
+  <View style={styles.header}>
+    <View style={styles.leftItem}>
+      {
+        leftItem ? (
+          <TouchableOpacity
+            onPress={leftItem.onPress}
+            style={styles.itemWrapper}
+          >
+            <Image source={leftItem.icon} />
+          </TouchableOpacity>
+        ) : null
+      }
+    </View>
+    <View style={styles.centerItem}>
+      <Text style={styles.titleText}>
+        {title}
+      </Text>
+    </View>
+    <View style={styles.rightItem}>
+      {
+        rightItem ? (
+          <TouchableOpacity
+            onPress={rightItem.onPress}
+            style={styles.itemWrapper}
+          >
+            <Image source={rightItem.icon} />
+          </TouchableOpacity>
+        ) : null
+      }
+    </View>
+  </View>
+);
+
 DigiHeader.propTypes = {
   title: PropTypes.string.isRequired,
   leftItem: PropTypes.object,
   rightItem: PropTypes.object,
 };
+
+export default DigiHeader;

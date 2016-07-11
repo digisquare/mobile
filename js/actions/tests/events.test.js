@@ -74,7 +74,7 @@ describe('events actions', () => {
         expect(lastCalledAction.type).to.equal('FETCH_EVENTS_SUCCESS');
         expect(lastCalledAction.events).to.deep.equal(json.events);
         done();
-      } catch(e) {
+      } catch (e) {
         done(e);
       }
     });
@@ -95,10 +95,9 @@ describe('events actions', () => {
         expect(lastCalledAction.type).to.equal('FETCH_EVENTS_FAILURE');
         expect(lastCalledAction.error).to.equal(error);
         done();
-      } catch(e) {
+      } catch (e) {
         done(e);
       }
     });
   });
-
 });

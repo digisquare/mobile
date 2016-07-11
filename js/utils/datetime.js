@@ -26,15 +26,15 @@ export const datetime = (startAt, endAt) => {
 
   // SAME DAY EVENTS
   if (start.isSame(endAt, 'day')) {
-    if (start.format('mm') == '00' && end.format('mm') == '00') {
+    if (start.format('mm') === '00' && end.format('mm') === '00') {
       // lundi 1 janvier 2016 de 9h à 18h
       return `${start.format('dddd D MMMM YYYY [de] H[h]')} à ${end.format('H[h]')}`;
     }
-    if (start.format('mm') == '00') {
+    if (start.format('mm') === '00') {
       // lundi 1 janvier 2016 de 9h à 18h30
       return `${start.format('dddd D MMMM YYYY [de] H[h]')} à ${end.format('H[h]mm')}`;
     }
-    if (end.format('mm') == '00') {
+    if (end.format('mm') === '00') {
       // lundi 1 janvier 2016 de 9h30 à 18h
       return `${start.format('dddd D MMMM YYYY [de] H[h]mm')} à ${end.format('H[h]')}`;
     }
@@ -42,17 +42,17 @@ export const datetime = (startAt, endAt) => {
     return `${start.format('dddd D MMMM YYYY [de] H[h]mm')} à ${end.format('H[h]mm')}`;
   }
 
-  if (start.format('mm') == '00' && end.format('mm') == '00') {
+  if (start.format('mm') === '00' && end.format('mm') === '00') {
     // du lundi 1 janvier 2016 à 9h au lundi 1 janvier 2017 à 18h
     return `du ${start.format('dddd D MMMM YYYY [à] H[h]')}
 au ${end.format('dddd D MMMM YYYY [à] H[h]')}`;
   }
-  if (start.format('mm') == '00') {
+  if (start.format('mm') === '00') {
     // du lundi 1 janvier 2016 à 9h au lundi 1 janvier 2017 à 18h30
     return `du ${start.format('dddd D MMMM YYYY [à] H[h]')}
 au ${end.format('dddd D MMMM YYYY [à] H[h]mm')}`;
   }
-  if (end.format('mm') == '00') {
+  if (end.format('mm') === '00') {
     // du lundi 1 janvier 2016 à 9h30 au lundi 1 janvier 2017 à 18h
     return `du ${start.format('dddd D MMMM YYYY [à] H[h]mm')}
 au ${end.format('dddd D MMMM YYYY [à] H[h]')}`;
@@ -60,4 +60,4 @@ au ${end.format('dddd D MMMM YYYY [à] H[h]')}`;
   // du lundi 1 janvier 2016 à 9h30 au lundi 1 janvier 2017 à 18h30
   return `du ${start.format('dddd D MMMM YYYY [à] H[h]mm')}
 au ${end.format('dddd D MMMM YYYY [à] H[h]mm')}`;
-}
+};

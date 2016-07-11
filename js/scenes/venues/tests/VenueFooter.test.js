@@ -37,7 +37,7 @@ describe('<VenueFooter />', () => {
 
   it('should open map on click', () => {
     const onComponentPress = sinon.spy(Linking, 'openURL');
-    
+
     const component = shallow(
       <VenueFooter
         venue={venue}

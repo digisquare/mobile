@@ -1,6 +1,18 @@
 import React, { PropTypes } from 'react';
 import { ScrollView, Image, Text, StyleSheet } from 'react-native';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  tumbeast: {
+    width: 200,
+    height: 200,
+  },
+});
+
 export default function DigiError({ refreshControl, image, text }) {
   return (
     <ScrollView
@@ -15,18 +27,6 @@ export default function DigiError({ refreshControl, image, text }) {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  tumbeast: {
-    width: 200,
-    height: 200,
-  },
-});
 
 DigiError.propTypes = {
   refreshControl: PropTypes.node,

@@ -1,51 +1,16 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 import { toggleNotification } from '../../actions/settings.js';
 
 import DigiHeader from '../../common/DigiHeader';
-
-const Notifications = ({ navigator, onToggleNotification, editions, notifications }) => {
-  return (
-    <View style={styles.container}>
-      <DigiHeader
-        title="Notifications"
-        leftItem={{
-          icon: require('../../common/img/back_white.png'),
-          onPress: () => navigator.pop(),
-        }}
-      />
-      <View>
-        {
-          editions.items.map(edition => {
-            const value = notifications[edition.name] || false;
-            return (
-              <View key={edition.id} style={styles.editionContainer}>
-                <View style={styles.nameContainer}>
-                  <Text style={styles.editionName}>
-                    {edition.name}
-                  </Text>
-                </View>
-                <View style={styles.switchContainer}>
-                  <Switch
-                    onValueChange={value => onToggleNotification(edition.name, value)}
-                    value={value}
-                  />
-                </View>
-              </View>
-            );
-          })
-        }
-      </View>
-    </View>
-  );
-}
+import DigiColors from '../../common/DigiColors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: DigiColors.primaryBackgroundColor,
   },
   editionContainer: {
     flex: 1,
@@ -61,13 +26,47 @@ const styles = StyleSheet.create({
   editionName: {
     fontSize: 18,
     fontWeight: '900',
-    color: 'grey',
+    color: DigiColors.secondaryFontColor,
   },
   switchContainer: {
     paddingTop: 15,
     paddingRight: 30,
   },
 });
+
+const Notifications = ({ navigator, onToggleNotification, editions, notifications }) => (
+  <View style={styles.container}>
+    <DigiHeader
+      title="Notifications"
+      leftItem={{
+        icon: require('../../common/img/back_white.png'),
+        onPress: () => navigator.pop(),
+      }}
+    />
+    <View>
+      {
+        editions.items.map(edition => {
+          const value = notifications[edition.name] || false;
+          return (
+            <View key={edition.id} style={styles.editionContainer}>
+              <View style={styles.nameContainer}>
+                <Text style={styles.editionName}>
+                  {edition.name}
+                </Text>
+              </View>
+              <View style={styles.switchContainer}>
+                <Switch
+                  onValueChange={v => onToggleNotification(edition.name, v)}
+                  value={value}
+                />
+              </View>
+            </View>
+          );
+        })
+      }
+    </View>
+  </View>
+);
 
 Notifications.propTypes = {
   navigator: PropTypes.object.isRequired,
@@ -76,19 +75,15 @@ Notifications.propTypes = {
   notifications: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    editions: state.editions,
-    notifications: state.settings.notifications,
-  }
-}
+const mapStateToProps = (state) => ({
+  editions: state.editions,
+  notifications: state.settings.notifications,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onToggleNotification: (name, value) => {
-      dispatch(toggleNotification(name, value));
-    },
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  onToggleNotification: (name, value) => {
+    dispatch(toggleNotification(name, value));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notifications);

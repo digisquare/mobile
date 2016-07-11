@@ -7,21 +7,58 @@ import HTMLView from 'react-native-htmlview';
 import { socialBadge } from '../../utils/social.js';
 
 import DigiHeader from '../../common/DigiHeader';
+import DigiColors from '../../common/DigiColors';
 import VenueFooter from '../venues/VenueFooter';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: DigiColors.primaryBackgroundColor,
+  },
+  scrollview: {
+    flex: 1,
+  },
+  organization: {
+    padding: 10,
+  },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  avatarContainer: {
+    marginRight: 20,
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: '900',
+    color: DigiColors.primaryFontColor,
+    marginTop: 10,
+  },
+  social: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+});
+
 const Organization = ({ navigator, organization, organizations }) => {
-  const { edition_id, venue_id } = organization.Organization;
-  if (edition_id && organizations[edition_id]) {
-    const organizationsItems = organizations[edition_id].items;
-    if (venue_id && !organization.Venue && organizationsItems.length > 0) {
-      const venue = organizationsItems.find(item => item.Venue.id === venue_id);
-      organization.Venue = venue ? venue.Venue : null;
+  const { edition_id: editionId, venue_id: venueId } = organization.Organization;
+  if (editionId && organizations[editionId]) {
+    const organizationsItems = organizations[editionId].items;
+    if (venueId && !organization.Venue && organizationsItems.length > 0) {
+      const venue = organizationsItems.find(item => item.Venue.id === venueId);
+      organization.Venue = venue ? venue.Venue : null; // eslint-disable-line no-param-reassign
     }
   }
   const rightItem = organization.Organization.Contacts.website ? {
     icon: require('../../common/img/website.png'),
     onPress: () => Linking.openURL(organization.Organization.Contacts.website),
-    title: "website",
+    title: 'website',
   } : null;
   return (
     <View style={styles.container}>
@@ -41,7 +78,7 @@ const Organization = ({ navigator, organization, organizations }) => {
                 <View style={styles.avatarContainer}>
                   <Image
                     style={styles.avatar}
-                    source={{uri: organization.Organization.avatar}}
+                    source={{ uri: organization.Organization.avatar }}
                   />
                 </View>
               ) : null
@@ -71,43 +108,7 @@ const Organization = ({ navigator, organization, organizations }) => {
       }
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  scrollview: {
-    flex: 1,
-  },
-  organization: {
-    padding: 10,
-  },
-  header: {
-    flex: 1,
-    flexDirection: 'row',
-    marginBottom: 20,
-  },
-  avatarContainer: {
-    marginRight: 20,
-  },
-  avatar: {
-    width: 80,
-    height: 80,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: '900',
-    color: 'black',
-    marginTop: 10,
-  },
-  social: {
-    flex: 1,
-    flexDirection: 'row',
-    marginTop: 10,
-  },
-});
+};
 
 Organization.propTypes = {
   navigator: PropTypes.object.isRequired,
@@ -115,10 +116,8 @@ Organization.propTypes = {
   organizations: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    organizations: state.organizations,
-  }
-}
+const mapStateToProps = (state) => ({
+  organizations: state.organizations,
+});
 
 export default connect(mapStateToProps)(Organization);

@@ -35,7 +35,7 @@ describe('organizations reducer', () => {
         type: organizationsActions.FETCH_ORGANIZATIONS_SUCCESS,
         edition: 9,
         organizations: [fetchedOrganizations],
-        receivedAt: receivedAt,
+        receivedAt,
       })
     ).to.deep.equal({
       9: {
@@ -54,13 +54,13 @@ describe('organizations reducer', () => {
       organizations([], {
         type: organizationsActions.FETCH_ORGANIZATIONS_FAILURE,
         edition: 9,
-        error: error,
-        receivedAt: receivedAt,
+        error,
+        receivedAt,
       })
     ).to.deep.equal({
       9: {
         isFetching: false,
-        error: error,
+        error,
         items: [],
         lastUpdated: receivedAt,
       },

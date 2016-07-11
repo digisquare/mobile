@@ -8,16 +8,16 @@ describe('<EventContainer />', () => {
     const events = {
       9: {
         items: [
-          { 'Event': { id: 41 } },
-          { 'Event': { id: eventId } },
-          { 'Event': { id: 43 } },
+          { Event: { id: 41 } },
+          { Event: { id: eventId } },
+          { Event: { id: 43 } },
         ],
       },
       10: {
         items: [
-          { 'Event': { id: 44 } },
-          { 'Event': { id: 45 } },
-          { 'Event': { id: 46 } },
+          { Event: { id: 44 } },
+          { Event: { id: 45 } },
+          { Event: { id: 46 } },
         ],
       },
     };

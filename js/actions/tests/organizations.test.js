@@ -21,13 +21,21 @@ describe('organizations actions', () => {
   });
 
   it('should create an action on fetch organizations success', () => {
-    const lastCalledAction = organizationsActions.fetchOrganizationsSuccess(edition, json, receivedAt);
+    const lastCalledAction = organizationsActions.fetchOrganizationsSuccess(
+      edition,
+      json,
+      receivedAt
+    );
     expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_SUCCESS');
     expect(lastCalledAction.organizations).to.deep.equal(json.organizations);
   });
 
   it('should create an action on fetch organizations error', () => {
-    const lastCalledAction = organizationsActions.fetchOrganizationsFailure(edition, error, receivedAt);
+    const lastCalledAction = organizationsActions.fetchOrganizationsFailure(
+      edition,
+      error,
+      receivedAt
+    );
     expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_FAILURE');
     expect(lastCalledAction.error).to.equal(error);
   });
@@ -74,7 +82,7 @@ describe('organizations actions', () => {
         expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_SUCCESS');
         expect(lastCalledAction.organizations).to.deep.equal(json.organizations);
         done();
-      } catch(e) {
+      } catch (e) {
         done(e);
       }
     });
@@ -95,10 +103,9 @@ describe('organizations actions', () => {
         expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_FAILURE');
         expect(lastCalledAction.error).to.equal(error);
         done();
-      } catch(e) {
+      } catch (e) {
         done(e);
       }
     });
   });
-
 });

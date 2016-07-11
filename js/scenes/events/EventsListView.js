@@ -3,14 +3,53 @@ import { ListView, RefreshControl, View, Text, StyleSheet } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 
 import DigiError from '../../common/DigiError';
+import DigiColors from '../../common/DigiColors';
 
 import EventsRow from './EventsRow';
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomColor: DigiColors.borderColor,
+    borderBottomWidth: 0.5,
+    marginLeft: 10,
+    marginRight: 10,
+    backgroundColor: DigiColors.primaryBackgroundColor,
+  },
+  header: {
+    color: DigiColors.primaryFontColor,
+    fontWeight: '900',
+    fontSize: 18,
+  },
+});
 
 export default class EventsListView extends Component {
   constructor(props) {
     super(props);
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderEventsRow = this.renderEventsRow.bind(this);
+  }
+
+  renderSectionHeader(sectionData) {
+    const date = moment(sectionData[0].Event.start_at);
+    return (
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>
+          {date.format('dddd Do MMMM')}
+        </Text>
+      </View>
+    );
+  }
+
+  renderEventsRow(event, sectionID, rowID) {
+    return (
+      <EventsRow
+        rowID={`${sectionID}-${rowID}`}
+        navigator={this.props.navigator}
+        event={event}
+      />
+    );
   }
 
   render() {
@@ -52,45 +91,7 @@ export default class EventsListView extends Component {
       />
     );
   }
-
-  renderSectionHeader(sectionData) {
-    const date = moment(sectionData[0]['Event']['start_at']);
-    return (
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>
-          {date.format('dddd Do MMMM')}
-        </Text>
-      </View>
-    );
-  }
-
-  renderEventsRow(event, sectionID, rowID) {
-    return (
-      <EventsRow
-        rowID={`${sectionID}-${rowID}`}
-        navigator={this.props.navigator}
-        event={event}
-      />
-    );
-  }
 }
-
-const styles = StyleSheet.create({
-  headerContainer: {
-    paddingTop: 10,
-    paddingBottom: 10,
-    borderBottomColor : 'grey',
-    borderBottomWidth: 0.5,
-    marginLeft: 10,
-    marginRight: 10,
-    backgroundColor: 'white',
-  },
-  header: {
-    color: 'black',
-    fontWeight: '900',
-    fontSize: 18,
-  },
-});
 
 EventsListView.propTypes = {
   navigator: PropTypes.object.isRequired,

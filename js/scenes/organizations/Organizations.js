@@ -9,6 +9,12 @@ import DigiHeader from '../../common/DigiHeader';
 
 import OrganizationsListView from './OrganizationsListView';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 const Organizations = class Organizations extends Component {
   constructor(props) {
     super(props);
@@ -65,6 +71,7 @@ const Organizations = class Organizations extends Component {
         error: false,
       });
     }
+    return null;
   }
 
   onRefresh() {
@@ -77,7 +84,7 @@ const Organizations = class Organizations extends Component {
 
   render() {
     const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
-    const edition = items.find(edition => edition.id === selectedEdition);
+    const edition = items.find(e => e.id === selectedEdition);
     const { dataSource, refreshing, error } = this.state;
     return (
       <View style={styles.container}>
@@ -98,13 +105,7 @@ const Organizations = class Organizations extends Component {
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 Organizations.propTypes = {
   navigator: PropTypes.object.isRequired,
@@ -114,19 +115,15 @@ Organizations.propTypes = {
   organizations: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    editions: state.editions,
-    organizations: state.organizations,
-  }
-}
+const mapStateToProps = (state) => ({
+  editions: state.editions,
+  organizations: state.organizations,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchOrganizations: (selectedEdition) => {
-      dispatch(fetchOrganizations(selectedEdition));
-    },
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  onFetchOrganizations: (selectedEdition) => {
+    dispatch(fetchOrganizations(selectedEdition));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Organizations);

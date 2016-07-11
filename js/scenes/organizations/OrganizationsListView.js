@@ -11,6 +11,15 @@ export default class OrganizationsListView extends Component {
     this.renderOrganizationsRow = this.renderOrganizationsRow.bind(this);
   }
 
+  renderOrganizationsRow(organization) {
+    return (
+      <OrganizationsRow
+        navigator={this.props.navigator}
+        organization={organization}
+      />
+    );
+  }
+
   render() {
     const { dataSource, error, refreshing, onRefresh } = this.props;
     const refreshControl = (
@@ -48,16 +57,6 @@ export default class OrganizationsListView extends Component {
       />
     );
   }
-
-  renderOrganizationsRow(organization) {
-    return (
-      <OrganizationsRow
-        navigator={this.props.navigator}
-        organization={organization}
-      />
-    );
-  }
-
 }
 
 OrganizationsListView.propTypes = {

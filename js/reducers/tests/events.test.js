@@ -35,7 +35,7 @@ describe('events reducer', () => {
         type: eventsActions.FETCH_EVENTS_SUCCESS,
         edition: 9,
         events: [fetchedEvents],
-        receivedAt: receivedAt,
+        receivedAt,
       })
     ).to.deep.equal({
       9: {
@@ -54,13 +54,13 @@ describe('events reducer', () => {
       events([], {
         type: eventsActions.FETCH_EVENTS_FAILURE,
         edition: 9,
-        error: error,
-        receivedAt: receivedAt,
+        error,
+        receivedAt,
       })
     ).to.deep.equal({
       9: {
         isFetching: false,
-        error: error,
+        error,
         items: [],
         lastUpdated: receivedAt,
       },

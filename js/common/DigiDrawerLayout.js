@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import Drawer from 'react-native-drawer'
+import Drawer from 'react-native-drawer';
+
+import DigiColors from './DigiColors';
 
 export default class DigiDrawerLayout extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this._drawer = null;
+    this.drawer = null;
     this.openDrawer = this.openDrawer.bind(this);
     this.closeDrawer = this.closeDrawer.bind(this);
     this.onDrawerOpen = this.onDrawerOpen.bind(this);
@@ -13,35 +15,23 @@ export default class DigiDrawerLayout extends Component {
     this.handleBackButton = this.handleBackButton.bind(this);
   }
 
-  render() {
-    const { ...props } = this.props;
-    return (
-      <Drawer
-        ref={(drawer) => this._drawer = drawer}
-        type="overlay"
-        openDrawerOffset={0.2}
-        panOpenMask={0.2}
-        panCloseMask={0.99}
-        negotiatePan={true}
-        captureGestures={false}
-        tweenHandler={(ratio) => {
-          return {
-            mainOverlay: {
-              opacity: 0.7 * ratio,
-              backgroundColor: 'black',
-            },
-          }
-        }}
-        {...props}
-        onOpen={this.onDrawerOpen}
-        onClose={this.onDrawerClose}
-      />
-    );
-  }
-
   componentWillUnmount() {
     this.context.removeBackButtonListener(this.handleBackButton);
-    this._drawer = null;
+    this.drawer = null;
+  }
+
+  onDrawerOpen() {
+    this.context.addBackButtonListener(this.handleBackButton);
+    if (this.props.onDrawerOpen) {
+      this.props.onDrawerOpen();
+    }
+  }
+
+  onDrawerClose() {
+    this.context.removeBackButtonListener(this.handleBackButton);
+    if (this.props.onDrawerClose) {
+      this.props.onDrawerClose();
+    }
   }
 
   handleBackButton() {
@@ -49,22 +39,40 @@ export default class DigiDrawerLayout extends Component {
     return true;
   }
 
-  onDrawerOpen() {
-    this.context.addBackButtonListener(this.handleBackButton);
-    this.props.onDrawerOpen && this.props.onDrawerOpen();
-  }
-
-  onDrawerClose() {
-    this.context.removeBackButtonListener(this.handleBackButton);
-    this.props.onDrawerClose && this.props.onDrawerClose();
-  }
-
   closeDrawer() {
-    this._drawer && this._drawer.close();
+    if (this.drawer) {
+      this.drawer.close();
+    }
   }
 
   openDrawer() {
-    this._drawer && this._drawer.open();
+    if (this.drawer) {
+      this.drawer.open();
+    }
+  }
+
+  render() {
+    const { ...props } = this.props;
+    return (
+      <Drawer
+        ref={(drawer) => { this.drawer = drawer; }}
+        type="overlay"
+        openDrawerOffset={0.2}
+        panOpenMask={0.2}
+        panCloseMask={0.99}
+        negotiatePan
+        captureGestures={false}
+        tweenHandler={(ratio) => ({
+          mainOverlay: {
+            opacity: 0.7 * ratio,
+            backgroundColor: DigiColors.invertedBackgroundColor,
+          },
+        })}
+        {...props}
+        onOpen={this.onDrawerOpen}
+        onClose={this.onDrawerClose}
+      />
+    );
   }
 }
 

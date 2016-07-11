@@ -6,16 +6,16 @@ import DigiError from '../../common/DigiError';
 
 import Event from './Event';
 
-export const findEvent = (eventId, events) => {
-  return Object.values(events).map(edition => (
+export const findEvent = (eventId, events) => (
+  Object.values(events).map(edition => (
     edition.items.filter(item => (
       parseInt(item.Event.id, 10) === eventId)
     )
   )).reduce((previousValue, currentValue) => ({
     ...previousValue,
     ...currentValue[0],
-  }), {});
-}
+  }), {})
+);
 
 const EventContainer = class EventContainer extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ const EventContainer = class EventContainer extends Component {
 
     const refreshControl = (
       <RefreshControl
-        refreshing={true}
+        refreshing
         onRefresh={() => null}
       />
     );
@@ -73,7 +73,7 @@ const EventContainer = class EventContainer extends Component {
       />
     );
   }
-}
+};
 
 EventContainer.propTypes = {
   navigator: PropTypes.object.isRequired,
@@ -81,10 +81,8 @@ EventContainer.propTypes = {
   eventId: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    events: state.events,
-  }
-}
+const mapStateToProps = (state) => ({
+  events: state.events,
+});
 
 export default connect(mapStateToProps)(EventContainer);
