@@ -65,7 +65,7 @@ describe('events actions', () => {
       lastCalledAction = action;
     };
 
-    fetchMock.mock(eventsUrlRegex, 'GET', json);
+    fetchMock.mock(eventsUrlRegex, json);
 
     const next = eventsActions.fetchEvents(edition);
 

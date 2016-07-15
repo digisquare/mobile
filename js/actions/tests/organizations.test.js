@@ -73,7 +73,7 @@ describe('organizations actions', () => {
       lastCalledAction = action;
     };
 
-    fetchMock.mock(organizationsUrlRegex, 'GET', json);
+    fetchMock.mock(organizationsUrlRegex, json);
 
     const next = organizationsActions.fetchOrganizations(edition);
 
