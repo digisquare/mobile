@@ -53,10 +53,8 @@ export default class DigiNavigator extends Component {
       }
     }
 
-    const { navigator } = this.refs;
-
-    if (navigator && navigator.getCurrentRoutes().length > 1) {
-      navigator.pop();
+    if (this.navigator && this.navigator.getCurrentRoutes().length > 1) {
+      this.navigator.pop();
       return true;
     }
 
@@ -72,7 +70,7 @@ export default class DigiNavigator extends Component {
   render() {
     return (
       <Navigator
-        ref="navigator"
+        ref={ref => { this.navigator = ref; }}
         style={styles.container}
         configureScene={() => Navigator.SceneConfigs.PushFromRight}
         initialRoute={this.props.initialRoute}

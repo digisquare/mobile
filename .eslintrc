@@ -43,5 +43,7 @@
     "react-native/no-color-literals": 2,
     "import/no-unresolved": [2, { ignore: ['\.png$'] }],
     "global-require": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-extraneous-dependencies": 0,
   }
 }

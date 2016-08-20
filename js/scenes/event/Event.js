@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';
 
-import { datetime } from '../../utils/datetime.js';
+import datetime from '../../utils/datetime.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';

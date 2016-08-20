@@ -17,7 +17,6 @@
     "react-native-drawer": "^2.2.3",
     "react-native-fabric": "^0.3.0",
     "react-native-htmlview": "^0.5.0",
-    "react-native-maps": "^0.5.0",
     "react-native-onesignal": "^1.1.1",
     "react-native-vector-icons": "^2.0.0",
     "react-redux": "^4.4.5",
@@ -25,7 +24,7 @@
     "redux-logger": "^2.6.1",
     "redux-persist": "^3.0.3",
     "redux-thunk": "^2.0.1",
-    "remote-redux-devtools": "^0.3.2"
+    "remote-redux-devtools": "^0.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.3",
@@ -35,11 +34,11 @@
     "core-js": "^2.4.0",
     "enzyme": "^2.3.0",
     "eslint": "^3.0.1",
-    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-airbnb": "^10.0.1",
     "eslint-config-defaults": "^10.0.0-alpha.1",
     "eslint-plugin-import": "^1.10.2",
     "eslint-plugin-jsx-a11y": "^2.0.1",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react": "^6.1.2",
     "eslint-plugin-react-native": "^2.0.0",
     "fetch-mock": "^5.0.0",
     "istanbul": "^1.0.0-alpha",

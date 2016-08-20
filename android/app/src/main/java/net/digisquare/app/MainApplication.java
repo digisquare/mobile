@@ -13,7 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.airbnb.android.react.maps.MapsPackage;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import com.smixx.fabric.FabricPackage;
@@ -39,7 +38,6 @@ public class MainApplication extends Application implements ReactApplication {
         new FabricPackage(),
         new MainReactPackage(),
         new VectorIconsPackage(),
-        new MapsPackage(),
         new ReactNativeOneSignalPackage()
       );
     }
