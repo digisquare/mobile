@@ -2,7 +2,7 @@ import moment from 'moment/min/moment-with-locales';
 
 moment.locale('fr');
 
-export const datetime = (startAt, endAt) => {
+const datetime = (startAt, endAt) => {
   const start = moment(startAt);
   const end = moment(endAt);
 
@@ -61,3 +61,5 @@ au ${end.format('dddd D MMMM YYYY [à] H[h]')}`;
   return `du ${start.format('dddd D MMMM YYYY [à] H[h]mm')}
 au ${end.format('dddd D MMMM YYYY [à] H[h]mm')}`;
 };
+
+export default datetime;

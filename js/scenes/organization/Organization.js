@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import HTMLView from 'react-native-htmlview';
 
-import { socialBadge } from '../../utils/social.js';
+import socialBadge from '../../utils/social.js';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';

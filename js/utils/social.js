@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const socialBadge = (network, contacts) => {
+const socialBadge = (network, contacts) => {
   if (!contacts[network]) {
     return <View />;
   }
@@ -41,3 +41,5 @@ export const socialBadge = (network, contacts) => {
     </View>
   );
 };
+
+export default socialBadge;
