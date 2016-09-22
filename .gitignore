@@ -35,6 +35,7 @@ ios/main.jsbundle
 android/app/src/debug/AndroidManifest.xml
 android/app/src/release/AndroidManifest.xml
 android/key/*.json
+local.properties
 
 # node.js
 #
