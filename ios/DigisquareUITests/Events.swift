@@ -14,11 +14,11 @@ class Events: XCTestCase {
     super.setUp()
     continueAfterFailure = false
     let app = XCUIApplication()
-    if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+    if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
       setupSnapshot(app)
     }
     app.launch()
-    if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+    if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
       snapshot("0Launch")
     }
   }
@@ -29,7 +29,7 @@ class Events: XCTestCase {
   
   func testClickEvent() {
     XCUIApplication().otherElements["EventsListView"].buttons["EventsRow-0-0"].tap()
-    if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+    if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
       snapshot("1Event")
     }
   }
