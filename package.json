@@ -48,7 +48,7 @@
     "mocha-osx-reporter": "^0.1.2",
     "mockery": "^1.7.0",
     "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react-dom": "^15.3.2",
     "react-native-mock": "^0.2.0",
     "sinon": "^1.17.4"
   }
