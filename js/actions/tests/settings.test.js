@@ -17,7 +17,7 @@ describe('settings actions', () => {
   it('should call OneSignal to init empty notifications settings', () => {
     sinon.stub(OneSignal, 'getTags').yields();
 
-    const fakeDispatcher = (action) => action;
+    const fakeDispatcher = action => action;
 
     const next = settingsActions.initNotifications();
 
@@ -34,7 +34,7 @@ describe('settings actions', () => {
       Montpellier: 'false',
     });
 
-    const fakeDispatcher = (action) => action;
+    const fakeDispatcher = action => action;
 
     const next = settingsActions.initNotifications();
 

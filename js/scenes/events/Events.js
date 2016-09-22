@@ -44,7 +44,7 @@ const Events = class Events extends Component {
 
   componentDidMount() {
     const { navigator } = this.props;
-    Linking.getInitialURL().then(url => {
+    Linking.getInitialURL().then((url) => {
       if (!url) {
         return null;
       }
@@ -91,7 +91,7 @@ const Events = class Events extends Component {
       const dataBlob = {};
       let date;
       let sectionID = -1;
-      events[selectedEdition].items.map(item => {
+      events[selectedEdition].items.map((item) => {
         const newDate = moment(item.Event.start_at).format('YYYY-MM-DD');
         if (newDate !== date) {
           date = newDate;
@@ -150,12 +150,12 @@ Events.propTypes = {
   events: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   editions: state.editions,
   events: state.events,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onFetchEvents: (selectedEdition) => {
     dispatch(fetchEvents(selectedEdition));
   },

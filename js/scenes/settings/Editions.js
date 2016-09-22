@@ -81,11 +81,11 @@ Editions.propTypes = {
   onSelectEdition: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   editions: state.editions,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onSelectEdition: (id) => {
     dispatch(selectEdition(id));
   },

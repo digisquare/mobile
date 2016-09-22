@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const goToMap = oneliner => {
+const goToMap = (oneliner) => {
   const mapsURL = Platform.OS === 'ios' ? (
     'https://maps.apple.com/?q='
   ) : (

@@ -115,12 +115,12 @@ Organizations.propTypes = {
   organizations: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   editions: state.editions,
   organizations: state.organizations,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onFetchOrganizations: (selectedEdition) => {
     dispatch(fetchOrganizations(selectedEdition));
   },

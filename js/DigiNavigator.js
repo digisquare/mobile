@@ -70,7 +70,7 @@ export default class DigiNavigator extends Component {
   render() {
     return (
       <Navigator
-        ref={ref => { this.navigator = ref; }}
+        ref={(ref) => { this.navigator = ref; }}
         style={styles.container}
         configureScene={() => Navigator.SceneConfigs.PushFromRight}
         initialRoute={this.props.initialRoute}
@@ -79,7 +79,7 @@ export default class DigiNavigator extends Component {
             const RouteComponent = route.component;
             return (
               <DigiDrawerLayout
-                ref={ref => { this.drawer = ref; }}
+                ref={(ref) => { this.drawer = ref; }}
                 content={
                   <DigiMainDrawer
                     navigator={navigator}

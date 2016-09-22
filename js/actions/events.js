@@ -29,7 +29,7 @@ export function fetchEventsFailure(edition, error) {
 }
 
 export function fetchEvents(edition) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(fetchEventsRequest(edition));
 
     const url = 'https://digisquare.net/events.json?'
