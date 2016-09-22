@@ -32,7 +32,7 @@ export default class DigiHeader extends Component {
 
   render() {
     const { leftItem, rightItem, title } = this.props;
-    let actions = [];
+    const actions = [];
     if (rightItem) {
       const { title: rightTitle, icon, layout } = rightItem;
       actions.push({
