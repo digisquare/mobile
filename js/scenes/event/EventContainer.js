@@ -81,7 +81,7 @@ EventContainer.propTypes = {
   eventId: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   events: state.events,
 });
 

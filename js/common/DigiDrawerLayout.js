@@ -62,7 +62,7 @@ export default class DigiDrawerLayout extends Component {
         panCloseMask={0.99}
         negotiatePan
         captureGestures={false}
-        tweenHandler={(ratio) => ({
+        tweenHandler={ratio => ({
           mainOverlay: {
             opacity: 0.7 * ratio,
             backgroundColor: DigiColors.invertedBackgroundColor,
@@ -82,7 +82,6 @@ DigiDrawerLayout.contextTypes = {
 };
 
 DigiDrawerLayout.propTypes = {
-  drawerPosition: PropTypes.string,
   onDrawerOpen: PropTypes.func,
   onDrawerClose: PropTypes.func,
 };

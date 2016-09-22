@@ -48,7 +48,7 @@ describe('events actions', () => {
   });
 
   it('should fetch events', () => {
-    const fakeDispatcher = (action) => action;
+    const fakeDispatcher = action => action;
 
     fetchMock.mock(eventsUrlRegex, 200);
 

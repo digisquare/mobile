@@ -27,7 +27,7 @@ export function fetchOrganizationsFailure(edition, error) {
 }
 
 export function fetchOrganizations(edition) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(fetchOrganizationsRequest(edition));
 
     const url = 'https://digisquare.net/organizations.json?'

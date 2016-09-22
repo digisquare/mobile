@@ -116,7 +116,7 @@ Organization.propTypes = {
   organizations: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   organizations: state.organizations,
 });
 

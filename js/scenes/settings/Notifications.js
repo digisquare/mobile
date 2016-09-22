@@ -45,7 +45,7 @@ const Notifications = ({ navigator, onToggleNotification, editions, notification
     />
     <View>
       {
-        editions.items.map(edition => {
+        editions.items.map((edition) => {
           const value = notifications[edition.name] || false;
           return (
             <View key={edition.id} style={styles.editionContainer}>
@@ -75,12 +75,12 @@ Notifications.propTypes = {
   notifications: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   editions: state.editions,
   notifications: state.settings.notifications,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onToggleNotification: (name, value) => {
     dispatch(toggleNotification(name, value));
   },

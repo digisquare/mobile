@@ -12,8 +12,8 @@ export function toggleNotification(edition, value) {
 
 export const INIT_NOTIFICATIONS = 'INIT_NOTIFICATIONS';
 export function initNotifications() {
-  return dispatch => {
-    OneSignal.getTags(receivedTags => {
+  return (dispatch) => {
+    OneSignal.getTags((receivedTags) => {
       if (receivedTags) {
         Object.keys(receivedTags).map(tag => (
           dispatch(toggleNotification(tag, receivedTags[tag] === 'true'))

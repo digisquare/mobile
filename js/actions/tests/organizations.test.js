@@ -56,7 +56,7 @@ describe('organizations actions', () => {
   });
 
   it('should fetch organizations', () => {
-    const fakeDispatcher = (action) => action;
+    const fakeDispatcher = action => action;
 
     fetchMock.mock(organizationsUrlRegex, 200);
 
