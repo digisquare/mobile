@@ -40,7 +40,7 @@ const selectOrganization = (navigator, organization) => {
   Answers.logContentView(
     `${organization.Organization.name}`,
     'organization',
-    `organizations/${organization.Organization.id}`
+    `organizations/${organization.Organization.id}`,
   );
   navigator.push({
     component: Organization,

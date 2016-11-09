@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
 
-import { fetchEvents } from '../../actions/events.js';
+import { fetchEvents } from '../../actions/events';
 
 import DigiHeader from '../../common/DigiHeader';
 
 import EventsListView from './EventsListView';
 import EventContainer from '../event/EventContainer';
+
+import hamburger from '../../common/img/hamburger.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -95,7 +97,7 @@ const Events = class Events extends Component {
         const newDate = moment(item.Event.start_at).format('YYYY-MM-DD');
         if (newDate !== date) {
           date = newDate;
-          sectionID++;
+          sectionID += 1;
           dataBlob[sectionID] = [];
         }
         dataBlob[sectionID].push(item);
@@ -126,7 +128,7 @@ const Events = class Events extends Component {
         <DigiHeader
           title={edition.name}
           leftItem={{
-            icon: require('../../common/img/hamburger.png'),
+            icon: hamburger,
             onPress: openMainDrawer,
           }}
         />

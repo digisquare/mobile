@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import events from '../events';
-import * as eventsActions from '../../actions/events.js';
+import * as eventsActions from '../../actions/events';
 
 describe('events reducer', () => {
   it('should return the initial state', () => {
@@ -12,7 +12,7 @@ describe('events reducer', () => {
       events([], {
         type: eventsActions.FETCH_EVENTS_REQUEST,
         edition: 9,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: true,
@@ -36,7 +36,7 @@ describe('events reducer', () => {
         edition: 9,
         events: [fetchedEvents],
         receivedAt,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: false,
@@ -56,7 +56,7 @@ describe('events reducer', () => {
         edition: 9,
         error,
         receivedAt,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: false,

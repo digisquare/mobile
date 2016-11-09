@@ -1,6 +1,6 @@
 import fetchMock from 'fetch-mock';
 import { expect } from 'chai';
-import * as organizationsActions from '../organizations.js';
+import * as organizationsActions from '../organizations';
 
 const edition = 9;
 const receivedAt = Date.now();
@@ -24,7 +24,7 @@ describe('organizations actions', () => {
     const lastCalledAction = organizationsActions.fetchOrganizationsSuccess(
       edition,
       json,
-      receivedAt
+      receivedAt,
     );
     expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_SUCCESS');
     expect(lastCalledAction.organizations).to.deep.equal(json.organizations);
@@ -34,7 +34,7 @@ describe('organizations actions', () => {
     const lastCalledAction = organizationsActions.fetchOrganizationsFailure(
       edition,
       error,
-      receivedAt
+      receivedAt,
     );
     expect(lastCalledAction.type).to.equal('FETCH_ORGANIZATIONS_FAILURE');
     expect(lastCalledAction.error).to.equal(error);

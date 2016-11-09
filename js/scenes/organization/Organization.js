@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 
 import HTMLView from 'react-native-htmlview';
 
-import socialBadge from '../../utils/social.js';
+import socialBadge from '../../utils/social';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
 import VenueFooter from '../venues/VenueFooter';
+
+import website from '../../common/img/website.png';
+import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -56,7 +59,7 @@ const Organization = ({ navigator, organization, organizations }) => {
     }
   }
   const rightItem = organization.Organization.Contacts.website ? {
-    icon: require('../../common/img/website.png'),
+    icon: website,
     onPress: () => Linking.openURL(organization.Organization.Contacts.website),
     title: 'website',
   } : null;
@@ -65,7 +68,7 @@ const Organization = ({ navigator, organization, organizations }) => {
       <DigiHeader
         title="Organisateur"
         leftItem={{
-          icon: require('../../common/img/back_white.png'),
+          icon: backWhite,
           onPress: () => navigator.pop(),
         }}
         rightItem={rightItem}

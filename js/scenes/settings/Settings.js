@@ -10,6 +10,8 @@ import DigiColors from '../../common/DigiColors';
 import Editions from './Editions';
 import Notifications from './Notifications';
 
+import hamburger from '../../common/img/hamburger.png';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -38,7 +40,7 @@ export default function Settings({ navigator, openMainDrawer }) {
       <DigiHeader
         title="Paramètres"
         leftItem={{
-          icon: require('../../common/img/hamburger.png'),
+          icon: hamburger,
           onPress: openMainDrawer,
         }}
       />
@@ -49,7 +51,7 @@ export default function Settings({ navigator, openMainDrawer }) {
             Answers.logContentView(
               'Choix de l\'édition',
               'editions',
-              'settings/editions'
+              'settings/editions',
             );
             navigator.push({
               component: Editions,
@@ -69,7 +71,7 @@ export default function Settings({ navigator, openMainDrawer }) {
             Answers.logContentView(
               'Paramètres des Notifications',
               'notifications',
-              'settings/notifications'
+              'settings/notifications',
             );
             navigator.push({
               component: Notifications,

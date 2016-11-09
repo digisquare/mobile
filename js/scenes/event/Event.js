@@ -5,12 +5,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment/min/moment-with-locales';
 import HTMLView from 'react-native-htmlview';
 
-import datetime from '../../utils/datetime.js';
+import datetime from '../../utils/datetime';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
 import VenueFooter from '../venues/VenueFooter';
 import OrganizationsRow from '../organizations/OrganizationsRow';
+
+import backWhite from '../../common/img/back_white.png';
 
 moment.locale('fr');
 
@@ -50,7 +52,7 @@ export default function Event({ navigator, event }) {
       <DigiHeader
         title="Évènement"
         leftItem={{
-          icon: require('../../common/img/back_white.png'),
+          icon: backWhite,
           onPress: () => navigator.pop(),
         }}
       />

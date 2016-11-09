@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import store from './reducers';
 
-import { initNotifications } from './actions/settings.js';
+import { initNotifications } from './actions/settings';
 
 import DigiNavigator from './DigiNavigator';
 import Events from './scenes/events/Events';

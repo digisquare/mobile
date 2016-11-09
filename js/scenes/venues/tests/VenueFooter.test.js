@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 import DigiTouchable from '../../../common/DigiTouchable';
-import VenueFooter from '../VenueFooter.js';
+import VenueFooter from '../VenueFooter';
 
 const venue = {
   id: '13',
@@ -28,7 +28,7 @@ describe('<VenueFooter />', () => {
     const component = shallow(
       <VenueFooter
         venue={venue}
-      />
+      />,
     );
 
     expect(component.find(DigiTouchable)).to.have.lengthOf(1);
@@ -41,7 +41,7 @@ describe('<VenueFooter />', () => {
     const component = shallow(
       <VenueFooter
         venue={venue}
-      />
+      />,
     );
 
     component.find(DigiTouchable).simulate('press');

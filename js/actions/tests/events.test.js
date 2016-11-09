@@ -1,6 +1,6 @@
 import fetchMock from 'fetch-mock';
 import { expect } from 'chai';
-import * as eventsActions from '../events.js';
+import * as eventsActions from '../events';
 
 const edition = 9;
 const receivedAt = Date.now();

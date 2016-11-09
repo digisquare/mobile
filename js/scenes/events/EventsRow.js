@@ -42,7 +42,7 @@ const selectEvent = (navigator, event) => {
   Answers.logContentView(
     `${event.Event.name}`,
     'event',
-    `events/${event.Event.id}`
+    `events/${event.Event.id}`,
   );
   navigator.push({
     component: Event,

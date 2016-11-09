@@ -1,7 +1,7 @@
 import OneSignal from 'react-native-onesignal';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import * as settingsActions from '../settings.js';
+import * as settingsActions from '../settings';
 
 const edition = 9;
 
@@ -47,7 +47,7 @@ describe('settings actions', () => {
 
   it('should create an action to toggle a notification', () => {
     expect(
-      settingsActions.toggleNotification(edition, true)
+      settingsActions.toggleNotification(edition, true),
     ).to.deep.equal({
       type: settingsActions.TOGGLE_NOTIFICATION,
       edition,

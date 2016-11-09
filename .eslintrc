@@ -40,13 +40,8 @@
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
-    "react-native/no-color-literals": 2,
-    "import/no-unresolved": [2, { ignore: ['\.png$'] }],
-    "global-require": 0,
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,
-    "react/forbid-prop-types": 0,
-    "class-methods-use-this": 0,
-    "no-plusplus": 0
+    "react/forbid-prop-types": 0
   }
 }

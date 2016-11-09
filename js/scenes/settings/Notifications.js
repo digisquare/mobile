@@ -2,10 +2,12 @@ import React, { PropTypes } from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-import { toggleNotification } from '../../actions/settings.js';
+import { toggleNotification } from '../../actions/settings';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
+
+import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,7 +41,7 @@ const Notifications = ({ navigator, onToggleNotification, editions, notification
     <DigiHeader
       title="Notifications"
       leftItem={{
-        icon: require('../../common/img/back_white.png'),
+        icon: backWhite,
         onPress: () => navigator.pop(),
       }}
     />

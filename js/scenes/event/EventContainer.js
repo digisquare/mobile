@@ -6,10 +6,12 @@ import DigiError from '../../common/DigiError';
 
 import Event from './Event';
 
+import tumbeastNetwork from '../../common/img/tumbeast-network.png';
+
 export const findEvent = (eventId, events) => (
   Object.values(events).map(edition => (
     edition.items.filter(item => (
-      parseInt(item.Event.id, 10) === eventId)
+      parseInt(item.Event.id, 10) === eventId),
     )
   )).reduce((previousValue, currentValue) => ({
     ...previousValue,
@@ -60,7 +62,7 @@ const EventContainer = class EventContainer extends Component {
       return (
         <DigiError
           refreshControl={refreshControl}
-          image={require('../../common/img/tumbeast-network.png')}
+          image={tumbeastNetwork}
           text="Oups, impossible de récupérer l'évènement"
         />
       );

@@ -3,11 +3,13 @@ import { View, ListView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { Answers } from 'react-native-fabric';
 
-import { fetchOrganizations } from '../../actions/organizations.js';
+import { fetchOrganizations } from '../../actions/organizations';
 
 import DigiHeader from '../../common/DigiHeader';
 
 import OrganizationsListView from './OrganizationsListView';
+
+import hamburger from '../../common/img/hamburger.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -91,7 +93,7 @@ const Organizations = class Organizations extends Component {
         <DigiHeader
           title={edition.name}
           leftItem={{
-            icon: require('../../common/img/hamburger.png'),
+            icon: hamburger,
             onPress: openMainDrawer,
           }}
         />

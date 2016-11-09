@@ -5,10 +5,10 @@ import devTools from 'remote-redux-devtools';
 import { persistStore, autoRehydrate } from 'redux-persist';
 import createLogger from 'redux-logger';
 
-import editions from './editions.js';
-import events from './events.js';
-import organizations from './organizations.js';
-import settings from './settings.js';
+import editions from './editions';
+import events from './events';
+import organizations from './organizations';
+import settings from './settings';
 
 
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;

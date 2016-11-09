@@ -3,11 +3,13 @@ import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
 
-import { selectEdition } from '../../actions/editions.js';
+import { selectEdition } from '../../actions/editions';
 
 import DigiHeader from '../../common/DigiHeader';
 import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
+
+import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +42,7 @@ const Editions = ({ navigator, editions, onSelectEdition }) => (
     <DigiHeader
       title="Edition"
       leftItem={{
-        icon: require('../../common/img/back_white.png'),
+        icon: backWhite,
         onPress: () => navigator.pop(),
       }}
     />

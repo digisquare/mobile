@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import organizations from '../organizations';
-import * as organizationsActions from '../../actions/organizations.js';
+import * as organizationsActions from '../../actions/organizations';
 
 describe('organizations reducer', () => {
   it('should return the initial state', () => {
@@ -12,7 +12,7 @@ describe('organizations reducer', () => {
       organizations([], {
         type: organizationsActions.FETCH_ORGANIZATIONS_REQUEST,
         edition: 9,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: true,
@@ -36,7 +36,7 @@ describe('organizations reducer', () => {
         edition: 9,
         organizations: [fetchedOrganizations],
         receivedAt,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: false,
@@ -56,7 +56,7 @@ describe('organizations reducer', () => {
         edition: 9,
         error,
         receivedAt,
-      })
+      }),
     ).to.deep.equal({
       9: {
         isFetching: false,

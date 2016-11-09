@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import editions, { initialState } from '../editions';
-import * as editionsActions from '../../actions/editions.js';
+import * as editionsActions from '../../actions/editions';
 
 describe('editions reducer', () => {
   it('should return the initial state', () => {
@@ -12,7 +12,7 @@ describe('editions reducer', () => {
       editions([], {
         type: editionsActions.SELECT_EDITION,
         edition: 23,
-      })
+      }),
     ).to.deep.equal({
       selectedEdition: 23,
     });

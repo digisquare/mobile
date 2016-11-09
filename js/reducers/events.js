@@ -1,4 +1,4 @@
-import * as eventsActions from '../actions/events.js';
+import * as eventsActions from '../actions/events';
 
 const initialState = {
   isFetching: false,

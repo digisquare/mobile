@@ -1,4 +1,4 @@
-import * as settingsActions from '../actions/settings.js';
+import * as settingsActions from '../actions/settings';
 
 export const initialState = {
   notifications: {},

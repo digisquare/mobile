@@ -5,6 +5,9 @@ import DigiError from '../../common/DigiError';
 
 import OrganizationsRow from './OrganizationsRow';
 
+import tumbeastNetwork from '../../common/img/tumbeast-network.png';
+import tumbeastSitting from '../../common/img/tumbeast-sitting.png';
+
 export default class OrganizationsListView extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +36,7 @@ export default class OrganizationsListView extends Component {
       return (
         <DigiError
           refreshControl={refreshControl}
-          image={require('../../common/img/tumbeast-network.png')}
+          image={tumbeastNetwork}
           text="Oups, impossible de récupérer les organisateurs"
         />
       );
@@ -43,7 +46,7 @@ export default class OrganizationsListView extends Component {
       return (
         <DigiError
           refreshControl={refreshControl}
-          image={require('../../common/img/tumbeast-sitting.png')}
+          image={tumbeastSitting}
           text="Snif, aucun organisateur dans cette ville"
         />
       );

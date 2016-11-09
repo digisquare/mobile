@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 
-import * as editionsActions from '../actions/editions.js';
+import * as editionsActions from '../actions/editions';
 
 export const initialState = {
   selectedEdition: 9,

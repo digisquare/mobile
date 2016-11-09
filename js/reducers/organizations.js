@@ -1,4 +1,4 @@
-import * as organizationsActions from '../actions/organizations.js';
+import * as organizationsActions from '../actions/organizations';
 
 const initialState = {
   isFetching: false,

@@ -47,7 +47,7 @@ export default class DigiNavigator extends Component {
   }
 
   handleBackButton() {
-    for (let i = this.handlers.length - 1; i >= 0; i--) {
+    for (let i = this.handlers.length - 1; i >= 0; i -= 1) {
       if (this.handlers[i]()) {
         return true;
       }

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import settings, { initialState } from '../settings';
-import * as settingsActions from '../../actions/settings.js';
+import * as settingsActions from '../../actions/settings';
 
 describe('settings reducer', () => {
   it('should return the initial state', () => {
@@ -13,7 +13,7 @@ describe('settings reducer', () => {
         type: settingsActions.TOGGLE_NOTIFICATION,
         edition: 9,
         value: true,
-      })
+      }),
     ).to.deep.equal({
       notifications: {
         9: true,

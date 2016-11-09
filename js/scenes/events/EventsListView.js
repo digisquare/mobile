@@ -7,6 +7,9 @@ import DigiColors from '../../common/DigiColors';
 
 import EventsRow from './EventsRow';
 
+import tumbeastNetwork from '../../common/img/tumbeast-network.png';
+import tumbeastSitting from '../../common/img/tumbeast-sitting.png';
+
 const styles = StyleSheet.create({
   headerContainer: {
     paddingTop: 10,
@@ -27,19 +30,7 @@ const styles = StyleSheet.create({
 export default class EventsListView extends Component {
   constructor(props) {
     super(props);
-    this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderEventsRow = this.renderEventsRow.bind(this);
-  }
-
-  renderSectionHeader(sectionData) {
-    const date = moment(sectionData[0].Event.start_at);
-    return (
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>
-          {date.format('dddd Do MMMM')}
-        </Text>
-      </View>
-    );
   }
 
   renderEventsRow(event, sectionID, rowID) {
@@ -65,7 +56,7 @@ export default class EventsListView extends Component {
       return (
         <DigiError
           refreshControl={refreshControl}
-          image={require('../../common/img/tumbeast-network.png')}
+          image={tumbeastNetwork}
           text="Oups, impossible de récupérer les évènements"
         />
       );
@@ -75,7 +66,7 @@ export default class EventsListView extends Component {
       return (
         <DigiError
           refreshControl={refreshControl}
-          image={require('../../common/img/tumbeast-sitting.png')}
+          image={tumbeastSitting}
           text="Snif, aucun évènement à venir"
         />
       );
@@ -86,7 +77,13 @@ export default class EventsListView extends Component {
         testID="EventsListView"
         dataSource={dataSource}
         refreshControl={refreshControl}
-        renderSectionHeader={this.renderSectionHeader}
+        renderSectionHeader={sectionData => (
+          <View style={styles.headerContainer}>
+            <Text style={styles.header}>
+              {moment(sectionData[0].Event.start_at).format('dddd Do MMMM')}
+            </Text>
+          </View>
+        )}
         renderRow={this.renderEventsRow}
       />
     );
