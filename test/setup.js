@@ -33,3 +33,5 @@ config.ignore = function(filename) {
 }
 
 register(config);
+
+require.extensions['.png'] = () => null;
