@@ -888,8 +888,8 @@ batch@0.5.3:
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.5.3.tgz#3f3414f380321743bfc1042f9a83ff1d5824d464"
 
 beeper@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.0.tgz#9ee6fc1ce7f54feaace7ce73588b056037866a2c"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
 
 binaryextensions@~1.0.0:
   version "1.0.1"
@@ -1430,8 +1430,8 @@ dateformat@^1.0.11:
     meow "^3.3.0"
 
 debug@^2.0.0, debug@^2.1.0, debug@^2.1.1, debug@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.3.0.tgz#3912dc55d7167fc3af17d2b85c13f93deaedaa43"
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.3.2.tgz#94cb466ef7d6d2c7e5245cdd6e4104f2d0d70d30"
   dependencies:
     ms "0.7.2"
 
@@ -1730,15 +1730,19 @@ entities@1.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.0.0.tgz#b2987aa3821347fcde642b24fdfc9e4fb712bf26"
 
 enzyme@^2.3.0:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.5.1.tgz#d7c8e2352c04c27fcf2523fb17bc7e0569352743"
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.6.0.tgz#148d742b25e2565f7e80870a0c92aea9be1b90ea"
   dependencies:
     cheerio "^0.22.0"
+    function.prototype.name "^1.0.0"
+    in-publish "^2.0.0"
     is-subset "^0.1.1"
-    lodash "^4.15.0"
+    lodash "^4.16.4"
     object-is "^1.0.1"
     object.assign "^4.0.4"
+    object.entries "^1.0.3"
     object.values "^1.0.3"
+    uuid "^2.0.3"
 
 "errno@>=0.1.1 <0.2.0-0":
   version "0.1.4"
@@ -2306,6 +2310,14 @@ function-bind@^1.0.2, function-bind@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
+function.prototype.name@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/function.prototype.name/-/function.prototype.name-1.0.0.tgz#5f523ca64e491a5f95aba80cc1e391080a14482e"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.1.0"
+    is-callable "^1.1.2"
+
 gauge@~1.2.5:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-1.2.7.tgz#e9cec5483d3d4ee0ef44b60a7d99e4935e136d93"
@@ -2688,6 +2700,10 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
+in-publish@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
+
 indent-string@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
@@ -2787,7 +2803,7 @@ is-bzip2@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-bzip2/-/is-bzip2-1.0.0.tgz#5ee58eaa5a2e9c80e21407bedf23ae5ac091b3fc"
 
-is-callable@^1.1.1, is-callable@^1.1.3:
+is-callable@^1.1.1, is-callable@^1.1.2, is-callable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.3.tgz#86eb75392805ddc33af71c92a0eedf74ee7604b2"
 
@@ -3015,8 +3031,8 @@ istanbul-lib-hook@^1.0.0-alpha:
     append-transform "^0.3.0"
 
 istanbul-lib-instrument@^1.0.0-alpha:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-instrument/-/istanbul-lib-instrument-1.2.0.tgz#73d5d108ab7568c373fdcb7d01c1d42d565bc8c4"
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/istanbul-lib-instrument/-/istanbul-lib-instrument-1.3.0.tgz#19f0a973397454989b98330333063a5b56df0e58"
   dependencies:
     babel-generator "^6.18.0"
     babel-template "^6.16.0"
@@ -3038,8 +3054,8 @@ istanbul-lib-report@^1.0.0-alpha:
     supports-color "^3.1.2"
 
 istanbul-lib-source-maps@^1.0.0-alpha:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-source-maps/-/istanbul-lib-source-maps-1.0.2.tgz#9e91b0e5ae6ed203f67c69a34e6e98b10bb69a49"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/istanbul-lib-source-maps/-/istanbul-lib-source-maps-1.1.0.tgz#9d429218f35b823560ea300a96ff0c3bbdab785f"
   dependencies:
     istanbul-lib-coverage "^1.0.0-alpha.0"
     mkdirp "^0.5.1"
@@ -3407,7 +3423,7 @@ lodash@^3.1.0, lodash@^3.10.1, lodash@^3.2.0, lodash@^3.3.1, lodash@^3.5.0, loda
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.15.0, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.16.6"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
 
@@ -3656,8 +3672,8 @@ module-deps@^3.9.1:
     xtend "^4.0.0"
 
 moment@^2.12.0, moment@2.x.x:
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.15.2.tgz#1bfdedf6a6e345f322fe956d5df5bd08a8ce84dc"
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.16.0.tgz#f38f2c97c9889b0ee18fc6cc392e1e443ad2da8e"
 
 morgan@~1.6.1:
   version "1.6.1"
@@ -3798,6 +3814,15 @@ object.assign@^4.0.4:
     define-properties "^1.1.2"
     function-bind "^1.1.0"
     object-keys "^1.0.10"
+
+object.entries@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/object.entries/-/object.entries-1.0.3.tgz#f42cc75363a4f9aa7037bcfb3bab3be4ffc78027"
+  dependencies:
+    define-properties "^1.1.1"
+    es-abstract "^1.3.2"
+    function-bind "^1.0.2"
+    has "^1.0.1"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -4072,7 +4097,7 @@ qs@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
 
-querystring@^0.2.0:
+querystring@^0.2.0, querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
@@ -4420,7 +4445,7 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux-devtools-instrument@^1.2.0:
+redux-devtools-instrument@^1.3.1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/redux-devtools-instrument/-/redux-devtools-instrument-1.3.3.tgz#4a17c80cc23465646460b2da3ee438a4ac0b28ae"
   dependencies:
@@ -4486,15 +4511,15 @@ regjsparser@^0.1.4:
   dependencies:
     jsesc "~0.5.0"
 
-remote-redux-devtools@^0.4.2:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/remote-redux-devtools/-/remote-redux-devtools-0.4.9.tgz#de06ea44aef0b5978f3f6f67fc5590fec5ac5354"
+remote-redux-devtools@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/remote-redux-devtools/-/remote-redux-devtools-0.5.3.tgz#7c98cdda4504866a6f11d16f99e12ae39f2b2da7"
   dependencies:
     jsan "^3.1.3"
     querystring "^0.2.0"
-    redux-devtools-instrument "^1.2.0"
+    redux-devtools-instrument "^1.3.1"
     remotedev-utils "0.0.5"
-    socketcluster-client "4.3.19"
+    socketcluster-client "^5.0.17"
 
 remotedev-utils@0.0.5:
   version "0.0.5"
@@ -4629,16 +4654,9 @@ sc-errors@1.0.x:
   dependencies:
     cycle "1.0.3"
 
-sc-formatter@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/sc-formatter/-/sc-formatter-1.0.4.tgz#a9f35b93731c8f84eba2e1fd928776a0afcbba4b"
-
-sc-ws@1.0.x:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/sc-ws/-/sc-ws-1.0.2.tgz#75c1c5151712f388482bffc00725cfb26e581fd8"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
+sc-formatter@2.0.x:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sc-formatter/-/sc-formatter-2.0.2.tgz#3159a8ca01c9949495c62914d8f21eb6be82a526"
 
 seek-bzip@^1.0.3:
   version "1.0.5"
@@ -4749,17 +4767,18 @@ slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
 
-socketcluster-client@4.3.19:
-  version "4.3.19"
-  resolved "https://registry.yarnpkg.com/socketcluster-client/-/socketcluster-client-4.3.19.tgz#df247662e29eb54160c923f02eaf958394994cb5"
+socketcluster-client@^5.0.17:
+  version "5.0.18"
+  resolved "https://registry.yarnpkg.com/socketcluster-client/-/socketcluster-client-5.0.18.tgz#4193a3a869e3240b8ab23c2a341fb52596b06702"
   dependencies:
     base-64 "0.1.0"
     linked-list "0.1.0"
+    querystring "0.2.0"
     sc-channel "1.0.x"
     sc-emitter "1.0.x"
     sc-errors "1.0.x"
-    sc-formatter "1.0.x"
-    sc-ws "1.0.x"
+    sc-formatter "2.0.x"
+    ws "1.1.1"
 
 source-map-support@^0.4.2:
   version "0.4.6"
@@ -5207,7 +5226,7 @@ utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
-uuid@^2.0.1:
+uuid@^2.0.1, uuid@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
@@ -5386,7 +5405,7 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^1.1.0:
+ws@^1.1.0, ws@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.1.tgz#082ddb6c641e85d4bb451f03d52f06eabdb1f018"
   dependencies:
