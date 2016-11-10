@@ -1,17 +1,15 @@
 import React, { PropTypes } from 'react';
-import { StyleSheet, View, Text, Linking, Platform } from 'react-native';
+import { StyleSheet, View, Text, Linking, Platform, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment/min/moment-with-locales';
 
-import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
 
 moment.locale('fr');
 
 const styles = StyleSheet.create({
-  venue: {
+  container: {
     backgroundColor: DigiColors.invertedBackgroundColor,
-    flex: 1,
     flexDirection: 'row',
   },
   venueDirections: {
@@ -47,26 +45,25 @@ const goToMap = (oneliner) => {
 
 export default function VenueFooter({ venue }) {
   return (
-    <DigiTouchable onPress={() => goToMap(venue.oneliner)}>
-      <View style={styles.container}>
-        <View style={styles.venue}>
-          <View style={styles.venueDirections}>
-            <Icon name="map-marker" size={30} color="white" />
-          </View>
-          <View style={styles.venueLocation}>
-            <Text style={styles.venueName}>
-              {venue.name}
-            </Text>
-            <Text style={styles.venueAddress}>
-              {venue.address}
-            </Text>
-            <Text style={styles.venueLastLine}>
-              {`${venue.zipcode} ${venue.city}`}
-            </Text>
-          </View>
-        </View>
+    <TouchableOpacity
+      onPress={() => goToMap(venue.oneliner)}
+      style={styles.container}
+    >
+      <View style={styles.venueDirections}>
+        <Icon name="map-marker" size={30} color="white" />
       </View>
-    </DigiTouchable>
+      <View style={styles.venueLocation}>
+        <Text style={styles.venueName}>
+          {venue.name}
+        </Text>
+        <Text style={styles.venueAddress}>
+          {venue.address}
+        </Text>
+        <Text style={styles.venueLastLine}>
+          {`${venue.zipcode} ${venue.city}`}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 

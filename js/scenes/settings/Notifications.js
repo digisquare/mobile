@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     backgroundColor: DigiColors.primaryBackgroundColor,
   },
   editionContainer: {
-    flex: 1,
     flexDirection: 'row',
     height: 56,
   },
@@ -45,7 +44,7 @@ const Notifications = ({ navigator, onToggleNotification, editions, notification
         onPress: () => navigator.pop(),
       }}
     />
-    <View>
+    <View style={styles.container}>
       {
         editions.items.map((edition) => {
           const value = notifications[edition.name] || false;

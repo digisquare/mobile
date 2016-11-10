@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Answers } from 'react-native-fabric';
 
 import DigiHeader from '../../common/DigiHeader';
-import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
 
 import Editions from './Editions';
@@ -20,7 +19,6 @@ const styles = StyleSheet.create({
     height: 56,
     alignItems: 'center',
     paddingLeft: 30,
-    flex: 1,
     flexDirection: 'row',
   },
   item: {
@@ -44,9 +42,10 @@ export default function Settings({ navigator, openMainDrawer }) {
           onPress: openMainDrawer,
         }}
       />
-      <View>
-        <DigiTouchable
+      <View style={styles.container}>
+        <TouchableOpacity
           key="1"
+          style={styles.itemContainer}
           onPress={() => {
             Answers.logContentView(
               'Choix de l\'édition',
@@ -58,15 +57,14 @@ export default function Settings({ navigator, openMainDrawer }) {
             });
           }}
         >
-          <View style={styles.itemContainer}>
-            <Icon name="globe" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
-            <Text style={styles.item}>
-              Edition
-            </Text>
-          </View>
-        </DigiTouchable>
-        <DigiTouchable
+          <Icon name="globe" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
+          <Text style={styles.item}>
+            Edition
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
           key="2"
+          style={styles.itemContainer}
           onPress={() => {
             Answers.logContentView(
               'Paramètres des Notifications',
@@ -78,13 +76,11 @@ export default function Settings({ navigator, openMainDrawer }) {
             });
           }}
         >
-          <View style={styles.itemContainer}>
-            <Icon name="bell-o" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
-            <Text style={styles.item}>
-              Notifications
-            </Text>
-          </View>
-        </DigiTouchable>
+          <Icon name="bell-o" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
+          <Text style={styles.item}>
+            Notifications
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

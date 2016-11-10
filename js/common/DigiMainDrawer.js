@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import DigiHeader from './DigiHeader';
-import DigiTouchable from './DigiTouchable';
 import DigiColors from './DigiColors';
 
 import Events from '../scenes/events/Events';
@@ -19,7 +18,6 @@ const styles = StyleSheet.create({
     height: 56,
     alignItems: 'center',
     paddingLeft: 30,
-    flex: 1,
     flexDirection: 'row',
   },
   item: {
@@ -34,56 +32,49 @@ const styles = StyleSheet.create({
 
 const DigiMainDrawer = ({ navigator }) => (
   <View style={styles.container}>
-    <View>
-      <DigiHeader
-        title="Digisquare"
-      />
-      <DigiTouchable
-        key="1"
-        onPress={() => {
-          navigator.replace({
-            component: Events,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="calendar" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
-          <Text style={styles.item}>
-            Évènements
-          </Text>
-        </View>
-      </DigiTouchable>
-      <DigiTouchable
-        key="2"
-        onPress={() => {
-          navigator.replace({
-            component: Organizations,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="users" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
-          <Text style={styles.item}>
-            Organisateurs
-          </Text>
-        </View>
-      </DigiTouchable>
-      <DigiTouchable
-        key="3"
-        onPress={() => {
-          navigator.replace({
-            component: Settings,
-          });
-        }}
-      >
-        <View style={styles.itemContainer}>
-          <Icon name="cogs" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
-          <Text style={styles.item}>
-            Paramètres
-          </Text>
-        </View>
-      </DigiTouchable>
-    </View>
+    <DigiHeader title="Digisquare" />
+    <TouchableOpacity
+      key="1"
+      style={styles.itemContainer}
+      onPress={() => {
+        navigator.replace({
+          component: Events,
+        });
+      }}
+    >
+      <Icon name="calendar" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
+      <Text style={styles.item}>
+        Évènements
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      key="2"
+      style={styles.itemContainer}
+      onPress={() => {
+        navigator.replace({
+          component: Organizations,
+        });
+      }}
+    >
+      <Icon name="users" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
+      <Text style={styles.item}>
+        Organisateurs
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      key="3"
+      style={styles.itemContainer}
+      onPress={() => {
+        navigator.replace({
+          component: Settings,
+        });
+      }}
+    >
+      <Icon name="cogs" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
+      <Text style={styles.item}>
+        Paramètres
+      </Text>
+    </TouchableOpacity>
   </View>
 );
 

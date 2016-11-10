@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Linking } from 'react-native';
+import { View, Linking, TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import DigiTouchable from '../../../common/DigiTouchable';
 import VenueFooter from '../VenueFooter';
 
 const venue = {
@@ -31,8 +30,8 @@ describe('<VenueFooter />', () => {
       />,
     );
 
-    expect(component.find(DigiTouchable)).to.have.lengthOf(1);
-    expect(component.find(View)).to.have.lengthOf(4);
+    expect(component.find(TouchableOpacity)).to.have.lengthOf(1);
+    expect(component.find(View)).to.have.lengthOf(2);
   });
 
   it('should open map on click', () => {
@@ -44,7 +43,7 @@ describe('<VenueFooter />', () => {
       />,
     );
 
-    component.find(DigiTouchable).simulate('press');
+    component.find(TouchableOpacity).simulate('press');
     expect(onComponentPress.calledOnce).to.equal(true);
 
     onComponentPress.restore();

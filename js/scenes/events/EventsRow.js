@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
 
-import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
 
 import Event from '../event/Event';
@@ -57,31 +56,30 @@ export default function EventsRow({ rowID, navigator, event }) {
   const place = event.Venue.name;
   const timeAndPlace = time === '00:00' ? place : `${time} @ ${place}`;
   return (
-    <DigiTouchable
+    <TouchableOpacity
       testID={`EventsRow-${rowID}`}
       onPress={() => selectEvent(navigator, event)}
+      style={styles.container}
     >
-      <View style={styles.container}>
-        <View style={styles.avatarContainer}>
-          {
-            event.Organization[0] && event.Organization[0].avatar ? (
-              <Image
-                style={styles.avatar}
-                source={{ uri: event.Organization[0].avatar }}
-              />
-            ) : null
-          }
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.title} numberOfLines={1}>
-            {event.Event.name}
-          </Text>
-          <Text style={styles.date}>
-            {timeAndPlace}
-          </Text>
-        </View>
+      <View style={styles.avatarContainer}>
+        {
+          event.Organization[0] && event.Organization[0].avatar ? (
+            <Image
+              style={styles.avatar}
+              source={{ uri: event.Organization[0].avatar }}
+            />
+          ) : null
+        }
       </View>
-    </DigiTouchable>
+      <View style={styles.textContainer}>
+        <Text style={styles.title} numberOfLines={1}>
+          {event.Event.name}
+        </Text>
+        <Text style={styles.date}>
+          {timeAndPlace}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 

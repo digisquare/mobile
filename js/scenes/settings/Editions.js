@@ -1,22 +1,21 @@
 import React, { PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
 
 import { selectEdition } from '../../actions/editions';
 
 import DigiHeader from '../../common/DigiHeader';
-import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
 
 import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: DigiColors.primaryBackgroundColor,
   },
   editionContainer: {
-    flex: 1,
     flexDirection: 'row',
     height: 56,
   },
@@ -48,30 +47,29 @@ const Editions = ({ navigator, editions, onSelectEdition }) => (
     />
     {
       editions.items.map(edition => (
-        <DigiTouchable
+        <TouchableOpacity
           key={edition.id}
           onPress={() => {
             onSelectEdition(edition.id);
           }}
+          style={styles.editionContainer}
         >
-          <View style={styles.editionContainer}>
-            <View style={styles.nameContainer}>
-              <Text style={styles.editionName}>
-                {edition.name}
-              </Text>
-            </View>
-            <View style={styles.switchContainer}>
-              {
-                edition.id === editions.selectedEdition ? (
-                  <Icon
-                    name="check" size={20} style={styles.icon}
-                    color={DigiColors.primaryFontColor}
-                  />
-                ) : null
-              }
-            </View>
+          <View style={styles.nameContainer}>
+            <Text style={styles.editionName}>
+              {edition.name}
+            </Text>
           </View>
-        </DigiTouchable>
+          <View style={styles.switchContainer}>
+            {
+              edition.id === editions.selectedEdition ? (
+                <Icon
+                  name="check" size={20} style={styles.icon}
+                  color={DigiColors.primaryFontColor}
+                />
+              ) : null
+            }
+          </View>
+        </TouchableOpacity>
       ))
     }
   </View>

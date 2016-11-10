@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Answers } from 'react-native-fabric';
 
-import DigiTouchable from '../../common/DigiTouchable';
 import DigiColors from '../../common/DigiColors';
 
 import Organization from '../organization/Organization';
@@ -52,32 +51,33 @@ const selectOrganization = (navigator, organization) => {
 
 export default function OrganizationsRow({ navigator, organization }) {
   return (
-    <DigiTouchable onPress={() => selectOrganization(navigator, organization)}>
-      <View style={styles.container}>
-        <View style={styles.avatarContainer}>
+    <TouchableOpacity
+      onPress={() => selectOrganization(navigator, organization)}
+      style={styles.container}
+    >
+      <View style={styles.avatarContainer}>
+        {
+          organization.Organization.avatar ? (
+            <Image
+              style={styles.avatar}
+              source={{ uri: organization.Organization.avatar }}
+            />
+          ) : null
+        }
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>
+          {organization.Organization.name}
+        </Text>
+        <Text style={styles.venue}>
           {
-            organization.Organization.avatar ? (
-              <Image
-                style={styles.avatar}
-                source={{ uri: organization.Organization.avatar }}
-              />
+            organization.Venue && organization.Venue.name ? (
+              `@ ${organization.Venue.name}`
             ) : null
           }
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>
-            {organization.Organization.name}
-          </Text>
-          <Text style={styles.venue}>
-            {
-              organization.Venue && organization.Venue.name ? (
-                `@ ${organization.Venue.name}`
-              ) : null
-            }
-          </Text>
-        </View>
+        </Text>
       </View>
-    </DigiTouchable>
+    </TouchableOpacity>
   );
 }
 
