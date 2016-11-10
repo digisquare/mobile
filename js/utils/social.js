@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Linking, StyleSheet } from 'react-native';
-import { Button } from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const colors = {
   facebook: '#3b5998',
@@ -27,7 +27,7 @@ const socialBadge = (network, contacts) => {
 
   return (
     <View style={styles.container}>
-      <Button
+      <Icon.Button
         name={network}
         padding={2}
         paddingLeft={8}
@@ -37,7 +37,7 @@ const socialBadge = (network, contacts) => {
         onPress={() => Linking.openURL(urls[network] + username)}
       >
         {username}
-      </Button>
+      </Icon.Button>
     </View>
   );
 };
