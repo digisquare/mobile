@@ -2,9 +2,8 @@ import React, { PropTypes } from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Answers } from 'react-native-fabric';
 
+import Router from '../../router';
 import DigiColors from '../../common/DigiColors';
-
-import Organization from '../organization/Organization';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,12 +40,7 @@ const selectOrganization = (navigator, organization) => {
     'organization',
     `organizations/${organization.Organization.id}`,
   );
-  navigator.push({
-    component: Organization,
-    passProps: {
-      organization,
-    },
-  });
+  navigator.push(Router.getRoute('organization', { organization }));
 };
 
 export default function OrganizationsRow({ navigator, organization }) {

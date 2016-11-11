@@ -11,7 +11,7 @@ It shares the same codebase for iOS and Android.
   	- [redux-persist](https://github.com/rt2zz/redux-persist) for offline persistence
   	- [redux-thunk](https://github.com/gaearon/redux-thunk) for asynchronous actions
   - Components
-    - [react-native-drawer](https://github.com/root-two/react-native-drawer)
+    - [@exponent/ex-navigation](https://github.com/exponentjs/ex-navigation)
     - [react-native-htmlview](https://github.com/jsdf/react-native-htmlview)
     - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 

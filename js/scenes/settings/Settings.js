@@ -3,13 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Answers } from 'react-native-fabric';
 
-import DigiHeader from '../../common/DigiHeader';
+import Router from '../../router';
 import DigiColors from '../../common/DigiColors';
-
-import Editions from './Editions';
-import Notifications from './Notifications';
-
-import hamburger from '../../common/img/hamburger.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,17 +26,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Settings({ navigator, openMainDrawer }) {
+export default function Settings({ navigator }) {
   Answers.logContentView('Paramètres', 'settings', 'settings');
   return (
     <View style={styles.container}>
-      <DigiHeader
-        title="Paramètres"
-        leftItem={{
-          icon: hamburger,
-          onPress: openMainDrawer,
-        }}
-      />
       <View style={styles.container}>
         <TouchableOpacity
           key="1"
@@ -52,9 +40,7 @@ export default function Settings({ navigator, openMainDrawer }) {
               'editions',
               'settings/editions',
             );
-            navigator.push({
-              component: Editions,
-            });
+            navigator.push(Router.getRoute('editions'));
           }}
         >
           <Icon name="globe" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
@@ -71,9 +57,7 @@ export default function Settings({ navigator, openMainDrawer }) {
               'notifications',
               'settings/notifications',
             );
-            navigator.push({
-              component: Notifications,
-            });
+            navigator.push(Router.getRoute('notifications'));
           }}
         >
           <Icon name="bell-o" size={20} color={DigiColors.primaryFontColor} style={styles.icon} />
@@ -88,5 +72,4 @@ export default function Settings({ navigator, openMainDrawer }) {
 
 Settings.propTypes = {
   navigator: PropTypes.object.isRequired,
-  openMainDrawer: PropTypes.func.isRequired,
 };

@@ -1,13 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import { toggleNotification } from '../../actions/settings';
 
-import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
-
-import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,46 +32,43 @@ const styles = StyleSheet.create({
   },
 });
 
-const Notifications = ({ navigator, onToggleNotification, editions, notifications }) => (
-  <View style={styles.container}>
-    <DigiHeader
-      title="Notifications"
-      leftItem={{
-        icon: backWhite,
-        onPress: () => navigator.pop(),
-      }}
-    />
-    <View style={styles.container}>
-      {
-        editions.items.map((edition) => {
-          const value = notifications[edition.name] || false;
-          return (
-            <View key={edition.id} style={styles.editionContainer}>
-              <View style={styles.nameContainer}>
-                <Text style={styles.editionName}>
-                  {edition.name}
-                </Text>
-              </View>
-              <View style={styles.switchContainer}>
-                <Switch
-                  onValueChange={v => onToggleNotification(edition.name, v)}
-                  value={value}
-                />
-              </View>
-            </View>
-          );
-        })
-      }
-    </View>
-  </View>
-);
+class Notifications extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Notifications',
+    },
+  }
 
-Notifications.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  onToggleNotification: PropTypes.func.isRequired,
-  editions: PropTypes.object.isRequired,
-  notifications: PropTypes.object.isRequired,
-};
+  render() {
+    const { onToggleNotification, editions, notifications } = this.props;
+    return (
+      <View style={styles.container}>
+        <View style={styles.container}>
+          {
+            editions.items.map((edition) => {
+              const value = notifications[edition.name] || false;
+              return (
+                <View key={edition.id} style={styles.editionContainer}>
+                  <View style={styles.nameContainer}>
+                    <Text style={styles.editionName}>
+                      {edition.name}
+                    </Text>
+                  </View>
+                  <View style={styles.switchContainer}>
+                    <Switch
+                      onValueChange={v => onToggleNotification(edition.name, v)}
+                      value={value}
+                    />
+                  </View>
+                </View>
+              );
+            })
+          }
+        </View>
+      </View>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   editions: state.editions,
@@ -88,3 +82,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
+
+Notifications.propTypes = {
+  onToggleNotification: PropTypes.func.isRequired,
+  editions: PropTypes.object.isRequired,
+  notifications: PropTypes.object.isRequired,
+};

@@ -19,7 +19,13 @@ export const findEvent = (eventId, events) => (
   }), {})
 );
 
-const EventContainer = class EventContainer extends Component {
+class EventContainer extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Évènement',
+    },
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +36,11 @@ const EventContainer = class EventContainer extends Component {
   componentWillMount() {
     const { events, eventId } = this.props;
     const event = findEvent(eventId, events);
-    if (!event) {
+    if (event && event.Event) {
+      this.setState({
+        event,
+      });
+    } else {
       // TODO: fetch event
     }
   }
@@ -75,16 +85,16 @@ const EventContainer = class EventContainer extends Component {
       />
     );
   }
-};
-
-EventContainer.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  events: PropTypes.object.isRequired,
-  eventId: PropTypes.number.isRequired,
-};
+}
 
 const mapStateToProps = state => ({
   events: state.events,
 });
 
 export default connect(mapStateToProps)(EventContainer);
+
+EventContainer.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  events: PropTypes.object.isRequired,
+  eventId: PropTypes.number.isRequired,
+};

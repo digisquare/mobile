@@ -4,14 +4,11 @@ import { connect } from 'react-redux';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
 
+import Router from '../../router';
+
 import { fetchEvents } from '../../actions/events';
 
-import DigiHeader from '../../common/DigiHeader';
-
 import EventsListView from './EventsListView';
-import EventContainer from '../event/EventContainer';
-
-import hamburger from '../../common/img/hamburger.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +17,14 @@ const styles = StyleSheet.create({
 });
 
 const Events = class Events extends Component {
+  static route = {
+    navigationBar: {
+      title({ title }) {
+        return title || 'Bordeaux';
+      },
+    },
+  }
+
   constructor(props) {
     super(props);
     const { editions: { selectedEdition }, events } = props;
@@ -52,21 +57,21 @@ const Events = class Events extends Component {
       }
       const match = url.match(/https:\/\/digisquare.net\/events\/([0-9]+)/);
       if (match && match[1]) {
-        navigator.push({
-          component: EventContainer,
-          passProps: {
-            eventId: parseInt(match[1], 10),
-          },
-        });
+        navigator.push(Router.getRoute('event', { eventId: parseInt(match[1], 10) }));
       }
       return null;
     }).catch(() => null);
   }
 
   componentWillReceiveProps(nextProps) {
-    const { onFetchEvents, events, editions: { selectedEdition } } = nextProps;
+    const { onFetchEvents, events, editions } = nextProps;
+    const { selectedEdition } = editions;
     const { dataSource, refreshing } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
+      const edition = editions.items.find(e => e.id === selectedEdition);
+      this.props.navigator.updateCurrentRouteParams({
+        title: edition.name,
+      });
       onFetchEvents(selectedEdition);
       this.setState({
         refreshing: true,
@@ -120,18 +125,10 @@ const Events = class Events extends Component {
   }
 
   render() {
-    const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
-    const edition = items.find(e => e.id === selectedEdition);
+    const { navigator } = this.props;
     const { dataSource, refreshing, error } = this.state;
     return (
       <View style={styles.container}>
-        <DigiHeader
-          title={edition.name}
-          leftItem={{
-            icon: hamburger,
-            onPress: openMainDrawer,
-          }}
-        />
         <EventsListView
           navigator={navigator}
           dataSource={dataSource}
@@ -142,14 +139,6 @@ const Events = class Events extends Component {
       </View>
     );
   }
-};
-
-Events.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  openMainDrawer: PropTypes.func.isRequired,
-  onFetchEvents: PropTypes.func.isRequired,
-  editions: PropTypes.object.isRequired,
-  events: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -164,3 +153,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Events);
+
+Events.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  onFetchEvents: PropTypes.func.isRequired,
+  editions: PropTypes.object.isRequired,
+  events: PropTypes.object.isRequired,
+};

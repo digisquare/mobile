@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
 
 import { selectEdition } from '../../actions/editions';
 
-import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
-
-import backWhite from '../../common/img/back_white.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,50 +33,48 @@ const styles = StyleSheet.create({
   },
 });
 
-const Editions = ({ navigator, editions, onSelectEdition }) => (
-  <View style={styles.container}>
-    <DigiHeader
-      title="Edition"
-      leftItem={{
-        icon: backWhite,
-        onPress: () => navigator.pop(),
-      }}
-    />
-    {
-      editions.items.map(edition => (
-        <TouchableOpacity
-          key={edition.id}
-          onPress={() => {
-            onSelectEdition(edition.id);
-          }}
-          style={styles.editionContainer}
-        >
-          <View style={styles.nameContainer}>
-            <Text style={styles.editionName}>
-              {edition.name}
-            </Text>
-          </View>
-          <View style={styles.switchContainer}>
-            {
-              edition.id === editions.selectedEdition ? (
-                <Icon
-                  name="check" size={20} style={styles.icon}
-                  color={DigiColors.primaryFontColor}
-                />
-              ) : null
-            }
-          </View>
-        </TouchableOpacity>
-      ))
-    }
-  </View>
-);
+class Editions extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Edition',
+    },
+  }
 
-Editions.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  editions: PropTypes.object.isRequired,
-  onSelectEdition: PropTypes.func.isRequired,
-};
+  render() {
+    const { editions, onSelectEdition } = this.props;
+    return (
+      <View style={styles.container}>
+        {
+          editions.items.map(edition => (
+            <TouchableOpacity
+              key={edition.id}
+              onPress={() => {
+                onSelectEdition(edition.id);
+              }}
+              style={styles.editionContainer}
+            >
+              <View style={styles.nameContainer}>
+                <Text style={styles.editionName}>
+                  {edition.name}
+                </Text>
+              </View>
+              <View style={styles.switchContainer}>
+                {
+                  edition.id === editions.selectedEdition ? (
+                    <Icon
+                      name="check" size={20} style={styles.icon}
+                      color={DigiColors.primaryFontColor}
+                    />
+                  ) : null
+                }
+              </View>
+            </TouchableOpacity>
+          ))
+        }
+      </View>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   editions: state.editions,
@@ -92,3 +87,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Editions);
+
+Editions.propTypes = {
+  editions: PropTypes.object.isRequired,
+  onSelectEdition: PropTypes.func.isRequired,
+};

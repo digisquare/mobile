@@ -5,11 +5,7 @@ import { Answers } from 'react-native-fabric';
 
 import { fetchOrganizations } from '../../actions/organizations';
 
-import DigiHeader from '../../common/DigiHeader';
-
 import OrganizationsListView from './OrganizationsListView';
-
-import hamburger from '../../common/img/hamburger.png';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +13,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const Organizations = class Organizations extends Component {
+class Organizations extends Component {
+  static route = {
+    navigationBar: {
+      title({ title }) {
+        return title || 'Bordeaux';
+      },
+    },
+  }
+
   constructor(props) {
     super(props);
     const { editions: { selectedEdition }, organizations } = props;
@@ -42,9 +46,14 @@ const Organizations = class Organizations extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { onFetchOrganizations, organizations, editions: { selectedEdition } } = nextProps;
+    const { onFetchOrganizations, organizations, editions } = nextProps;
+    const { selectedEdition } = editions;
     const { dataSource, refreshing } = this.state;
     if (selectedEdition !== this.props.editions.selectedEdition) {
+      const edition = editions.items.find(e => e.id === selectedEdition);
+      this.props.navigator.updateCurrentRouteParams({
+        title: edition.name,
+      });
       onFetchOrganizations(selectedEdition);
       this.setState({
         refreshing: true,
@@ -85,18 +94,10 @@ const Organizations = class Organizations extends Component {
   }
 
   render() {
-    const { navigator, openMainDrawer, editions: { selectedEdition, items } } = this.props;
-    const edition = items.find(e => e.id === selectedEdition);
+    const { navigator } = this.props;
     const { dataSource, refreshing, error } = this.state;
     return (
       <View style={styles.container}>
-        <DigiHeader
-          title={edition.name}
-          leftItem={{
-            icon: hamburger,
-            onPress: openMainDrawer,
-          }}
-        />
         <OrganizationsListView
           navigator={navigator}
           dataSource={dataSource}
@@ -107,15 +108,7 @@ const Organizations = class Organizations extends Component {
       </View>
     );
   }
-};
-
-Organizations.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  openMainDrawer: PropTypes.func.isRequired,
-  onFetchOrganizations: PropTypes.func.isRequired,
-  editions: PropTypes.object.isRequired,
-  organizations: PropTypes.object.isRequired,
-};
+}
 
 const mapStateToProps = state => ({
   editions: state.editions,
@@ -129,3 +122,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Organizations);
+
+Organizations.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  onFetchOrganizations: PropTypes.func.isRequired,
+  editions: PropTypes.object.isRequired,
+  organizations: PropTypes.object.isRequired,
+};

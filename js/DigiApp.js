@@ -6,9 +6,9 @@ import store from './reducers';
 
 import { initNotifications } from './actions/settings';
 
-import DigiNavigator from './DigiNavigator';
-import Events from './scenes/events/Events';
 import DigiColors from './common/DigiColors';
+
+import Drawer from './scenes/drawer/Drawer';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,12 +30,7 @@ export default class DigiApp extends Component {
             backgroundColor={DigiColors.invertedBackgroundColor}
             barStyle="light-content"
           />
-          <DigiNavigator
-            initialRoute={{
-              name: 'Digisquare',
-              component: Events,
-            }}
-          />
+          <Drawer />
         </View>
       </Provider>
     );

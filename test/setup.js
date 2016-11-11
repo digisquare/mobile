@@ -13,6 +13,9 @@ mockery.registerMock('react-native-fabric', {
     crash: () => {},
   },
 });
+mockery.registerMock('@exponent/ex-navigation', {
+  createRouter: () => {},
+});
 
 const modulesToCompile = [
   'react-native',

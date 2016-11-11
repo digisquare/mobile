@@ -3,9 +3,8 @@ import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
 
+import Router from '../../router';
 import DigiColors from '../../common/DigiColors';
-
-import Event from '../event/Event';
 
 moment.locale('fr');
 
@@ -43,12 +42,7 @@ const selectEvent = (navigator, event) => {
     'event',
     `events/${event.Event.id}`,
   );
-  navigator.push({
-    component: Event,
-    passProps: {
-      event,
-    },
-  });
+  navigator.push(Router.getRoute('event', { eventId: parseInt(event.Event.id, 10) }));
 };
 
 export default function EventsRow({ rowID, navigator, event }) {

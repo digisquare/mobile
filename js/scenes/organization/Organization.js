@@ -1,19 +1,21 @@
-import React, { PropTypes } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, Linking } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { View, Text, Image, ScrollView, StyleSheet, Linking, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import HTMLView from 'react-native-htmlview';
 
 import socialBadge from '../../utils/social';
 
-import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
 import VenueFooter from '../venues/VenueFooter';
 
-import website from '../../common/img/website.png';
-import backWhite from '../../common/img/back_white.png';
-
 const styles = StyleSheet.create({
+  itemWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 10,
+  },
   container: {
     flex: 1,
     backgroundColor: DigiColors.primaryBackgroundColor,
@@ -49,78 +51,82 @@ const styles = StyleSheet.create({
   },
 });
 
-const Organization = ({ navigator, organization, organizations }) => {
-  const { edition_id: editionId, venue_id: venueId } = organization.Organization;
-  if (editionId && organizations[editionId]) {
-    const organizationsItems = organizations[editionId].items;
-    if (venueId && !organization.Venue && organizationsItems.length > 0) {
-      const venue = organizationsItems.find(item => item.Venue.id === venueId);
-      organization.Venue = venue ? venue.Venue : null; // eslint-disable-line no-param-reassign
-    }
+class Organization extends Component {
+  static route = {
+    navigationBar: {
+      title: 'Organisateur',
+      renderRight: (route) => {
+        const { params: { organization } } = route;
+        return organization.Organization.Contacts.website && (
+          <TouchableOpacity
+            onPress={() => Linking.openURL(organization.Organization.Contacts.website)}
+            style={styles.itemWrapper}
+          >
+            <Icon name="link" size={20} color={DigiColors.invertedFontColor} />
+          </TouchableOpacity>
+        );
+      },
+    },
   }
-  const rightItem = organization.Organization.Contacts.website ? {
-    icon: website,
-    onPress: () => Linking.openURL(organization.Organization.Contacts.website),
-    title: 'website',
-  } : null;
-  return (
-    <View style={styles.container}>
-      <DigiHeader
-        title="Organisateur"
-        leftItem={{
-          icon: backWhite,
-          onPress: () => navigator.pop(),
-        }}
-        rightItem={rightItem}
-      />
-      <ScrollView style={styles.scrollview}>
-        <View style={styles.organization}>
-          <View style={styles.header}>
-            {
-              organization.Organization.avatar ? (
-                <View style={styles.avatarContainer}>
-                  <Image
-                    style={styles.avatar}
-                    source={{ uri: organization.Organization.avatar }}
-                  />
+
+  render() {
+    const { organization, organizations } = this.props;
+    const { edition_id: editionId, venue_id: venueId } = organization.Organization;
+
+    if (editionId && organizations[editionId]) {
+      const organizationsItems = organizations[editionId].items;
+      if (venueId && !organization.Venue && organizationsItems.length > 0) {
+        const venue = organizationsItems.find(item => item.Venue.id === venueId);
+        organization.Venue = venue ? venue.Venue : null; // eslint-disable-line no-param-reassign
+      }
+    }
+
+    return (
+      <View style={styles.container}>
+        <ScrollView style={styles.scrollview}>
+          <View style={styles.organization}>
+            <View style={styles.header}>
+              {
+                organization.Organization.avatar ? (
+                  <View style={styles.avatarContainer}>
+                    <Image
+                      style={styles.avatar}
+                      source={{ uri: organization.Organization.avatar }}
+                    />
+                  </View>
+                ) : null
+              }
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>
+                  {organization.Organization.name}
+                </Text>
+                <View style={styles.social}>
+                  {socialBadge('twitter', organization.Organization.Contacts)}
+                  {socialBadge('facebook', organization.Organization.Contacts)}
                 </View>
-              ) : null
-            }
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>
-                {organization.Organization.name}
-              </Text>
-              <View style={styles.social}>
-                {socialBadge('twitter', organization.Organization.Contacts)}
-                {socialBadge('facebook', organization.Organization.Contacts)}
               </View>
             </View>
+            <HTMLView
+              value={organization.Organization.description}
+              onLinkPress={url => Linking.openURL(url)}
+            />
           </View>
-          <HTMLView
-            value={organization.Organization.description}
-            onLinkPress={url => Linking.openURL(url)}
-          />
-        </View>
-      </ScrollView>
-      {
-        organization.Venue && organization.Venue.id ? (
-          <VenueFooter
-            venue={organization.Venue}
-          />
-        ) : null
-      }
-    </View>
-  );
-};
-
-Organization.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  organization: PropTypes.object.isRequired,
-  organizations: PropTypes.object.isRequired,
-};
+        </ScrollView>
+        {
+          organization.Venue && organization.Venue.id && <VenueFooter venue={organization.Venue} />
+        }
+      </View>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   organizations: state.organizations,
 });
 
 export default connect(mapStateToProps)(Organization);
+
+Organization.propTypes = {
+  organization: PropTypes.object.isRequired,
+  organizations: PropTypes.object.isRequired,
+};

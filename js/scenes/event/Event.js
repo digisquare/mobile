@@ -7,12 +7,9 @@ import HTMLView from 'react-native-htmlview';
 
 import datetime from '../../utils/datetime';
 
-import DigiHeader from '../../common/DigiHeader';
 import DigiColors from '../../common/DigiColors';
 import VenueFooter from '../venues/VenueFooter';
 import OrganizationsRow from '../organizations/OrganizationsRow';
-
-import backWhite from '../../common/img/back_white.png';
 
 moment.locale('fr');
 
@@ -46,16 +43,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Event({ navigator, event }) {
+function Event({ navigator, event }) {
   return (
     <View style={styles.container}>
-      <DigiHeader
-        title="Évènement"
-        leftItem={{
-          icon: backWhite,
-          onPress: () => navigator.pop(),
-        }}
-      />
       <ScrollView style={styles.scrollview}>
         <View style={styles.event}>
           <Text style={styles.title}>
@@ -99,6 +89,8 @@ export default function Event({ navigator, event }) {
     </View>
   );
 }
+
+export default Event;
 
 Event.propTypes = {
   navigator: PropTypes.object.isRequired,
