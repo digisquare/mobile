@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Linking, TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import sinon from 'sinon';
 
 import VenueFooter from '../VenueFooter';
 
@@ -35,7 +34,7 @@ describe('<VenueFooter />', () => {
   });
 
   it('should open map on click', () => {
-    const onComponentPress = sinon.spy(Linking, 'openURL');
+    jest.mock('Linking');
 
     const component = shallow(
       <VenueFooter
@@ -44,8 +43,6 @@ describe('<VenueFooter />', () => {
     );
 
     component.find(TouchableOpacity).simulate('press');
-    expect(onComponentPress.calledOnce).to.equal(true);
-
-    onComponentPress.restore();
+    expect(Linking.openURL.mock.calls).to.have.lengthOf(1);
   });
 });

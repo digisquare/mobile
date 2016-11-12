@@ -7,6 +7,7 @@
   },
   "env": {
     "es6": true,
+    "jest": true
   },
   "plugins": [
     "react",
@@ -25,16 +26,9 @@
     }
   },
   "globals": {
-    "require": false,
-    "module": false,
     "fetch": false,
     "__DEV__": false,
     "window": false,
-    "__dirname": false,
-    "describe": false,
-    "it": false,
-    "beforeEach": false,
-    "afterEach": false
   },
   "rules": {
     "react-native/no-unused-styles": 2,

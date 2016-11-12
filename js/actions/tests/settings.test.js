@@ -1,38 +1,34 @@
 import OneSignal from 'react-native-onesignal';
 import { expect } from 'chai';
-import sinon from 'sinon';
 import * as settingsActions from '../settings';
 
 const edition = 9;
 
-describe('settings actions', () => {
-  beforeEach(() => {
-    sinon.stub(OneSignal, 'sendTags');
-  });
+jest.mock('react-native-onesignal');
 
+describe('settings actions', () => {
   afterEach(() => {
-    OneSignal.sendTags.restore();
+    OneSignal.sendTags.mockReset();
+    OneSignal.getTags.mockReset();
   });
 
   it('should call OneSignal to init empty notifications settings', () => {
-    sinon.stub(OneSignal, 'getTags').yields();
-
     const fakeDispatcher = action => action;
 
     const next = settingsActions.initNotifications();
 
     next(fakeDispatcher);
 
-    sinon.assert.calledOnce(OneSignal.getTags);
-
-    OneSignal.getTags.restore();
+    expect(OneSignal.getTags.mock.calls).to.have.lengthOf(1);
   });
 
   it('should call OneSignal to init existing notifications settings', () => {
-    sinon.stub(OneSignal, 'getTags').yields({
-      Bordeaux: 'true',
-      Montpellier: 'false',
-    });
+    jest.mock('react-native-onesignal', () => ({
+      getTags: () => ({
+        Bordeaux: 'true',
+        Montpellier: 'false',
+      }),
+    }));
 
     const fakeDispatcher = action => action;
 
@@ -40,9 +36,7 @@ describe('settings actions', () => {
 
     next(fakeDispatcher);
 
-    sinon.assert.calledOnce(OneSignal.getTags);
-
-    OneSignal.getTags.restore();
+    expect(OneSignal.getTags.mock.calls).to.have.lengthOf(1);
   });
 
   it('should create an action to toggle a notification', () => {
@@ -57,6 +51,6 @@ describe('settings actions', () => {
 
   it('should call OneSignal to toggle a notification', () => {
     settingsActions.toggleNotification(edition, true);
-    sinon.assert.calledOnce(OneSignal.sendTags);
+    expect(OneSignal.sendTags.mock.calls).to.have.lengthOf(1);
   });
 });
