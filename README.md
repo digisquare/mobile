@@ -23,20 +23,17 @@ It shares the same codebase for iOS and Android.
 
 Tests are written with:
 
-  - [Mocha](https://github.com/mochajs/mocha)
+  - [Jest](https://github.com/facebook/jest)
   - [Chai](https://github.com/chaijs/chai)
   - [Enzyme](https://github.com/airbnb/enzyme/)
-  - [react-native-mock](https://github.com/lelandrichardson/react-native-mock)
   
-They run with `npm test`
-  
-Coverage uses [Istanbul](https://github.com/gotwarlost/istanbul) and is run with `npm run cover`
+They run with `npm test`. Coverage is available with `npm run cover`.
 
 A [Travis CI](https://travis-ci.org/digisquare/mobile) job is set up, together with a [GreenKeeper](https://github.com/greenkeeperio/greenkeeper) bot to check for updated dependencies.
 
 ## Linting
 
-All code is linted with [eslint](https://github.com/eslint/eslint) and can be checked with `npm run lint`
+All code is linted with [eslint](https://github.com/eslint/eslint) and can be checked with `npm run lint`, using [Airbnb rules](https://github.com/airbnb/javascript).
 
 ## Push Notifications
 
