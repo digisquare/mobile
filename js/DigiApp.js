@@ -13,6 +13,7 @@ import Drawer from './scenes/drawer/Drawer';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: DigiColors.primaryBackgroundColor,
   },
 });
 
