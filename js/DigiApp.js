@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet } from 'react-native';
+import { View, StatusBar, StyleSheet, Platform } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './reducers';
@@ -8,6 +8,7 @@ import { initNotifications } from './actions/settings';
 
 import DigiColors from './common/DigiColors';
 
+import Tabs from './scenes/tabs/Tabs';
 import Drawer from './scenes/drawer/Drawer';
 
 const styles = StyleSheet.create({
@@ -31,7 +32,9 @@ export default class DigiApp extends Component {
             backgroundColor={DigiColors.invertedBackgroundColor}
             barStyle="light-content"
           />
-          <Drawer />
+          {
+            Platform.OS === 'ios' ? <Tabs /> : <Drawer />
+          }
         </View>
       </Provider>
     );
