@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class Organizations extends Component {
+class OrganizationsContainer extends Component {
   static route = {
     navigationBar: {
       title({ title }) {
@@ -121,9 +121,9 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Organizations);
+export default connect(mapStateToProps, mapDispatchToProps)(OrganizationsContainer);
 
-Organizations.propTypes = {
+OrganizationsContainer.propTypes = {
   navigator: PropTypes.object.isRequired,
   onFetchOrganizations: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
