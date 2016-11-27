@@ -2,15 +2,6 @@ import { expect } from 'chai';
 
 import { findEvent } from '../EventContainer';
 
-jest.mock('react-native-fabric', () => ({
-  crash: () => {},
-}));
-
-jest.mock('@exponent/ex-navigation', () => ({
-  withNavigation: () => {},
-  createRouter: () => {},
-}));
-
 describe('<EventContainer />', () => {
   it('should find an event', () => {
     const eventId = 42;

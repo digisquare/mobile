@@ -29,6 +29,9 @@
   },
   "jest": {
     "preset": "jest-react-native",
+    "setupFiles": [
+      "js/Config/jest.mocks.js"
+    ],
     "collectCoverageFrom": [
       "js/**/*.{js,jsx}",
       "!js/**/*.mock.{js,jsx}"
