@@ -1,0 +1,67 @@
+exports[`test renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "height": 60,
+      "padding": 10,
+    }
+  }
+  testID="EventsRow-0-0">
+  <View
+    style={
+      Object {
+        "width": 50,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "https://pbs.twimg.com/profile_images/2741451195/8ff14ab4849d749af06271795a15cf54_400x400.png",
+        }
+      }
+      style={
+        Object {
+          "height": 40,
+          "marginTop": 3,
+          "width": 40,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "grey",
+          "fontSize": 18,
+          "fontWeight": "900",
+        }
+      }>
+      Petit retour d’expérience après 6 mois sur une grosse application React
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "grey",
+        }
+      }>
+      19:00 @ Le Node
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
