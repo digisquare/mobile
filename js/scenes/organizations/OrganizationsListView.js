@@ -57,6 +57,7 @@ export default class OrganizationsListView extends Component {
         dataSource={dataSource}
         refreshControl={refreshControl}
         renderRow={this.renderOrganizationsRow}
+        enableEmptySections
       />
     );
   }
