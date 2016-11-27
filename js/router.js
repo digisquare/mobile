@@ -1,6 +1,6 @@
 import { createRouter } from '@exponent/ex-navigation';
 
-import Events from './scenes/events/Events';
+import EventsContainer from './scenes/events/EventsContainer';
 import EventContainer from './scenes/event/EventContainer';
 import Organizations from './scenes/organizations/Organizations';
 import OrganizationContainer from './scenes/organization/OrganizationContainer';
@@ -9,7 +9,7 @@ import Editions from './scenes/settings/Editions';
 import Notifications from './scenes/settings/Notifications';
 
 const Router = createRouter(() => ({
-  events: () => Events,
+  events: () => EventsContainer,
   event: () => EventContainer,
   organizations: () => Organizations,
   organization: () => OrganizationContainer,

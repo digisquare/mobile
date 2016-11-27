@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, ListView, StyleSheet, Linking } from 'react-native';
+import { ListView, Linking } from 'react-native';
 import { connect } from 'react-redux';
 import moment from 'moment/min/moment-with-locales';
 import { Answers } from 'react-native-fabric';
@@ -10,13 +10,7 @@ import { fetchEvents } from '../../actions/events';
 
 import EventsListView from './EventsListView';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-const Events = class Events extends Component {
+class EventsContainer extends Component {
   static route = {
     navigationBar: {
       title({ title }) {
@@ -128,18 +122,16 @@ const Events = class Events extends Component {
     const { navigator } = this.props;
     const { dataSource, refreshing, error } = this.state;
     return (
-      <View style={styles.container}>
-        <EventsListView
-          navigator={navigator}
-          dataSource={dataSource}
-          refreshing={refreshing}
-          onRefresh={this.onRefresh}
-          error={error}
-        />
-      </View>
+      <EventsListView
+        navigator={navigator}
+        dataSource={dataSource}
+        refreshing={refreshing}
+        onRefresh={this.onRefresh}
+        error={error}
+      />
     );
   }
-};
+}
 
 const mapStateToProps = state => ({
   editions: state.editions,
@@ -152,9 +144,9 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer);
 
-Events.propTypes = {
+EventsContainer.propTypes = {
   navigator: PropTypes.object.isRequired,
   onFetchEvents: PropTypes.func.isRequired,
   editions: PropTypes.object.isRequired,
