@@ -1,0 +1,46 @@
+const Organization = {
+  Organization: {
+    id: '22',
+    venue_id: null,
+    edition_id: '9',
+    name: 'BordeauxJS',
+    type: '0',
+    avatar: 'https://pbs.twimg.com/profile_images/2741451195/8ff14ab4849d749af06271795a15cf54_400x400.png',
+    description: 'User group JavaScript \u00e0 #bordeaux : r\u00e9unions, discussions et live coding entre gens en asynchrone. #nodejs #coffeescript #javascript',
+    contacts: '{\'twitter\':\'BordeauxJS\',\'website\':\'http:\\/\\/www.meetup.com\\/BordeauxJS\\/\'}',
+    event_count: '7',
+    recent_event_count: '0',
+    created: '2015-01-24 13:35:25',
+    modified: '2016-07-22 04:00:01',
+    Contacts: {
+      twitter: 'BordeauxJS',
+      website: 'http://www.meetup.com/BordeauxJS/',
+    },
+  },
+  Venue: {
+    id: '1',
+    edition_id: '9',
+    name: 'Le Node',
+    address: '12 Rue Des Faussets',
+    zipcode: '33000',
+    city: 'Bordeaux',
+    country_code: 'FR',
+    latitude: '44.840373',
+    longitude: '-0.570311',
+    event_count: '277',
+    created: '2015-01-24 14:50:42',
+    modified: '2015-02-15 17:26:20',
+    oneliner: 'Le Node, 12 Rue Des Faussets, 33000 Bordeaux, FR',
+  },
+  Edition: {
+    id: '9',
+    name: 'Bordeaux',
+    slug: 'bordeaux',
+    event_count: '906',
+    organization_count: '0',
+    created: '2015-01-24 13:35:02',
+    modified: '2015-01-24 13:35:02',
+  },
+};
+
+export default Organization;

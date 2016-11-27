@@ -1,0 +1,256 @@
+exports[`test renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }>
+  <ScrollView
+    style={
+      Object {
+        "flex": 1,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "padding": 10,
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "marginBottom": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }>
+          <Image
+            source={
+              Object {
+                "uri": "https://pbs.twimg.com/profile_images/2741451195/8ff14ab4849d749af06271795a15cf54_400x400.png",
+              }
+            }
+            style={
+              Object {
+                "height": 80,
+                "width": 80,
+              }
+            } />
+        </View>
+        <View
+          style={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "black",
+                "fontSize": 22,
+                "fontWeight": "900",
+                "marginTop": 10,
+              }
+            }>
+            BordeauxJS
+          </Text>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+                "marginTop": 10,
+              }
+            }>
+            <View
+              style={
+                Object {
+                  "marginRight": 10,
+                }
+              }>
+              <TouchableHighlight
+                activeOpacity={0.85}
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "overflow": "hidden",
+                    },
+                    Object {
+                      "backgroundColor": "#55acee",
+                      "borderRadius": 5,
+                    },
+                  ]
+                }
+                underlayColor="black">
+                <View
+                  padding={2}
+                  paddingLeft={8}
+                  paddingRight={8}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "justifyContent": "flex-start",
+                        "padding": 8,
+                      },
+                      Object {
+                        "backgroundColor": "#55acee",
+                        "borderRadius": 5,
+                      },
+                      undefined,
+                    ]
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={false}
+                    ellipsizeMode="tail"
+                    onPress={[Function]}
+                    style={
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 12,
+                        },
+                        Object {
+                          "marginRight": 10,
+                        },
+                        Object {
+                          "fontFamily": "FontAwesome",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                      ]
+                    }>
+                    
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "fontWeight": "600",
+                        },
+                        Object {
+                          "color": "white",
+                        },
+                      ]
+                    }>
+                    BordeauxJS
+                  </Text>
+                </View>
+              </TouchableHighlight>
+            </View>
+            <View />
+          </View>
+        </View>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+          User group JavaScript à #bordeaux : réunions, discussions et live coding entre gens en asynchrone. #nodejs #coffeescript #javascript
+        </Text>
+      </Text>
+    </View>
+  </ScrollView>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "black",
+        "flexDirection": "row",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": 60,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 30,
+            },
+            undefined,
+            Object {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingBottom": 5,
+          "paddingLeft": 10,
+          "paddingTop": 5,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "500",
+          }
+        }>
+        Le Node
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+          }
+        }>
+        12 Rue Des Faussets
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+          }
+        }>
+        33000 Bordeaux
+      </Text>
+    </View>
+  </TouchableOpacity>
+</View>
+`;
