@@ -1,0 +1,348 @@
+exports[`test renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }>
+  <ScrollView
+    style={
+      Object {
+        "flex": 1,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "padding": 10,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 22,
+            "fontWeight": "900",
+          }
+        }>
+        Petit retour d’expérience après 6 mois sur une grosse application React
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 12,
+            "fontWeight": "900",
+            "marginBottom": 10,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              undefined,
+              Object {
+                "fontFamily": "FontAwesome",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }>
+          
+        </Text>
+         
+        jeudi 28 avril 2016 de 19h à 21h
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+          Après le talk de Vladimir Barsukov sur Redux, on continue avec React, en accueillant 
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={[Function]}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#007AFF",
+                "fontWeight": "500",
+              }
+            }>
+            Damien Varron
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+          , qui nous propose un retour d\'expérience sur plusieurs mois de développement.
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={null}>
+          
+          
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={null}>
+          
+          
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+          React c\'est magique, tout le monde en parle, tout le monde vous l\'a dit. Mais passé l\'exemple du Hello World ou de la TodoMVC comment ça se passe dans la vraie vie ? Est-ce que je m\'y retrouve encore dans mon code après plusieurs mois ? Quel est l\'intérêt de toutes ces librairies qui fleurissent autour de React ? Voici quelques observations et leçons apprises au cours du développement de l\'application 
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={[Function]}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#007AFF",
+                "fontWeight": "500",
+              }
+            }>
+            Voxeet
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+           et de son 
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={[Function]}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#007AFF",
+                "fontWeight": "500",
+              }
+            }>
+            TimeZoneNinja
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={null}>
+          .
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          onPress={null}>
+          
+          
+        </Text>
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+            "fontWeight": "900",
+            "marginTop": 10,
+          }
+        }>
+        Organisé par :
+      </Text>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "padding": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "width": 50,
+            }
+          }>
+          <Image
+            source={
+              Object {
+                "uri": "https://pbs.twimg.com/profile_images/2741451195/8ff14ab4849d749af06271795a15cf54_400x400.png",
+              }
+            }
+            style={
+              Object {
+                "height": 40,
+                "marginTop": 3,
+                "width": 40,
+              }
+            } />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+              "justifyContent": "center",
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "grey",
+                "fontSize": 18,
+                "fontWeight": "900",
+              }
+            }>
+            BordeauxJS
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "grey",
+              }
+            } />
+        </View>
+      </TouchableOpacity>
+    </View>
+  </ScrollView>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "black",
+        "flexDirection": "row",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": 60,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 30,
+            },
+            undefined,
+            Object {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingBottom": 5,
+          "paddingLeft": 10,
+          "paddingTop": 5,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "500",
+          }
+        }>
+        Le Node
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+          }
+        }>
+        12 Rue Des Faussets
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+          }
+        }>
+        33000 Bordeaux
+      </Text>
+    </View>
+  </TouchableOpacity>
+</View>
+`;
