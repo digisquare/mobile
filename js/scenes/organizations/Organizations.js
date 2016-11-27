@@ -8,7 +8,7 @@ import OrganizationsRow from './OrganizationsRow';
 import tumbeastNetwork from '../../common/img/tumbeast-network.png';
 import tumbeastSitting from '../../common/img/tumbeast-sitting.png';
 
-export default class OrganizationsListView extends Component {
+export default class Organizations extends Component {
   constructor(props) {
     super(props);
     this.renderOrganizationsRow = this.renderOrganizationsRow.bind(this);
@@ -63,7 +63,7 @@ export default class OrganizationsListView extends Component {
   }
 }
 
-OrganizationsListView.propTypes = {
+Organizations.propTypes = {
   navigator: PropTypes.object.isRequired,
   dataSource: PropTypes.object.isRequired,
   refreshing: PropTypes.bool.isRequired,

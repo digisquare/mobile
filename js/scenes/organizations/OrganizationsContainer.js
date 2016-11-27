@@ -1,17 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import { View, ListView, StyleSheet } from 'react-native';
+import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 import { Answers } from 'react-native-fabric';
 
 import { fetchOrganizations } from '../../actions/organizations';
 
-import OrganizationsListView from './OrganizationsListView';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import Organizations from './Organizations';
 
 class OrganizationsContainer extends Component {
   static route = {
@@ -97,15 +91,13 @@ class OrganizationsContainer extends Component {
     const { navigator } = this.props;
     const { dataSource, refreshing, error } = this.state;
     return (
-      <View style={styles.container}>
-        <OrganizationsListView
-          navigator={navigator}
-          dataSource={dataSource}
-          refreshing={refreshing}
-          onRefresh={this.onRefresh}
-          error={error}
-        />
-      </View>
+      <Organizations
+        navigator={navigator}
+        dataSource={dataSource}
+        refreshing={refreshing}
+        onRefresh={this.onRefresh}
+        error={error}
+      />
     );
   }
 }
