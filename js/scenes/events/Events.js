@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class EventsListView extends Component {
+export default class Events extends Component {
   constructor(props) {
     super(props);
     this.renderEventsRow = this.renderEventsRow.bind(this);
@@ -90,7 +90,7 @@ export default class EventsListView extends Component {
   }
 }
 
-EventsListView.propTypes = {
+Events.propTypes = {
   navigator: PropTypes.object.isRequired,
   dataSource: PropTypes.object.isRequired,
   refreshing: PropTypes.bool.isRequired,

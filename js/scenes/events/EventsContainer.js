@@ -8,7 +8,7 @@ import Router from '../../router';
 
 import { fetchEvents } from '../../actions/events';
 
-import EventsListView from './EventsListView';
+import Events from './Events';
 
 class EventsContainer extends Component {
   static route = {
@@ -122,7 +122,7 @@ class EventsContainer extends Component {
     const { navigator } = this.props;
     const { dataSource, refreshing, error } = this.state;
     return (
-      <EventsListView
+      <Events
         navigator={navigator}
         dataSource={dataSource}
         refreshing={refreshing}
