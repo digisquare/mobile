@@ -30,7 +30,8 @@
   "jest": {
     "preset": "jest-react-native",
     "collectCoverageFrom": [
-      "js/**/*.{js,jsx}"
+      "js/**/*.{js,jsx}",
+      "!js/**/*.mock.{js,jsx}"
     ]
   },
   "devDependencies": {
