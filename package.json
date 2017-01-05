@@ -19,7 +19,7 @@
     "react-native-fabric": "^0.3.0",
     "react-native-htmlview": "^0.5.0",
     "react-native-onesignal": "^1.1.1",
-    "react-native-vector-icons": "^3.0.0",
+    "react-native-vector-icons": "^4.0.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.1",
     "redux-logger": "^2.6.1",
