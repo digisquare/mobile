@@ -16,7 +16,7 @@
     "moment": "^2.12.0",
     "react": "15.3.2",
     "react-native": "^0.37.0",
-    "react-native-fabric": "^0.3.0",
+    "react-native-fabric": "^0.4.1",
     "react-native-htmlview": "^0.5.0",
     "react-native-onesignal": "^1.1.1",
     "react-native-vector-icons": "^3.0.0",
